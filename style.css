@@ -1,10 +1,135 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+
 body {
     font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
-    margin-top: 5rem;
+    margin: 0;
+    background-color: #fbfcfb;
    
 }
 
+.site-header {
+    background-color: #add8d0; /* mörkgröngrå bakgrund */
+    padding-top: 1rem;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+  }
+  
+  .header-inner {
+    display: flex;
+    justify-content: flex-start; /* Ändra från space-between */
+    align-items: flex-end;
+    padding: 1rem 2rem;
+    flex-wrap: wrap;
+    gap: 12rem; /* avstånd mellan logga och navbar */
+  }
+  
+  
+  .header-logo {
+    max-height: 60px;
+    height: auto;
+  }
+  
+  /* === Navbar === */
+  .navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .navbar a {
+    position: relative;
+    color: #57847b;
+    text-decoration: none;
+    font-size: small;
+    font-weight: 600;
+    text-transform: uppercase;
+    display: inline-block;
+    padding-bottom: 4px;
+  }
+  
+  .navbar a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 1.5px;
+    background-color: #57847b;
+    transition: width 0.4s ease;
+  }
+  
+  .navbar a:hover::after {
+    width: 100%;
+  }
+  
+  
+  /* === Hamburgermeny (mobil) === */
+  .menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 1rem;
+  }
+  
+  .menu-toggle span {
+    height: 3px;
+    width: 25px;
+    background-color: #fff;
+    margin: 4px 0;
+    border-radius: 2px;
+  }
+  
+  @media (max-width: 768px) {
+    .navbar ul {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+      background-color: #4f5a4f;
+      padding: 1rem 0;
+    }
+  
+    .navbar ul.active {
+      display: flex;
+    }
+  
+    .menu-toggle {
+      display: flex;
+    }
+  }
 
+  .intro-section {
+    max-width: 800px;
+    margin: 6rem auto 4rem auto;
+    padding: 1.5rem 2rem;
+    text-align: center;
+  }
+
+  .intro-text {
+    color: #767c7b;
+    font-size: 1.2rem;
+    line-height: 1.7;
+    letter-spacing: 0.03rem;
+    font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+
+    border-radius: 6px;
+    padding: 1.5rem;
+
+  }
+  
+  
 .chart-text {
     font-size: 1rem;
     color: #777;
@@ -42,7 +167,7 @@ body {
 
 
 .info-box {
-    border-left: 15px solid pink;
+    border-left: 12px solid #e1eae8; /* mörkgröngrå vänsterkant */
     padding-left: 25px;
     padding-top: 5px;
     margin: 25px auto 60px auto;

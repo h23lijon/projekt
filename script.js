@@ -301,7 +301,7 @@ window.addEventListener("load", () => {
 
 const co2Labels = ["Box (3 l)", "Påse (2 l)", "Papp (1 l)", "Returglas (0.5 l)", "Burk (0.375 l)", "PET (0.75 l)", "Lättare glasflaska (0.75 l)", "Glasflaska (0.75 l)", "Tung glasflaska (0.75 l, mousserande)"];
 const co2Values = [68, 71, 76, 110, 176, 243, 532, 664, 894];
-const backgroundColors = ['#d1f0d1', '#b6e2b6', '#9bd49b', '#7ec67e', '#64b164', '#4a9c4a', '#2f872f', '#1c6f1c', '#0a580a'];
+const backgroundColors = ['rgba(255, 182, 193, 0.4)', 'rgba(173, 216, 230, 0.4)', 'rgba(186, 85, 211, 0.4)', 'rgba(144, 238, 144, 0.4)', 'rgba(135, 206, 250, 0.4)', 'rgba(205, 133, 63, 0.4)','rgba(255, 105, 135, 1)', 'rgba(100, 149, 237, 1)', 'rgba(147, 112, 219, 1)'];
 
 const ctx4 = document.getElementById('myChart4').getContext('2d');
 new Chart(ctx4, {
@@ -337,6 +337,9 @@ new Chart(ctx4, {
     }
   }
 });
+// === Mobilmeny ===
+document.getElementById('mobile-menu').addEventListener('click', function () {
+  document.getElementById('navbar-links').classList.toggle('active');
+});
 
-// === Femte och sjätte diagrammet kommer härnäst ===
-// ... inkludera kod för myCombinedChart och myChart6 på liknande sätt ...
+
