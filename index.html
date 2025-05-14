@@ -6,7 +6,8 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
   <script src="script.js" defer></script>
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://use.typekit.net/sft1pux.css"> 
+  <link rel="stylesheet" href="https://use.typekit.net/sft1pux.css">
+  <script src="https://cdn.plot.ly/plotly-2.26.0.min.js"></script>
 </head>
 <body>
 
@@ -87,10 +88,18 @@
       <canvas id="myChart4"></canvas>
       <div class="chart-source">Källa: Systembolaget, 2023</div>
     </div>
+
+  <!-- Karta -->
+  <div class="chart-card">
+  <div id="map"></div>
+  </div>
   
   <!-- faktarutor -->
-  <section class="information">
-    <h2>Mer läsning</h2>
+  <div class="chart-card">
+    <div class="chart-info-box" id="chart4">
+      <h2>Mer läsning</h2>
+      <p>Intressant vetenskaplig fakta om alkoholens klimatpåverkan och förpackningar.</p>
+    </div>
 
     <div class="info-list">
       <details class="info-box">
@@ -114,6 +123,8 @@
         </div>
       </details>
 
+    
+
       <details class="info-box">
         <summary>Återvinning</summary>
         <div class="info-content">
@@ -121,7 +132,8 @@
         </div>
       </details>
     </div>
-  </section>
+  </div>
+
 
 <!-- Footer -->
   <footer class="site-footer">

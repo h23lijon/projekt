@@ -345,3 +345,73 @@ document.addEventListener('DOMContentLoaded', function () {
     nav.classList.toggle('active');
   });
 });
+
+// === Fjärde diagrammet: CO₂-utsläpp per förpackning ===
+
+const consumptionData = {
+  "Stockholm": 4.4,
+  "Uppsala": 3.9,
+  "Södermanland": 3.6,
+  "Östergötland": 3.9,
+  "Jönköping": 3.3,
+  "Kronoberg": 3.6,
+  "Kalmar": 3.5,
+  "Gotland": 4.0,
+  "Blekinge": 3.6,
+  "Skåne": 3.9,
+  "Halland": 3.7,
+  "Västra Götaland": 3.9,
+  "Värmland": 3.6,
+  "Örebro": 3.5,
+  "Västmanland": 3.4,
+  "Dalarna": 3.4,
+  "Gävleborg": 3.5,
+  "Västernorrland": 3.5,
+  "Jämtland": 3.5,
+  "Västerbotten": 3.6,
+  "Norrbotten": 3.5
+};
+
+fetch('swedish_regions.geojson')
+  .then(res => res.json())
+  .then(geojson => {
+    const locations = Object.keys(consumptionData);
+    const zValues = Object.values(consumptionData);
+
+    const data = [{
+      type: 'choroplethmapbox',
+      geojson: geojson,
+      locations: locations,
+      z: zValues,
+      colorscale: 'YlGnBu',
+      colorbar: {
+        title: 'Liter per invånare'
+      },
+      text: locations.map(name => `${name}: ${consumptionData[name]} liter`),
+      hoverinfo: 'text',
+      marker: {
+        line: {
+          width: 0.5,
+          color: 'gray'
+        }
+      },
+      featureidkey: 'properties.name'
+    }];
+
+    const layout = {
+      mapbox: {
+        style: 'carto-positron',
+        center: { lon: 17, lat: 63 },
+        zoom: 3.3
+      },
+      margin: { t: 0, b: 0, l: 0, r: 0 }
+    };
+
+    Plotly.newPlot('map', data, layout, {
+      mapboxAccessToken: 'pk.eyJ1IjoibW9ja3Rva2VuIiwiYSI6ImNrd3UzY3gydzA4dGIyb3A0cWQzYmF0N2cifQ.eYxOUUv-QWHM5cHHzGdrMg'
+    });
+  })
+  .catch(error => {
+    console.error('Kunde inte ladda kartan:', error);
+    document.getElementById('map').innerText = 'Kartan kunde inte laddas.';
+  });
