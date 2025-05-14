@@ -337,9 +337,11 @@ new Chart(ctx4, {
     }
   }
 });
-// === Mobilmeny ===
-document.getElementById('mobile-menu').addEventListener('click', function () {
-  document.getElementById('navbar-links').classList.toggle('active');
+document.addEventListener('DOMContentLoaded', function () {
+  const toggle = document.querySelector('.menu-toggle');
+  const nav = document.querySelector('.navbar ul');
+
+  toggle.addEventListener('click', function () {
+    nav.classList.toggle('active');
+  });
 });
-
-
