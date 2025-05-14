@@ -17,9 +17,10 @@
   
   /* === Header och navbar === */
   .site-header {
-    background-color: #add8d0;
+    /*background-color: #add8d0;*/
+    background-color: #ffffff;
     padding-top: 1rem;
-    position: fixed;
+    /*position: fixed;*/
     top: 0;
     width: 100%;
     z-index: 1000;
@@ -98,8 +99,56 @@
   .navbar a:hover::after {
     width: 100%;
   }
-  
   /* === Intro === */
+.hero-section {
+    background-image: url(img/flaskor.jpg); 
+    background-size: cover;
+    background-position: center;
+    height: 500px; 
+    width: 100%;
+    display: flex;
+    position: relative;
+    margin-bottom: 5rem;
+  }
+  
+  .hero-content {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 4rem 2rem;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .intro-text h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: white; 
+    border-left: 12px; 
+    padding-left: 25px;
+    padding-top: 15%;
+    margin: 25px auto 60px auto;
+    max-width: 800px;
+    text-align: left;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+  }
+  
+  .intro-text p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: white;
+    border-left: 12px; 
+    padding-left: 25px;
+    margin: 25px auto 60px auto;
+    max-width: 800px;
+    text-align: left;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+  }
+  
+  /* === Intro === 
   .intro-section {
     max-width: 800px;
     margin: 8rem auto 4rem auto;
@@ -114,7 +163,7 @@
     letter-spacing: 0.03rem;
     border-radius: 6px;
     padding: 1.5rem;
-  }
+  }*/
   
   /* === Diagramkort === */
   .chart-text {
@@ -132,12 +181,12 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     padding: 20px;
-    margin: 40px auto 120px auto;
+    margin: 0 auto 80px auto;
     max-width: 800px;
   }
   
   .chart-card canvas {
-    margin: 3rem;
+    margin: 1rem;
     display: block;
     width: 100%;
     height: auto;
@@ -153,10 +202,9 @@
   
   /* === Info-box === */
   .chart-info-box {
-    border-left: 12px solid #e1eae8;
-    padding-left: 25px;
+    /*border-left: 12px solid #e1eae8;*/
     padding-top: 5px;
-    margin: 25px auto 60px auto;
+    margin: 25px auto 20px auto;
     max-width: 800px;
     text-align: left;
     border-top-left-radius: 8px;
@@ -168,6 +216,7 @@
     margin-bottom: 10px;
     color: #777;
     letter-spacing: 0.04rem;
+    margin-left: 2.5rem;
   }
   
   .chart-info-box p {
@@ -177,6 +226,7 @@
     letter-spacing: 0.03rem;
     max-width: 60ch;
     padding-bottom: 1rem;
+    margin-left: 2.5rem;
   }
   
   /* === Footer === */
@@ -205,7 +255,7 @@
   .footer-nav {
     display: flex;
     flex-wrap: wrap;
-    gap: 1.5rem;
+    gap: 14rem;
     margin-bottom: 1rem;
   }
   
@@ -275,7 +325,7 @@
     font-size: 1em;
     margin-bottom: 10px;
     color: #777;
-    letter-spacing: 0.04rem;
+    letter-spacing: 0.05rem;
   }
   
   .info-box summary {

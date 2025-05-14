@@ -338,10 +338,10 @@ new Chart(ctx4, {
   }
 });
 document.addEventListener('DOMContentLoaded', function () {
-  const toggle = document.querySelector('.menu-toggle');
+  const toggle = document.getElementById('mobile-menu');
   const nav = document.querySelector('.navbar ul');
 
-  toggle.addEventListener('click', function () {
+  toggle.addEventListener('click', () => {
     nav.classList.toggle('active');
   });
 });
