@@ -1,4 +1,4 @@
-// === Första diagrammet: Förpackningar ===
+// Förpackningar, SCB
 
 const urlSCB1 = 'https://api.scb.se/OV0104/v1/doris/sv/ssd/START/MI/MI0307/MI0307T2N';
 
@@ -42,12 +42,12 @@ fetch(urlSCB1, {
     const colorBase = [
       'rgba(255, 209, 220, 0.4)',
       'rgba(173, 216, 230, 0.4)',
-      'rgba(216, 191, 216, 0.4)'
+      'rgba(255, 105, 135, 1)'
     ];
     const borderColorBase = [
       'rgba(255, 160, 190, 1)',
       'rgba(100, 149, 237, 1)',
-      'rgba(186, 85, 211, 1)'
+      'rgba(255, 105, 135, 1)'
     ];
 
     const datasets = uniquePackages.map((pkg, index) => {
@@ -107,7 +107,7 @@ fetch(urlSCB1, {
     console.error('Fel vid hämtning av data (myChart1):', error);
   });
 
-// === Andra diagrammet: Försäljning av alkohol ===
+// Försäljning av alkohol , SCB
 
 const urlSCB2 = 'https://api.scb.se/OV0104/v1/doris/sv/ssd/START/HA/HA0103/HA0103A/LivsN';
 
@@ -232,7 +232,7 @@ fetch(urlSCB2, {
     console.error('Fel vid hämtning av data (myChart2):', error);
   });
 
-// === Tredje diagrammet: Konsumtion från CAN ===
+// Konsumtion från CAN 
 
 const labels = ["2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019a", "2019b", "2020", "2021", "2022", "2023"];
 const rawDatasets = [
@@ -297,7 +297,7 @@ window.addEventListener("load", () => {
   new Chart(ctx3, config);
 });
 
-// === Fjärde diagrammet: CO₂-utsläpp per förpackning ===
+// CO₂-utsläpp per förpackning, Systembolaget
 
 const co2Labels = ["Box (3 l)", "Påse (2 l)", "Papp (1 l)", "Returglas (0.5 l)", "Burk (0.375 l)", "PET (0.75 l)", "Lättare glasflaska (0.75 l)", "Glasflaska (0.75 l)", "Tung glasflaska (0.75 l, mousserande)"];
 const co2Values = [68, 71, 76, 110, 176, 243, 532, 664, 894];
@@ -346,7 +346,7 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 
-// === Fjärde diagrammet: CO₂-utsläpp per förpackning ===
+// === Karta geojson ===
 
 const consumptionData = {
   "Stockholm": 4.4,
@@ -378,6 +378,18 @@ fetch('swedish_regions.geojson')
     const locations = Object.keys(consumptionData);
     const zValues = Object.values(consumptionData);
 
+    // Beräknar snittet
+    const total = zValues.reduce((sum, val) => sum + val, 0);
+    const average = (total / zValues.length).toFixed(2);
+
+    // Hovertext med skillnad från snitt
+    const hoverTexts = locations.map(region => {
+      const value = consumptionData[region];
+      const diff = (value - average).toFixed(2);
+      const direction = diff > 0 ? '+' : '';
+      return `${region}<br>Konsumtion: ${value} liter<br>Rikssnitt: ${average} liter<br>Skillnad: ${direction}${diff} liter`;
+    });
+
     const data = [{
       type: 'choroplethmapbox',
       geojson: geojson,
@@ -387,7 +399,7 @@ fetch('swedish_regions.geojson')
       colorbar: {
         title: 'Liter per invånare'
       },
-      text: locations.map(name => `${name}: ${consumptionData[name]} liter`),
+      text: hoverTexts,
       hoverinfo: 'text',
       marker: {
         line: {
@@ -415,3 +427,29 @@ fetch('swedish_regions.geojson')
     console.error('Kunde inte ladda kartan:', error);
     document.getElementById('map').innerText = 'Kartan kunde inte laddas.';
   });
+
+  //Popoup för källorna
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const modal = document.getElementById("chartModal");
+    const link = document.getElementById("openModal");
+    const closeBtn = document.querySelector(".close");
+  
+    if (link && modal && closeBtn) {
+      link.addEventListener("click", (e) => {
+        e.preventDefault(); 
+        modal.style.display = "block";
+      });
+  
+      closeBtn.addEventListener("click", () => {
+        modal.style.display = "none";
+      });
+  
+      window.addEventListener("click", (event) => {
+        if (event.target === modal) {
+          modal.style.display = "none";
+        }
+      });
+    }
+  });
+  

@@ -18,7 +18,7 @@
   /* === Header och navbar === */
   .site-header {
     /*background-color: #add8d0;*/
-    background-color: #ffffff;
+    background-color: #fbfcfb;
     padding-top: 1rem;
     /*position: fixed;*/
     top: 0;
@@ -36,7 +36,7 @@
   }
   
   .header-logo {
-    max-height: 30px;
+    max-height: 35px;
     height: auto;
     margin-top: 0.5rem;
     align-self: flex-start;
@@ -81,6 +81,7 @@
     font-size: 0.9rem;
     font-weight: 600;
     text-transform: uppercase;
+    letter-spacing: 0.02rem;
     display: inline-block;
     padding-bottom: 4px;
   }
@@ -128,7 +129,7 @@
     border-left: 12px; 
     padding-left: 25px;
     padding-top: 15%;
-    margin: 25px auto 60px auto;
+    margin: 25px auto 30px auto;
     max-width: 800px;
     text-align: left;
     border-top-left-radius: 8px;
@@ -147,23 +148,6 @@
     border-top-left-radius: 8px;
     border-bottom-left-radius: 8px;
   }
-  
-  /* === Intro === 
-  .intro-section {
-    max-width: 800px;
-    margin: 8rem auto 4rem auto;
-    padding: 1.5rem 2rem;
-    text-align: center;
-  }
-  
-  .intro-text {
-    color: #767c7b;
-    font-size: 1.2rem;
-    line-height: 1.7;
-    letter-spacing: 0.03rem;
-    border-radius: 6px;
-    padding: 1.5rem;
-  }*/
   
   /* === Diagramkort === */
   .chart-text {
@@ -186,7 +170,7 @@
   }
   .chart-card #map {
     width: 100%;
-    height: 500px; /* Justera efter behov */
+    height: 500px; 
     margin: 0;
     padding: 0;
   }
@@ -205,9 +189,8 @@
     text-align: left;
   }
   
-  /* === Info-box === */
+  /* Info-box */
   .chart-info-box {
-    /*border-left: 12px solid #e1eae8;*/
     padding-top: 5px;
     margin: 25px auto 20px auto;
     max-width: 800px;
@@ -234,7 +217,7 @@
     margin-left: 2.5rem;
   }
   
-  /* === Footer === */
+  /* Footer */
   .site-footer {
     background-color: #57847b;
     color: white;
@@ -293,7 +276,7 @@
     opacity: 0.8;
   }
   
-  /* === Sektion === */
+  /* Sektion */
   .information {
     max-width: 800px;
     margin: 4rem auto;
@@ -307,7 +290,7 @@
     letter-spacing: 0.05rem;
   }
   
-  /* === Lista med staplade boxar === */
+  /*  Lista med staplade boxar  */
   .info-list {
     display: flex;
     flex-direction: column;
@@ -318,7 +301,7 @@
     width: 100%;
   }
   
-  /* === Varje utfällbar ruta === */
+  /* Varje utfällbar ruta  */
   .info-box {
     border: 1px solid #ccc;
     border-radius: 6px;
@@ -360,7 +343,7 @@
     height: 100vh;
   }
 
-  /* === Responsiva anpassningar === */
+  /* Responsivitet */
   @media (max-width: 1024px) {
     .menu-toggle {
       display: flex;
@@ -429,6 +412,63 @@
     .navbar a {
       color: #57847b;
       font-size: 0.9rem;
+    }
+  }
+  
+  /* Modal, bakgrund  */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 2rem 1rem;
+    box-sizing: border-box;
+  }
+  
+  /*  Modal, innehåll  */
+  .modal-content {
+    background-color: #fff;
+    margin: auto;
+    padding: 1.5rem;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 800px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.25);
+    position: relative;
+    box-sizing: border-box;
+  }
+  
+  /*  stängknapp  */
+  .close {
+    color: #aaa;
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  .close:hover {
+    color: #000;
+  }
+
+  /* responsivitet  */
+  @media (max-width: 600px) {
+    .modal-content {
+      padding: 1rem;
+    }
+  
+    .modal-content #map {
+      height: 50vh;
+    }
+  
+    .chart-text {
+      font-size: 1.1rem;
     }
   }
   
