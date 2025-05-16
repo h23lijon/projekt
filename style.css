@@ -334,6 +334,7 @@
     padding: 1rem;
     background-color: #57847b;
     color: white;
+    outline: none;
     font-weight: 600;
     font-size: 1.1rem;
     cursor: pointer;
@@ -372,7 +373,7 @@
       .navbar ul {
         display: none;
         flex-direction: column;
-        align-items: flex-start; /* ← vänsterjustera texten */
+        align-items: flex-start; 
         background-color: rgba(87, 132, 123, 0.92); /* 0.92 = 92% opacitet */
         padding: 1rem 1.2rem;
         border-radius: 8px;
