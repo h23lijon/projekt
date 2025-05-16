@@ -20,11 +20,16 @@
     /*background-color: #add8d0;*/
     background-color: #fbfcfb;
     padding-top: 1rem;
-    /*position: fixed;*/
+    position: fixed;
     top: 0;
     width: 100%;
     z-index: 1000;
   }
+
+  .header-spacer {
+    height: 60px; /* samma eller lite mer än headerns höjd */
+  }
+  
   
   .header-inner {
     display: flex;
@@ -120,6 +125,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+
+  [id] {
+    scroll-margin-top: 200px; /* justera efter headerns höjd */
   }
   
   .intro-text h1 {
