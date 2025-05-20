@@ -13,8 +13,9 @@
 
   <header class="site-header">
     <div class="header-inner">
-      <img src="img/coctail.png" alt="CO₂ctail-logotyp" class="header-logo" />
-  
+
+<img src="img/coctail.png" alt="CO₂ctail-logotyp" class="header-logo" />
+
       <nav class="navbar">
         <div class="menu-toggle" id="mobile-menu">
           <span></span>
@@ -75,7 +76,7 @@
     <div class="chart-info-box" id="chart5">
       <h2>Konsumtionen län för län</h2>
       <p>Mörkare färg representerar högre genomsnittlig konsumtion av alkohol (liter ren alkohol per person och år).
-        Visualiseringen tydliggör regionala skillnader i konsumtionsmönster över landet, åren 2017-2019. Genom att peka på ett län visas även skillnader från rikssnittet på 3,66 liter.</p>
+        Visualiseringen tydliggör regionala skillnader i konsumtionsmönster över landet, åren 2017–2019. Genom att peka på ett län visas även skillnader från rikssnittet på 3,66 liter.</p>
     </div>
   <div id="map"></div>
   <div class="chart-source">Källa: CAN, 2020 </div>
@@ -103,9 +104,32 @@
       <canvas id="myChart4"></canvas>
       <div class="chart-source">Källa: Systembolaget, 2023</div>
     </div>
+  </div>
+  <!-- Kalkylatorn  -->
+  <div class="calculator">
+    <h1>Beräkna klimatpåverkan av din alkoholkonsumtion*</h1>
+    <p></p>
+    <form>
+      <div class="label-row">
+      <label for="beer">Antal glas öl per månad </label> <div class="calculator-info"> (1 glas öl = 33 cl)</div>
+      <input type="number" id="beer" placeholder="t.ex. 4" min="0" />
+     
+      </div>
+      <div class="label-row">
+      <label for="wine">Antal glas vin per månad </label> <div class="calculator-info"> (1 glas vin = 15 cl)</div>
+      <input type="number" id="wine" placeholder="t.ex. 2" min="0" />
+      </div>
+      <div class="label-row">
+      <label for="spirits">Antal glas sprit per månad </label><div class="calculator-info"> (1 glas sprit = 4 cl)</div>
+      <input type="number" id="spirits" placeholder="t.ex. 1" min="0" />
+      </div>
 
-
-
+      <button id="calculate-button">Beräkna</button>
+    </form>
+    <div class="calculator-source">*Uträkningen baseras på genomsnittliga utsläpp per dryckestyp och
+        bör ses som en ungefärlig uppskattning. Den faktiska klimatpåverkan kan variera beroende 
+        på tillverkning, förpackning och transport. Beräkningar gjorda efter siffror i <i> Climate impact of alcohol consumption in Sweden (2018).</i></div>
+    <div id="result"></div>
   </div>
   
   <!-- faktarutor -->
@@ -126,7 +150,7 @@
       <details class="info-box">
         <summary>Vem dricker vad – och hur mycket?</summary>
         <div class="info-content">
-          <p>Enligt Guttormsson (2024) beräknades den genomsnittliga alkoholkonsumtionen till 8,64 liter ren alkohol per invånare (15 år och äldre) år 2023. Den mest populära drycken är vin (43,7 %), följt av öl (31,6 %), sprit (18,4 %), folköl (4 %) samt cider och blanddrycker (2 %). Alkoholkonsumtion ger i genomsnitt upphov till 52 kg CO₂e per person och år och cirka 3 % av de totala kostrelaterade växthusgasutsläppen. I den grupp som dricker mest kan andelen nå 6–11 % . Mäns alkoholkonsumtion ger 90 % mer utsläpp än kvinnors, vilket hänger ihop med skillnader i volym (Hallström et al., 2018).Folkhälsomyndigheten (2024) visar att cirka 16 % av befolkningen har riskkonsumtion. Mellan 2004 och 2024 har andelen minskat från 87 % till 82 %. Män rapporterar riskkonsumtion i högre grad än kvinnor: 18 % respektive 13 %.</p>
+          <p>Enligt Guttormsson (2024) beräknades den genomsnittliga alkoholkonsumtionen till 8,64 liter ren alkohol per invånare (15 år och äldre) år 2023. Den mest populära drycken är vin (43,7 %), följt av öl (31,6 %), sprit (18,4 %), folköl (4 %) samt cider och blanddrycker (2 %). Alkoholkonsumtion ger i genomsnitt upphov till 52 kg CO₂e per person och år och cirka 3 % av de totala kostrelaterade växthusgasutsläppen. I den grupp som dricker mest kan andelen nå 6–11 % . Mäns alkoholkonsumtion ger 90 % mer utsläpp än kvinnors, vilket hänger ihop med skillnader i volym (Hallström et al., 2018). Folkhälsomyndigheten (2024) visar att cirka 16 % av befolkningen har riskkonsumtion. Mellan 2004 och 2024 har andelen minskat från 87 % till 82 %. Män rapporterar riskkonsumtion i högre grad än kvinnor: 18 % respektive 13 %.</p>
         </div>
       </details>
 
@@ -142,13 +166,24 @@
       <details class="info-box">
         <summary>Hållbarhet i praktiken</summary>
         <div class="info-content">
-          <p>Systembolaget har integrerat hållbarhet som en central del i hela verksamheten. Det syns både på huvudkontoret och i butiker, samt i verksamhetsplaner och publika redovisningar.Ledningen har skapat ett tydligt hållbarhetsfokus med hjälp av kommunikation, ansvarsfördelning och strategiska mål. Hållbarhet är även inbyggt i budgetprocessen, där särskilda resurser avsätts till investeringar i teknik och lösningar.Målet är att halvera den totala klimatpåverkan till år 2030 (Claesson et al., 2024). </p>
+          <p>Systembolaget har integrerat hållbarhet som en central del i hela verksamheten. Det syns både på huvudkontoret och i butiker, samt i verksamhetsplaner och publika redovisningar. Ledningen har skapat ett tydligt hållbarhetsfokus med hjälp av kommunikation, ansvarsfördelning och strategiska mål. Hållbarhet är även inbyggt i budgetprocessen, där särskilda resurser avsätts till investeringar i teknik och lösningar. Målet är att halvera den totala klimatpåverkan till år 2030 (Claesson et al., 2024). </p>
+        </div>
+      </details>
+      <details class="info-box">
+        <summary>Transporter</summary>
+        <div class="info-content">
+          <p>Även transporter bidrar till klimatpåverkan. 
+            Enligt Gierling & Blanke (2021) ger en vinflaska som levereras lokalt utsläpp på bara 6–9 gram CO₂, medan en importerad flaska kan ge upp till 250 gram, beroende på 
+            avstånd och transportsätt. Dessutom står bilresor till vingården för en stor andel av vinets totala 
+            limatavtryck – i vissa fall lika mycket som själva produktionen. Att välja närproducerat och att samordna inköp 
+            kan därför göra skillnad (Gierling & Blanke, 2021).</p>
         </div>
       </details>
     </div>
   </div>
 
-
+</div>
+</div>
 <!-- Popup-fönstret -->
 <div id="chartModal" class="modal">
   <div class="modal-content chart-card">
@@ -172,7 +207,6 @@
     </p>
   </div>
 </div>
-
 
 
 <!-- Footer -->

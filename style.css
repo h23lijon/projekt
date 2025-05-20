@@ -19,17 +19,14 @@
   .site-header {
     /*background-color: #add8d0;*/
     background-color: #fbfcfb;
-    padding-top: 1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 1000;
   }
 
-  /*.header-spacer KAN TAS BORT? {
-    height: 60px; 
-  }*/
-  
   
   .header-inner {
     display: flex;
@@ -105,7 +102,7 @@
     width: 100%;
   }
 
-  /* Intro  */
+  /* Hero + Intro  */
 .hero-section {
     background-image: url(img/flaskor.jpg); 
     background-size: cover;
@@ -127,7 +124,7 @@
     justify-content: center;
   }
 
-/* Behövs för att inte sticky headern ska hamna ivägen */
+/* Behövs för att inte sticky headern ska hamna i vägen */
   [id] {
     scroll-margin-top: 12.5rem; 
   }
@@ -166,8 +163,8 @@
     font-size: 1rem;
     color: #777;
     text-align: center;
-    margin-bottom: 1.25rem;
-    margin-top: 1.25rem;
+    margin-bottom: 20px;
+    margin-top: 20px;
     letter-spacing: 0.04rem;
   }
   
@@ -215,7 +212,7 @@
     font-size: 1.25em;
     margin-bottom: 0.625rem;
     color: #777;
-    letter-spacing: 0.05rem;
+    letter-spacing: 0.02rem;
     margin-left: 2.5rem;
   }
   
@@ -224,7 +221,7 @@
     line-height: 1.6;
     color: #777;
     letter-spacing: 0.03rem;
-    max-width: 30rem;
+    max-width: 60ch;
     padding-bottom: 1rem;
     margin-left: 2.5rem;
   }
@@ -299,7 +296,7 @@
     text-align: center;
     color: #57847b;
     margin-bottom: 2rem;
-    letter-spacing: 0.05rem;
+    letter-spacing: 0.02rem;
   }
   
   /*  Lista med staplade boxar  */
@@ -326,7 +323,7 @@
     font-size: 1em;
     margin-bottom: 0.625rem;
     color: #777;
-    letter-spacing: 0.05rem;
+    letter-spacing: 0.02rem;
   }
   
   .info-box summary {
@@ -337,7 +334,7 @@
     font-weight: 600;
     font-size: 1.1rem;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.5s ease;
   }
   
   .info-box[open] summary {
@@ -433,6 +430,129 @@
       font-size: 0.9rem;
     }
   }
+
+ /*===kalkylatorn===*/
+.calculator {
+    background-image: url('img/bg.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    color: #333;
+    z-index: 1;
+    max-width: 800px;
+    margin: 5rem auto;
+    padding: 3rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    text-align: left;
+  }
+  
+  .calculator::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.55);
+    border-radius: 10px;
+    z-index: 0;
+    pointer-events: none;
+  }
+  
+  .calculator > * {
+    position: relative;
+    z-index: 1;
+  }
+  
+  .calculator form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: 350px;
+    width: 100%;
+  }
+  
+  .calculator p {
+    font-size: 0.9rem;
+    color: #fff;
+  }
+
+  .label-row {
+    display: flex;
+    align-items: baseline;
+    gap: 0.1rem; /* avstånd mellan label och texten */
+    flex-wrap: wrap; /* radbryt vid behov på små skärmar */
+  }
+  
+  h1 {
+    font-size: 1.25em;
+    margin-bottom: 10px;
+    color: #fff;
+    letter-spacing: 0.05rem;
+    text-align: flex-start;
+  }
+  
+  .calculator-source {
+    font-size: 0.75rem;
+    color: #fff;
+    margin-top: 1rem;
+    text-align: left;
+    width: 27rem;
+  }
+  
+  .calculator-info {
+    font-size: 0.75rem;
+    color: #fff;
+    margin-top: 0.2rem;
+    margin-left: 0.04rem;
+    text-align: left;
+  }
+  
+  
+  label {
+    display: block;
+    margin: 1rem 0 0.5rem;
+    font-weight: 600;
+    color: #fff;
+    text-align: left;
+  }
+  
+  input[type="number"] {
+    width: 100%;
+    padding: 0.6rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    font-family: 'Segoe UI', sans-serif;
+    box-sizing: border-box;
+  }
+  
+  button {
+    margin-top: 1.5rem;
+    padding: 0.8rem 1.2rem;
+    font-size: 1rem;
+    background-color: #57847b;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #456b61;
+  }
+  
+  #result {
+    font-size: 1em;
+    line-height: 1.6;
+    letter-spacing: 0.02rem;
+    margin-top: 1rem;
+
+    color: #fff;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  /*===kalkylator slut===*/ 
   
   /* Modal, bakgrund  */
 .modal {

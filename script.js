@@ -453,3 +453,46 @@ fetch('swedish_regions.geojson')
     }
   });
   
+   //Kalkylatorn
+   document.addEventListener("DOMContentLoaded", function () {
+    const button = document.getElementById("calculate-button");
+    if (button) {
+      button.addEventListener("click", function (e) {
+        e.preventDefault(); // Förhindrar formuläruppdatering
+        calculateImpact();
+      });
+    }
+  });
+  
+  function calculateImpact() {
+    const drinks = {
+      beer:    { co2: 0.73, label: "öl",     volume: 0.33 }, // 33 cl
+      wine:    { co2: 1.52, label: "vin",    volume: 0.15 }, // 15 cl
+      spirits: { co2: 2.38, label: "sprit",  volume: 0.04 }  // 4 cl
+    };
+  
+    let totalEmission = 0;
+    let summary = [];
+  
+    for (const type in drinks) {
+      const value = parseInt(document.getElementById(type).value);
+      if (!isNaN(value) && value > 0) {
+        const litres = value * drinks[type].volume * 12; // per år
+        const emission = litres * drinks[type].co2;
+        totalEmission += emission;
+        summary.push(`${value} glas ${drinks[type].label}`);
+      }
+    }
+  
+    const result = document.getElementById("result");
+  
+    if (totalEmission === 0) {
+      result.innerHTML = "Vänligen fyll i minst ett dryckesalternativ med ett giltigt antal glas.";
+    } else {
+      result.innerHTML = `
+        Din uppskattade klimatpåverkan från ${summary.join(" och ")} per månad är 
+        <strong>${totalEmission.toFixed(1)} kg CO₂e/år</strong>.<br><br>
+      `;
+    }
+  }
+  
