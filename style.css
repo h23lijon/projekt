@@ -136,7 +136,8 @@
     margin-bottom: 1rem;
     color: white; 
     border-left: 0.75rem; 
-    padding-left: 1.6rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
     padding-top: 15%;
     margin: 1.6rem auto 1.9rem auto;
     max-width: 50rem;
@@ -150,7 +151,8 @@
     line-height: 1.6;
     color: white;
     border-left: 0.75rem; 
-    padding-left: 1.6rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
     margin: 1.6rem auto 3.75rem auto;
     max-width: 50rem;
     text-align: left;
@@ -198,10 +200,17 @@
     text-align: left;
   }
   
+  #myChart4 {
+  padding: 0rem;
+  margin: 1.6rem auto 3.75rem auto;
+  max-width: 30rem;
+  max-height: 30rem;
+  align-self: center;
+  }
+
   /* Info-box */
   .chart-info-box {
-    padding-top: 0.3125rem;
-    margin: 1.6rem auto 1.25rem auto;
+    margin: 1.6rem auto rem auto;
     max-width: 50rem;
     text-align: left;
     border-top-left-radius: 0.5rem;
@@ -213,7 +222,7 @@
     margin-bottom: 0.625rem;
     color: #777;
     letter-spacing: 0.02rem;
-    margin-left: 2.5rem;
+    margin-left: 1.6rem;
   }
   
   .chart-info-box p {
@@ -222,8 +231,7 @@
     color: #777;
     letter-spacing: 0.03rem;
     max-width: 60ch;
-    padding-bottom: 1rem;
-    margin-left: 2.5rem;
+    margin-left: 1.6rem;
   }
   
   /* Footer */
@@ -306,7 +314,7 @@
     gap: 1.5rem;
     max-width: 44rem;
     padding: 1rem;
-    margin: 0 auto;
+    margin-left: 1.6;
     width: 100%;
   }
   

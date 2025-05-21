@@ -301,7 +301,17 @@ window.addEventListener("load", () => {
 
 const co2Labels = ["Box (3 l)", "Påse (2 l)", "Papp (1 l)", "Returglas (0.5 l)", "Burk (0.375 l)", "PET (0.75 l)", "Lättare glasflaska (0.75 l)", "Glasflaska (0.75 l)", "Tung glasflaska (0.75 l, mousserande)"];
 const co2Values = [68, 71, 76, 110, 176, 243, 532, 664, 894];
-const backgroundColors = ['rgba(255, 182, 193, 0.4)', 'rgba(173, 216, 230, 0.4)', 'rgba(186, 85, 211, 0.4)', 'rgba(144, 238, 144, 0.4)', 'rgba(135, 206, 250, 0.4)', 'rgba(205, 133, 63, 0.4)','rgba(255, 105, 135, 1)', 'rgba(100, 149, 237, 1)', 'rgba(147, 112, 219, 1)'];
+const backgroundColors = [
+  'rgb(220, 134, 153)',
+  'rgb(136, 176, 75)',
+  'rgb(60, 125, 144)',
+  'rgb(39, 60, 118)',
+  'rgb(153, 174, 174)',
+  'rgb(254, 231, 21)',
+  'rgb(255, 111, 97)',
+  'rgb(150, 45, 73)',
+  'rgb(198, 35, 104)'
+];
 
 const ctx4 = document.getElementById('myChart4').getContext('2d');
 new Chart(ctx4, {
@@ -337,6 +347,7 @@ new Chart(ctx4, {
     }
   }
 });
+
 document.addEventListener('DOMContentLoaded', function () {
   const toggle = document.getElementById('mobile-menu');
   const nav = document.querySelector('.navbar ul');
