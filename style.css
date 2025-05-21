@@ -387,7 +387,14 @@
     line-height: 1.6;
     background-color: #fff;
   }
-  
+
+  .map-section .chart-card {
+  max-width: 80rem;
+  width: 100%;
+  padding: 1rem 2rem; 
+  box-sizing: border-box;
+}
+
   #map {
     width: 100vw;
     height: 100vh;
