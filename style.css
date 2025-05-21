@@ -466,11 +466,10 @@
     position: relative;
     color: #333;
     z-index: 1;
-    max-width: 800px;
+    max-width: 80rem;
     margin: 5rem auto;
     padding: 3rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    box-shadow: 0 0.25rem 0.75rem rgba(0,0,0,0.1);
     text-align: left;
   }
   
