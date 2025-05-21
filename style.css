@@ -171,7 +171,7 @@
     justify-content: center; /* Centrera hela raden */
     flex-wrap: wrap; /* Gör att de kan radbrytas på små skärmar */
     max-width: 80rem;
-    margin: 0 auto 40px;
+    margin: 0 auto 31.25rem;
   }
 
   .chart-row .chart-card {
@@ -185,7 +185,7 @@
     justify-content: center; /* Centrera hela raden */
     flex-wrap: wrap; /* Gör att de kan radbrytas på små skärmar */
     max-width: 80rem;
-    margin: 0 auto 40px;
+    margin: 0 auto 31.25rem;
   }
 
   .chart-row2 .chart-card {
