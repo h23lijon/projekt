@@ -332,13 +332,13 @@ new Chart(ctx4, {
     }]
   },
   options: {
-    responsive: true,
+    responsive: true, 
     plugins: {
       title: {
         display: true,
       },
       legend: {
-        position: 'right'
+        position: 'bottom'
       },
       tooltip: {
         callbacks: {
