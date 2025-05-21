@@ -29,19 +29,20 @@
   }
 
   
-  .header-inner {
+    .header-inner {
     display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    text-align: center;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
     padding: 1rem 2rem;
     position: relative;
   }
   
   .header-logo {
     max-height: 2rem;
-    margin-top: 0.5rem;
-    align-self: flex-start;
+    margin-top: 0;
+    margin-right: 1rem;
+    align-self: center;
   }
   
   /* === Hamburgermeny === */
@@ -57,15 +58,23 @@
   .menu-toggle span {
     height: 0.2rem;
     width: 1.5rem;
-    background-color: #57847b;
+    background-color: rgb(39, 60, 118);
     margin: 0.25rem 0;
     border-radius: 2px;
   }
   
   /* === Navbar === */
+<<<<<<< HEAD
   .navbar {
     width: 100%;
     
+=======
+ .navbar {
+    flex-grow: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+>>>>>>> 50fb59c2e54046309a6dc4674ad7008194b954a2
   }
   
   .navbar ul {
@@ -79,7 +88,7 @@
   
   .navbar a {
     position: relative;
-    color: #57847b;
+    color:rgb(39, 60, 118);
     text-decoration: none;
     font-size: 0.9rem;
     font-weight: 600;
@@ -96,7 +105,7 @@
     bottom: 0;
     width: 0%;
     height: 0.1rem;
-    background-color: #57847b;
+    background-color: rgb(39, 60, 118);
     transition: width 0.4s ease;
   }
   
@@ -165,7 +174,7 @@
   /* === Diagramkort === */
   .chart-text {
     font-size: 1rem;
-    color: #777;
+    color: rgb(39, 60, 118);
     text-align: center;
     margin-bottom: 20px;
     margin-top: 20px;
@@ -196,7 +205,7 @@
   
   .chart-source {
     font-size: 0.75rem;
-    color: #777;
+    color: rgb(39, 60, 118);
     margin-top: 2rem;
     margin-left: 2rem;
     text-align: left;
@@ -222,7 +231,7 @@
   .chart-info-box h2 {
     font-size: 1.25em;
     margin-bottom: 0.625rem;
-    color: #777;
+    color: rgb(39, 60, 118);
     letter-spacing: 0.02rem;
     margin-left: 1.6rem;
   }
@@ -230,7 +239,7 @@
   .chart-info-box p {
     font-size: 1rem;
     line-height: 1.6;
-    color: #777;
+    color: rgb(39, 60, 118);
     letter-spacing: 0.03rem;
     max-width: 60ch;
     margin-left: 1.6rem;
@@ -238,7 +247,7 @@
   
   /* Footer */
   .site-footer {
-    background-color: #57847b;
+    background-color: rgb(39, 60, 118);
     color: white;
     padding: 1.5rem 1rem;
   }
@@ -304,7 +313,7 @@
   
   .information h2 {
     text-align: center;
-    color: #57847b;
+    color: rgb(39, 60, 118);
     margin-bottom: 2rem;
     letter-spacing: 0.02rem;
   }
@@ -332,13 +341,13 @@
   .info-box p {
     font-size: 1em;
     margin-bottom: 0.625rem;
-    color: #777;
+    color: rgb(39, 60, 118);
     letter-spacing: 0.02rem;
   }
   
   .info-box summary {
     padding: 1rem;
-    background-color: #57847b;
+    background-color: rgb(39, 60, 118);
     color: white;
     outline: none;
     font-weight: 600;
@@ -348,7 +357,7 @@
   }
   
   .info-box[open] summary {
-    background-color: #456b61;
+    background-color: rgb(39, 60, 118);
   }
   
   .info-content {
@@ -380,7 +389,7 @@
         display: none;
         flex-direction: column;
         align-items: flex-start; 
-        background-color: rgba(87, 132, 123, 0.92); /* 0.92 = 92% opacitet */
+        background-color: rgb(39, 60, 118); 
         padding: 1rem 1.2rem;
         border-radius: 0.5rem;
         width: max-content;
@@ -436,7 +445,7 @@
     }
   
     .navbar a {
-      color: #57847b;
+      color: rgb(39, 60, 118);
       font-size: 0.9rem;
     }
   }
@@ -540,7 +549,7 @@
     margin-top: 1.5rem;
     padding: 0.8rem 1.2rem;
     font-size: 1rem;
-    background-color: #57847b;
+    background-color: rgb(39, 60, 118);
     color: white;
     border: none;
     border-radius: 6px;
@@ -549,7 +558,7 @@
   }
   
   button:hover {
-    background-color: #456b61;
+    background-color: rgb(39, 60, 118);
   }
   
   #result {
