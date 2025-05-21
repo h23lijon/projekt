@@ -40,14 +40,14 @@ fetch(urlSCB1, {
     const uniqueYears = [...new Set(data.data.map(item => item.key[1]))];
 
     const colorBase = [
-      'rgba(255, 209, 220, 0.4)',
-      'rgba(173, 216, 230, 0.4)',
-      'rgba(255, 105, 135, 1)'
+    'rgb(220, 134, 153)',
+    'rgb(136, 176, 75)',
+    'rgb(60, 125, 144)'   
     ];
     const borderColorBase = [
-      'rgba(255, 160, 190, 1)',
-      'rgba(100, 149, 237, 1)',
-      'rgba(255, 105, 135, 1)'
+    'rgb(220, 134, 153)',
+    'rgb(136, 176, 75)',
+    'rgb(60, 125, 144)'   
     ];
 
     const datasets = uniquePackages.map((pkg, index) => {
@@ -61,9 +61,9 @@ fetch(urlSCB1, {
         tension: 0.3,
         borderColor: borderColorBase[index % borderColorBase.length],
         backgroundColor: colorBase[index % colorBase.length],
-        borderWidth: 1,
-        pointRadius: 4,
-        pointHoverRadius: 6,
+        borderWidth: 2,
+        pointRadius: 3,
+        pointHoverRadius: 4,
       };
     });
 
@@ -79,7 +79,6 @@ fetch(urlSCB1, {
         plugins: {
           title: {
             display: true,
-            text: 'Förändring av tillförd mängd förpackningar över tid'
           },
           legend: {
             position: 'top'
@@ -161,14 +160,14 @@ fetch(urlSCB2, {
   .then(response => response.json())
   .then(data => {
     const colorBase = [
-      'rgba(255, 182, 193, 0.6)',
-      'rgba(173, 216, 230, 0.6)',
-      'rgba(186, 85, 211, 0.6)'
+      'rgb(220, 134, 153)',
+      'rgb(136, 176, 75)',
+      'rgb(254, 231, 21)'
     ];
     const borderColorBase = [
-      'rgba(255, 105, 135, 1)',
-      'rgba(100, 149, 237, 1)',
-      'rgba(147, 112, 219, 1)'
+      'rgb(220, 134, 153)',
+      'rgb(136, 176, 75)',
+      'rgb(254, 231, 21)'
     ];
 
     const datasets = data.data.map((item, index) => {
@@ -197,7 +196,6 @@ fetch(urlSCB2, {
         plugins: {
           title: {
             display: true,
-            text: 'Försäljning av spritdrycker, vin och öl i Sverige'
           },
           legend: {
             position: 'top'
@@ -208,7 +206,6 @@ fetch(urlSCB2, {
             stacked: false,
             title: {
               display: true,
-              text: 'Dryckesgrupp'
             },
             ticks: {
               display: false
@@ -221,7 +218,7 @@ fetch(urlSCB2, {
             beginAtZero: true,
             title: {
               display: true,
-              text: 'Försäljning i miljoner kronor'
+              text: 'Miljoner kronor'
             }
           }
         }
@@ -279,7 +276,6 @@ const config = {
     plugins: {
       title: {
         display: true,
-        text: "Alkoholkonsumtion i Sverige 2001–2023"
       },
       legend: {
         position: 'top'
@@ -340,7 +336,6 @@ new Chart(ctx4, {
     plugins: {
       title: {
         display: true,
-        text: 'CO₂-utsläpp per liter för olika förpackningar (g CO₂/l)'
       },
       legend: {
         position: 'right'
