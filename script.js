@@ -106,7 +106,7 @@ fetch(urlSCB1, {
     console.error('Fel vid hämtning av data (myChart1):', error);
   });
 
-// Försäljning av alkohol , SCB
+//Vad köper vi mest, myChart2 ================================================================
 
 const urlSCB2 = 'https://api.scb.se/OV0104/v1/doris/sv/ssd/START/HA/HA0103/HA0103A/LivsN';
 
@@ -153,83 +153,121 @@ const beverageNames = {
   '02.1.3': 'Öl'
 };
 
-fetch(urlSCB2, {
-  method: 'POST',
-  body: JSON.stringify(querySCB2)
-})
-  .then(response => response.json())
-  .then(data => {
-    const colorBase = [
-      'rgb(220, 134, 153)',
-      'rgb(136, 176, 75)',
-      'rgb(254, 231, 21)'
-    ];
-    const borderColorBase = [
-      'rgb(220, 134, 153)',
-      'rgb(136, 176, 75)',
-      'rgb(254, 231, 21)'
-    ];
+// Ladda bilder korrekt
+const vinImg = new Image();
+const ölImg = new Image();
+const spritImg = new Image();
 
-    const datasets = data.data.map((item, index) => {
-      const code = item.key[0];
-      const label = beverageNames[code] || code;
-      const value = parseFloat(item.values[0]);
+const vinPromise = new Promise(resolve => {
+  vinImg.onload = resolve;
+  vinImg.src = 'img/vin.png';
+});
+const ölPromise = new Promise(resolve => {
+  ölImg.onload = resolve;
+  ölImg.src = 'img/öl.png';
+});
+const spritPromise = new Promise(resolve => {
+  spritImg.onload = resolve;
+  spritImg.src = 'img/sprit.png';
+});
 
-      return {
-        label: label,
-        data: [value],
-        backgroundColor: colorBase[index % colorBase.length],
-        borderColor: borderColorBase[index % borderColorBase.length],
-        borderWidth: 1
-      };
-    });
+// När alla bilder är laddade
+Promise.all([vinPromise, ölPromise, spritPromise])
+  .then(() => {
+    fetch(urlSCB2, {
+      method: 'POST',
+      body: JSON.stringify(querySCB2)
+    })
+      .then(response => response.json())
+      .then(data => {
+        const rawData = data.data.map(item => {
+          return {
+            code: item.key[0],
+            label: beverageNames[item.key[0]],
+            value: parseFloat(item.values[0])
+          };
+        });
 
-    const ctx2 = document.getElementById('myChart2').getContext('2d');
-    new Chart(ctx2, {
-      type: 'bar',
-      data: {
-        labels: [''],
-        datasets: datasets
-      },
-      options: {
-        responsive: true,
-        plugins: {
-          title: {
-            display: true,
-          },
-          legend: {
-            position: 'top'
-          }
-        },
-        scales: {
-          x: {
-            stacked: false,
-            title: {
-              display: true,
+        const chartData = {
+          labels: rawData.map(d => d.label),
+          datasets: [{
+            label: 'Konsumtion',
+            data: rawData.map(d => d.value),
+            backgroundColor: 'transparent'
+          }]
+        };
+
+        const ctx2 = document.getElementById('myChart2').getContext('2d');
+
+        const imageMap = {
+          'Spritdrycker': spritImg,
+          'Vin': vinImg,
+          'Öl': ölImg
+        };
+
+        const chartConfig = {
+          type: 'bar',
+          data: chartData,
+          options: {
+            responsive: true,
+            plugins: {
+              legend: { display: false },
+              title: {
+                display: true,
+                text: 'Konsumtion av vin, öl och sprit (miljoner kr, 2023)'
+              }
             },
-            ticks: {
-              display: false
-            },
-            grid: {
-              display: false
+            scales: {
+              y: {
+                beginAtZero: true,
+                title: {
+                  display: true,
+                  text: 'Miljoner kronor'
+                }
+              },
+              x: {
+                ticks: {
+                  font: {
+                    size: 14
+                  }
+                }
+              }
             }
           },
-          y: {
-            beginAtZero: true,
-            title: {
-              display: true,
-              text: 'Miljoner kronor'
+          plugins: [{
+            id: 'imageBars',
+            beforeDatasetDraw(chart) {
+              const { ctx, data, chartArea: { top, bottom }, scales: { x, y } } = chart;
+              const dataset = data.datasets[0];
+          
+              dataset.data.forEach((value, index) => {
+                const xPos = x.getPixelForValue(index);
+                const yVal = y.getPixelForValue(value);
+                const yBase = y.getPixelForValue(0);
+                const image = imageMap[data.labels[index]];
+          
+                const barHeight = yBase - yVal; // höjden på stapeln i pixlar
+                const aspectRatio = image.naturalWidth / image.naturalHeight; 
+                const barWidth = barHeight * aspectRatio;
+          
+                const xOffset = xPos - barWidth / 2;
+          
+                ctx.drawImage(image, xOffset, yVal, barWidth, barHeight);
+              });
             }
-          }
-        }
-      }
-    });
-  })
-  .catch(error => {
-    console.error('Fel vid hämtning av data (myChart2):', error);
+          }]
+          
+        };          
+
+        new Chart(ctx2, chartConfig);
+      })
+      .catch(error => {
+        console.error('Fel vid hämtning av data (myChart2):', error);
+      });
   });
 
-// Konsumtion från CAN 
+
+// Konsumtion från CAN ==================================================================== CAN
 
 const labels = ["2003", "2008", "2013", "2018", "2020", "2021", "2022", "2023"];
 const rawDatasets = [
