@@ -261,10 +261,10 @@ const styledDatasets = rawDatasets.map((dataset, index) => ({
   ...dataset,
   backgroundColor: colorBase[index % colorBase.length],
   borderColor: borderColorBase[index % borderColorBase.length],
-  borderWidth: 1,
+  borderWidth: 2,
   fill: false,
   tension: 0.3,
-  pointRadius: 2,
+  pointRadius: 3,
   pointHoverRadius: 4
 }));
 
