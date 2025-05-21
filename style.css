@@ -133,6 +133,7 @@
     scroll-margin-top: 12.5rem; 
   }
   
+
   .intro-text h1 {
     font-size: 2rem;
     margin-bottom: 1rem;
@@ -177,6 +178,21 @@
     flex: 1 1 45%; /* Tar ungefär 45% bredd vardera, med viss flexibilitet */
     min-width: 5rem; /* Säkerställer att de inte blir för smala */
   }
+
+  .chart-row2 {
+    display: flex;
+    gap: 1rem; /* Avstånd mellan korten */
+    justify-content: center; /* Centrera hela raden */
+    flex-wrap: wrap; /* Gör att de kan radbrytas på små skärmar */
+    max-width: 80rem;
+    margin: 0 auto 40px;
+  }
+
+  .chart-row2 .chart-card {
+    flex: 1 1 45%; /* Tar ungefär 45% bredd vardera, med viss flexibilitet */
+    min-width: 5rem; /* Säkerställer att de inte blir för smala */
+  }
+
 
   .chart-text {
     font-size: 1rem;
