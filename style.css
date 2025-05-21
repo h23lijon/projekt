@@ -166,13 +166,13 @@
 
   /* === Diagramkort === */
   .chart-row {
-    display: flex;
-    gap: 1rem; /* Avstånd mellan korten */
-    justify-content: center; /* Centrera hela raden */
-    flex-wrap: wrap; /* Gör att de kan radbrytas på små skärmar */
-    max-width: 80rem;
-    margin: 0 auto 31.25rem;
-  }
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 80rem;
+  margin: 0 auto 1rem;
+}
 
   .chart-row .chart-card {
     flex: 1 1 45%; /* Tar ungefär 45% bredd vardera, med viss flexibilitet */
@@ -185,7 +185,7 @@
     justify-content: center; /* Centrera hela raden */
     flex-wrap: wrap; /* Gör att de kan radbrytas på små skärmar */
     max-width: 80rem;
-    margin: 0 auto 31.25rem;
+    margin: 0 auto 1rem;
   }
 
   .chart-row2 .chart-card {
