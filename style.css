@@ -60,21 +60,13 @@
     width: 1.5rem;
     background-color: rgb(39, 60, 118);
     margin: 0.25rem 0;
-    border-radius: 2px;
+    border-radius: 0.5rem;
   }
   
   /* === Navbar === */
-<<<<<<< HEAD
   .navbar {
     width: 100%;
     
-=======
- .navbar {
-    flex-grow: 1;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
->>>>>>> 50fb59c2e54046309a6dc4674ad7008194b954a2
   }
   
   .navbar ul {
