@@ -59,7 +59,7 @@
     width: 1.5rem;
     background-color: rgb(39, 60, 118);
     margin: 0.25rem 0;
-    border-radius: 2px;
+    border-radius: 0.125rem;
   }
   
   /* === Navbar === */
@@ -111,7 +111,7 @@
     background-image: url(img/flaskor.jpg); 
     background-size: cover;
     background-position: center;
-    height: 500px; 
+    height: 31.25rem; 
     width: 100%;
     display: flex;
     position: relative;
@@ -133,8 +133,6 @@
     scroll-margin-top: 12.5rem; 
   }
   
-
-
   .intro-text h1 {
     font-size: 2rem;
     margin-bottom: 1rem;
@@ -478,7 +476,6 @@
     position: absolute;
     inset: 0;
     background-color: rgba(0, 0, 0, 0.55);
-    border-radius: 10px;
     z-index: 0;
     pointer-events: none;
   }
@@ -492,7 +489,7 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    max-width: 350px;
+    max-width: 22rem;
     width: 100%;
   }
   
@@ -510,7 +507,7 @@
   
   h1 {
     font-size: 1.25em;
-    margin-bottom: 10px;
+    margin-bottom: 0.625rem;
     color: #fff;
     letter-spacing: 0.05rem;
     text-align: flex-start;
@@ -546,7 +543,7 @@
     padding: 0.6rem;
     font-size: 1rem;
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 0.31rem;
     background-color: #fff;
     font-family: 'Segoe UI', sans-serif;
     box-sizing: border-box;
@@ -559,7 +556,7 @@
     background-color: rgb(39, 60, 118);
     color: white;
     border: none;
-    border-radius: 6px;
+    border-radius: 0.375;
     cursor: pointer;
     transition: background-color 0.3s ease;
   }
@@ -602,7 +599,7 @@
     padding: 1.5rem;
     border-radius: 0.5rem;
     width: 100%;
-    max-width: 800px;
+    max-width: 50rem;
     box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.25);
     position: relative;
     box-sizing: border-box;
