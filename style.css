@@ -140,8 +140,8 @@
     margin-bottom: 1rem;
     color: white; 
     border-left: 0.75rem; 
-    padding-left: 3rem;
-    padding-right: 3rem;
+    padding-left: 1.6rem;
+    padding-right: 1.6rem;
     padding-top: 15%;
     margin: 1.6rem auto 1.9rem auto;
     max-width: 50rem;
@@ -155,8 +155,8 @@
     line-height: 1.6;
     color: white;
     border-left: 0.75rem; 
-    padding-left: 3rem;
-    padding-right: 3rem;
+    padding-left: 1.6rem;
+    padding-right: 1.6rem;
     margin: 1.6rem auto 3.75rem auto;
     max-width: 50rem;
     text-align: left;
@@ -168,18 +168,18 @@
   /* === Diagramkort === */
   .chart-row {
     display: flex;
-    gap: 20px; /* Avstånd mellan korten */
+    gap: 1rem; /* Avstånd mellan korten */
     justify-content: center; /* Centrera hela raden */
     flex-wrap: wrap; /* Gör att de kan radbrytas på små skärmar */
-    max-width: 900px;
+    max-width: 80rem;
     margin: 0 auto 40px;
   }
 
   .chart-row .chart-card {
     flex: 1 1 45%; /* Tar ungefär 45% bredd vardera, med viss flexibilitet */
-    min-width: 280px; /* Säkerställer att de inte blir för smala */
+    min-width: 5rem; /* Säkerställer att de inte blir för smala */
   }
-  
+
   .chart-text {
     font-size: 1rem;
     color: rgb(39, 60, 118);
@@ -218,7 +218,7 @@
     margin-left: 2rem;
     text-align: left;
   }
-  
+
   #myChart4 {
   padding: 0rem;
   margin: 1.6rem auto 3.75rem auto;
