@@ -25,7 +25,6 @@
     top: 0;
     width: 100%;
     z-index: 1000;
-    box-shadow: inset 0 -0.0825rem 0.125rem rgba(0, 0, 0, 0.1);
   }
 
   
@@ -64,17 +63,11 @@
   }
   
   /* === Navbar === */
-<<<<<<< HEAD
-  .navbar {
-    width: 100%;
-    
-=======
  .navbar {
     flex-grow: 1;
     display: flex;
     justify-content: flex-end;
     align-items: center;
->>>>>>> 50fb59c2e54046309a6dc4674ad7008194b954a2
   }
   
   .navbar ul {
@@ -118,7 +111,7 @@
     background-image: url(img/flaskor.jpg); 
     background-size: cover;
     background-position: center;
-    height: 31.25rem; 
+    height: 500px; 
     width: 100%;
     display: flex;
     position: relative;
@@ -140,40 +133,39 @@
     scroll-margin-top: 12.5rem; 
   }
   
+
+
   .intro-text h1 {
     font-size: 2rem;
     margin-bottom: 1rem;
     color: white; 
+    border-left: 0.75rem; 
+    padding-left: 3rem;
+    padding-right: 3rem;
+    padding-top: 15%;
+    margin: 1.6rem auto 1.9rem auto;
+    max-width: 50rem;
     text-align: left;
-    padding-left: 1.7rem;
+    border-top-left-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
   }
   
   .intro-text p {
     font-size: 1.2rem;
     line-height: 1.6;
     color: white;
+    border-left: 0.75rem; 
+    padding-left: 3rem;
+    padding-right: 3rem;
+    margin: 1.6rem auto 3.75rem auto;
+    max-width: 50rem;
     text-align: left;
-    padding-right: 10rem;
-    padding-left: 1.7rem;
+    border-top-left-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
   }
   
 
   /* === Diagramkort === */
-  .chart-row {
-    display: flex;
-    gap: 1rem; /* Avstånd mellan korten */
-    justify-content: center; /* Centrera hela raden */
-    flex-wrap: wrap; /* Gör att de kan radbrytas på små skärmar */
-    max-width: 90rem;
-    margin: 0 auto 2.5rem;
-    padding: 0 1rem;
-  }
-
-  .chart-row .chart-card {
-    flex: 1 1 45%; /* Tar ungefär 45% bredd vardera, med viss flexibilitet */
-    min-width: 280px; /* Säkerställer att de inte blir för smala */
-  }
-
   .chart-text {
     font-size: 1rem;
     color: rgb(39, 60, 118);
