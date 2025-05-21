@@ -14,7 +14,7 @@
   <header class="site-header">
     <div class="header-inner">
 
-<img src="img/coctail.png" alt="CO₂ctail-logotyp" class="header-logo" />
+      <img src="img/coctail.png" alt="CO₂ctail-logotyp" class="header-logo" />
 
       <nav class="navbar">
         <div class="menu-toggle" id="mobile-menu">
@@ -22,7 +22,7 @@
           <span></span>
           <span></span>
         </div>
-  
+
         <ul id="navbar-links">
           <li><a href="#chart3">Konsumtion över tid</a></li> 
           <li><a href="#chart2">Populära drycker</a></li>
@@ -37,7 +37,7 @@
   </header>
   <div class="header-spacer" aria-hidden="true"></div>
 
-<!-- Hero Section -->
+  <!-- Hero Section -->
   <section class="hero-section">
     <div class="hero-content">
       <div class="intro-text">
@@ -49,20 +49,9 @@
     </div>
   </section>
 
-    <!-- Info + Diagram 3 -->
-
-    <div class="chart-card">
-      <div class="chart-info-box" id="chart3">
-        <h2>Alkoholkonsumtionen genom åren 2003-2023</h2>
-        <p>Under de senaste två decennierna har våra alkoholvanor skiftat gradvis – men tydligt. Vin har stadigt ökat sin andel av den totala konsumtionen och är idag den dominerande drycken i Sverige, följt av starköl och sprit. Folköl har däremot halverats sedan början av 2000-talet.</p>
-      </div>
-      <canvas id="myChart3"></canvas>
-      <div class="chart-source">Källa: CAN:s Monitormätningar, 2024.</div>
-    </div>
-  
-
+  <!-- Wrapper för chart 2 och 3 för att lägga dem bredvid varandra -->
+  <div class="chart-row">
     <!-- Info + Diagram 2 -->
-   
     <div class="chart-card">
       <div class="chart-info-box" id="chart2">
         <h2>Vad köper vi mest?</h2>
@@ -72,6 +61,17 @@
       <div class="chart-source">Källa: SCB, försäljningsår 2023</div>
     </div>
 
+    <!-- Info + Diagram 3 -->
+    <div class="chart-card">
+      <div class="chart-info-box" id="chart3">
+        <h2>Alkoholkonsumtionen genom åren 2003-2023</h2>
+        <p>Under de senaste två decennierna har våra alkoholvanor skiftat gradvis – men tydligt. Vin har stadigt ökat sin andel av den totala konsumtionen och är idag den dominerande drycken i Sverige, följt av starköl och sprit. Folköl har däremot halverats sedan början av 2000-talet.</p>
+      </div>
+      <canvas id="myChart3"></canvas>
+      <div class="chart-source">Källa: CAN:s Monitormätningar, 2024.</div>
+    </div>
+  </div>
+
   <!-- Karta -->
   <div class="chart-card">
     <div class="chart-info-box" id="chart5">
@@ -79,12 +79,11 @@
       <p>Mörkare färg representerar högre genomsnittlig konsumtion av alkohol (liter ren alkohol per person och år).
         Visualiseringen tydliggör regionala skillnader i konsumtionsmönster över landet, åren 2017–2019. Genom att peka på ett län visas även skillnader från rikssnittet på 3,66 liter.</p>
     </div>
-  <div id="map"></div>
-  <div class="chart-source">Källa: CAN, 2020 </div>
+    <div id="map"></div>
+    <div class="chart-source">Källa: CAN, 2020 </div>
   </div>
-  
+
   <!-- Info + Diagram 1 -->
- 
   <div class="chart-card">
     <div class="chart-info-box" id="chart1">
       <h2>Förändring av tillförd mängd förpackningar över tid</h2>
@@ -94,35 +93,32 @@
     <div class="chart-source">Källa: SCB, 2024</div>
   </div>
 
-
-    <!-- Info + Diagram 4 -->
-   
-    <div class="chart-card">
-      <div class="chart-info-box" id="chart4">
-        <h2>Vilken förpackning släpper ut mest CO₂?</h2>
-        <p>Klimatpåverkan varierar kraftigt beroende på förpackningstyp. Nedan ser du utsläpp i gram CO₂ per liter för olika typer av förpackningar. Tunga glasflaskor står för det högsta utsläppet.</p>
-      </div>
-      <canvas id="myChart4"></canvas>
-      <div class="chart-source">Källa: Systembolaget, 2023</div>
+  <!-- Info + Diagram 4 -->
+  <div class="chart-card">
+    <div class="chart-info-box" id="chart4">
+      <h2>Vilken förpackning släpper ut mest CO₂?</h2>
+      <p>Klimatpåverkan varierar kraftigt beroende på förpackningstyp. Nedan ser du utsläpp i gram CO₂ per liter för olika typer av förpackningar. Tunga glasflaskor står för det högsta utsläppet.</p>
     </div>
+    <canvas id="myChart4"></canvas>
+    <div class="chart-source">Källa: Systembolaget, 2023</div>
   </div>
+
   <!-- Kalkylatorn  -->
   <div class="calculator">
     <h1>Beräkna klimatpåverkan av din alkoholkonsumtion*</h1>
     <p></p>
     <form>
       <div class="label-row">
-      <label for="beer">Antal glas öl per månad </label> <div class="calculator-info"> (1 glas öl = 33 cl)</div>
-      <input type="number" id="beer" placeholder="t.ex. 4" min="0" />
-     
+        <label for="beer">Antal glas öl per månad </label> <div class="calculator-info"> (1 glas öl = 33 cl)</div>
+        <input type="number" id="beer" placeholder="t.ex. 4" min="0" />
       </div>
       <div class="label-row">
-      <label for="wine">Antal glas vin per månad </label> <div class="calculator-info"> (1 glas vin = 15 cl)</div>
-      <input type="number" id="wine" placeholder="t.ex. 2" min="0" />
+        <label for="wine">Antal glas vin per månad </label> <div class="calculator-info"> (1 glas vin = 15 cl)</div>
+        <input type="number" id="wine" placeholder="t.ex. 2" min="0" />
       </div>
       <div class="label-row">
-      <label for="spirits">Antal glas sprit per månad </label><div class="calculator-info"> (1 glas sprit = 4 cl)</div>
-      <input type="number" id="spirits" placeholder="t.ex. 1" min="0" />
+        <label for="spirits">Antal glas sprit per månad </label><div class="calculator-info"> (1 glas sprit = 4 cl)</div>
+        <input type="number" id="spirits" placeholder="t.ex. 1" min="0" />
       </div>
 
       <button id="calculate-button">Beräkna</button>
@@ -132,7 +128,7 @@
         på tillverkning, förpackning och transport. Beräkningar gjorda efter siffror i <i> Climate impact of alcohol consumption in Sweden (2018).</i></div>
     <div id="result"></div>
   </div>
-  
+
   <!-- faktarutor -->
   <div class="chart-card">
     <div class="chart-info-box" id="chart6">
@@ -162,68 +158,14 @@
         </div>
       </details>
 
-    
-
       <details class="info-box">
         <summary>Hållbarhet i praktiken</summary>
         <div class="info-content">
-          <p>Systembolaget har integrerat hållbarhet som en central del i hela verksamheten. Det syns både på huvudkontoret och i butiker, samt i verksamhetsplaner och publika redovisningar. Ledningen har skapat ett tydligt hållbarhetsfokus med hjälp av kommunikation, ansvarsfördelning och strategiska mål. Hållbarhet är även inbyggt i budgetprocessen, där särskilda resurser avsätts till investeringar i teknik och lösningar. Målet är att halvera den totala klimatpåverkan till år 2030 (Claesson et al., 2024). </p>
-        </div>
-      </details>
-      <details class="info-box">
-        <summary>Transporter</summary>
-        <div class="info-content">
-          <p>Även transporter bidrar till klimatpåverkan. 
-            Enligt Gierling & Blanke (2021) ger en vinflaska som levereras lokalt utsläpp på bara 6–9 gram CO₂, medan en importerad flaska kan ge upp till 250 gram, beroende på 
-            avstånd och transportsätt. Dessutom står bilresor till vingården för en stor andel av vinets totala 
-            limatavtryck – i vissa fall lika mycket som själva produktionen. Att välja närproducerat och att samordna inköp 
-            kan därför göra skillnad (Gierling & Blanke, 2021).</p>
+          <p>Systembolaget har integrerat hållbarhet som en central del i hela verksamheten. Det syns både på huvudkontoret och i butiker, samt i verksamhetsplaner och publika redovisningar. Ledningen har skapat ett tydligt hållbarhetsfokus med hjälp av kommunikation, ansvarsfördelning och strategiska mål. Hållbarhet genomsyrar också produktutveckling, inköp och logistik (Systembolaget, 2024).</p>
         </div>
       </details>
     </div>
   </div>
-
-</div>
-</div>
-<!-- Popup-fönstret -->
-<div id="chartModal" class="modal">
-  <div class="modal-content chart-card">
-    <span class="close">&times;</span>
-    <h2 class="chart-text">Källförteckning</h2>
-    <p class="chart-text">Källor och vidare läsning till informationen i diagram och faktarutor:</p>
-    <p class="chart-text">
-      Claesson, I., Flemström, J., & Sjöbacka, E. (2024). <i>Hållbarhetsstyrning i Systembolaget AB: En fallstudie med grund i sustainable management control systems</i>. Kandidatuppsats, Örebro universitet, Handelshögskolan.
-      <a href="https://www.diva-portal.org/smash/get/diva2:1898609/FULLTEXT01.pdf" target="_blank">https://www.diva-portal.org/smash/get/diva2:1898609/FULLTEXT01.pdf</a>
-    </p>
-    <p class="chart-text">
-      Folkhälsomyndigheten. (9 december 2024). <i>Alkoholkonsumtion bland vuxna.</i>
-      <a href="https://www.folkhalsomyndigheten.se/livsvillkor-levnadsvanor/andts/andts-anvandning-och-ohalsa/anvandning-och-omfattning-av-andts-i-befolkningen/alkoholkonsumtion/alkoholkonsumtion-bland-vuxna/" target="_blank">https://www.folkhalsomyndigheten.se/livsvillkor-levnadsvanor/andts/andts-anvandning-och-ohalsa/anvandning-och-omfattning-av-andts-i-befolkningen/alkoholkonsumtion/alkoholkonsumtion-bland-vuxna/</a>
-    </p>
-        <p class="chart-text">
-    Guttormsson, U. (2024). <i>Självrapporterade alkoholvanor i Sverige 2004–2023.</i> (Rapport 229). Centralförbundet för alkohol- och narkotikaupplysning (CAN). <a href= "https://www.can.se/publikationer/sjalvrapporterade-alkoholvanor-i-sverige-2004-2023/" target="_blank">https://www.can.se/publikationer/sjalvrapporterade-alkoholvanor-i-sverige-2004-2023/</a>
-    </p>
-    <p class="chart-text">
-      Hallström, E., Håkansson, N., Åkesson, A., Wolk, A., & Sonesson, U. (2018). <i>Climate impact of alcohol consumption in Sweden</i>. <i>Science of The Total Environment, 618</i>, 796–804. 
-      <a href="https://doi.org/10.1016/j.jclepro.2018.07.295" target="_blank">https://doi.org/10.1016/j.jclepro.2018.07.295</a>
-    </p>
-  </div>
-</div>
-
-
-<!-- Footer -->
-  <footer class="site-footer">
-    <div class="footer-container">
-      <nav class="footer-nav">
-        <a href="#">Projekt</a>
-        <a href="#">Om</a>
-        <a href="#" id="openModal">Källförteckning</a>
-
-      </nav>
-      <div class="footer-copy">© 2025 CO₂ctail</div>
-    </div>
-  </footer>
-  
-
 
 </body>
 </html>

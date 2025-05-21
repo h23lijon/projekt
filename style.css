@@ -166,6 +166,20 @@
   
 
   /* === Diagramkort === */
+  .chart-row {
+    display: flex;
+    gap: 20px; /* Avstånd mellan korten */
+    justify-content: center; /* Centrera hela raden */
+    flex-wrap: wrap; /* Gör att de kan radbrytas på små skärmar */
+    max-width: 900px;
+    margin: 0 auto 40px;
+  }
+
+  .chart-row .chart-card {
+    flex: 1 1 45%; /* Tar ungefär 45% bredd vardera, med viss flexibilitet */
+    min-width: 280px; /* Säkerställer att de inte blir för smala */
+  }
+  
   .chart-text {
     font-size: 1rem;
     color: rgb(39, 60, 118);
