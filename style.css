@@ -669,6 +669,15 @@
     flex: 1 1 100%; /* Gör att varje kort tar 100% av raden */
     max-width: 100%; /* Säkerställ full bredd */
     }
+    .calculator h1 {
+    margin-left: 1rem;
+    }
+
+  .calculator-source{
+    margin-left: 1rem;
+    }
+    .calculator form {
+    margin-left: 1rem ;
   }
  .chart-text {
   text-align: left;
