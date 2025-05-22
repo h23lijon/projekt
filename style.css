@@ -443,6 +443,166 @@
   transform: rotate(270deg);
 }
 
+/* ======= karusellen ======= */
+/* Karusellcontainer */
+.carousel-container {
+  max-width: 70rem;
+  margin: 4rem auto;
+  padding: 2rem 3rem; /* extra utrymme åt höger och vänster */
+  text-align: center;
+  position: relative; /* behövs för att absolutpositionera pilar */
+}
+
+/* Överrubrik och text */
+.carousel-container h2 {
+  color: #273C76;
+  font-size: 1.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.carousel-container p {
+  color: #273C76;
+  font-size: 1rem;
+  margin-bottom: 2rem;
+}
+
+/* Karusellområde */
+.carousel {
+  position: relative;
+  overflow: hidden;
+  padding: 0 3rem; /* detta skapar plats åt pilarna inom karusellen */
+}
+
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.7s ease-in-out;
+  gap: 1.5rem;
+  padding: 1rem 0;
+}
+
+/* Enskilda cards */
+.carousel-card {
+  flex: 0 0 28%;
+  background: #ffffff;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.15);
+  text-align: left;
+  min-height: 330px;
+}
+
+/* Bilder i card */
+.carousel-card img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+/* Rubrik och text */
+.carousel-card h3 {
+  color: #273C76;
+  font-size: 1.2rem;
+  margin: 0.5rem 0 0.25rem;
+}
+
+.carousel-card p {
+  color: #273C76;
+  font-size: 0.95rem;
+  margin-bottom: 0.75rem;
+}
+
+/* "Läs mer" – fet text, ingen knapp */
+.carousel-card button {
+  all: unset;
+  font-weight: bold;
+  color: #273C76;
+  cursor: pointer;
+}
+
+/* Pilarna */
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  font-size: 2.5rem;
+  color: #273C76;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.carousel-btn.left {
+  left: 0.25rem; /* ändrad från -1rem */
+}
+
+.carousel-btn.right {
+  right: 0.25rem; /* ändrad från -1rem */
+}
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 100;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: 8% auto;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  max-width: 40rem;
+  position: relative;
+  text-align: left;
+}
+
+.modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #000;
+  cursor: pointer;
+}
+
+#carousel-modal-text h3 {
+  color: #273C76;
+  font-size: 1.5rem;
+}
+
+#carousel-modal-text p {
+  color: #273C76;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Bild-overlay-effekt */
+.image-wrapper {
+  position: relative;
+}
+
+.image-overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 0.5rem;
+  transition: opacity 0.3s ease;
+}
+
+.image-wrapper:hover .image-overlay {
+  opacity: 0;
+}
+
+
   /* Responsivitet */
   @media (max-width: 64rem) {
     .menu-toggle {
@@ -531,7 +691,7 @@
     color: #333;
     z-index: 1;
     max-width: 100%;
-    margin: 5rem auto;
+    margin: 2rem auto;
     padding: 3rem;
     box-shadow: 0 0.25rem 0.75rem rgba(0,0,0,0.1);
     text-align: left;
