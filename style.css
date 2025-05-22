@@ -720,7 +720,7 @@
     align-items: flex-start;
     max-width: 22rem;
     width: 100%;
-    margin-left: 15rem;
+    margin-left: 10rem;
   }
   
   .calculator p {
@@ -729,11 +729,11 @@
   }
 
   .calculator h1 {
-    margin-left: 15rem;
+    margin-left: 10rem;
   }
 
   .calculator-source{
-    margin-left: 15rem;
+    margin-left: 10rem;
   }
 
   .label-row {
