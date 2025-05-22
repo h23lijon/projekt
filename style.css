@@ -11,13 +11,13 @@
   
   body {
     font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
-    background-color: #fbfcfb;
+    background-color: #fafafa;
     margin: 0;
   }
   
   /* === Header och navbar == */
   .site-header {
-    background-color: #fbfcfb;
+    background-color: #fafafa;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
     position: fixed;
@@ -40,7 +40,7 @@
   .header-logo {
     max-height: 2rem;
     margin-top: 0;
-    margin-right: 1rem;
+    margin-left: 4rem;
     align-self: center;
   }
   
@@ -65,13 +65,16 @@
   /* === Navbar === */
   .navbar {
     width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 4rem;
     
   }
   
   .navbar ul {
     list-style: none;
     display: flex;
-    justify-content: right;
+    justify-content: flex-end;
     gap: 3rem;
     padding: 0.5rem 0;
     margin: 0;
@@ -280,7 +283,8 @@
   .chart-info-box h2 {
     font-size: 1.25em;
     margin-bottom: 0.625rem;
-    color: rgb(39, 60, 118);
+    color: #2f3b57;
+    /*    color: rgb(39, 60, 118);*/
     letter-spacing: 0.02rem;
     margin-left: 1.6rem;
   }
@@ -288,7 +292,8 @@
   .chart-info-box p {
     font-size: 1rem;
     line-height: 1.6;
-    color: rgb(39, 60, 118);
+    /*color: rgb(39, 60, 118);*/
+    color: #59627a;
     letter-spacing: 0.03rem;
     max-width: 60ch;
     margin-left: 1.6rem;
@@ -791,16 +796,17 @@
     margin-top: 1.5rem;
     padding: 0.8rem 1.2rem;
     font-size: 1rem;
-    background-color: rgb(39, 60, 118);
+    background-color: #273c76;
+    border-color: #e4e7f0; /*Lade till stroke weak för att den ska synas bättre mot bakgrunden*/
     color: white;
-    border: none;
     border-radius: 0.375rem;
+    border-width: 0.0525rem;
     cursor: pointer;
     transition: background-color 0.3s ease;
   }
   
   button:hover {
-    background-color: rgb(39, 60, 118);
+    background-color: #1b2e5e;
   }
   
   #result {
@@ -845,7 +851,7 @@
   
   /*  stängknapp  */
   .close {
-    color: #aaa;
+    color: #aaa; /*Se över om den ska vara annan färg? Brand? Likaså hover*/
     position: absolute;
     top: 1rem;
     right: 1.5rem;
