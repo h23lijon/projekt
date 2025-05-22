@@ -136,43 +136,74 @@
     <div id="result"></div>
   </div>
 
-  <!-- faktarutor -->
-  <div class="chart-card">
-    <div class="chart-info-box" id="chart6">
-      <h2>Mer läsning</h2>
-      <p>Vetenskaplig fakta om alkoholens klimatpåverkan och förpackningar.</p>
+ <!-- Karusell före footer -->
+<div class="carousel-container" id="chart6">
+  <h2>Mer läsning</h2>
+  <p>Vetenskaplig fakta om alkoholens klimatpåverkan och förpackningar.</p>
+
+  <div class="carousel">
+    <button class="carousel-btn left" onclick="prevSlide()">‹</button>
+    <div class="carousel-track">
+      <div class="carousel-card" data-index="0">
+        <div class="image-wrapper">
+          <img src="img/bild1.jpg" alt="Klimatpåverkan per dryck" />
+          <div class="image-overlay"></div>
+        </div>
+        <h3>Klimatpåverkan per dryck</h3>
+        <p>Vilken dryck påverkar klimatet mest? Starkvin och vin leder listan.</p>
+        <button onclick="openModal(0)">Läs mer</button>
+      </div>
+      <div class="carousel-card" data-index="1">
+        <div class="image-wrapper">
+          <img src="img/bild2.jpg" alt="Vem dricker vad" />
+          <div class="image-overlay"></div>
+        </div>
+        <h3>Vem dricker vad – och hur mycket?</h3>
+        <p>Hur fördelas alkoholkonsumtionen i Sverige? Vad orsakar mest utsläpp?</p>
+        <button onclick="openModal(1)">Läs mer</button>
+      </div>
+      <div class="carousel-card" data-index="2">
+        <div class="image-wrapper">
+          <img src="img/bild3.jpg" alt="Systembolaget och hållbarhet" />
+          <div class="image-overlay"></div>
+        </div>
+        <h3>Systembolaget och hållbarhet</h3>
+        <p>Folkhälsouppdraget möjliggör klimatfokus bortom lönsamhet.</p>
+        <button onclick="openModal(2)">Läs mer</button>
+      </div>
+      <div class="carousel-card" data-index="1">
+        <div class="image-wrapper">
+          <img src="img/bild2.jpg" alt="Vem dricker vad" />
+          <div class="image-overlay"></div>
+        </div>
+        <h3>Vem dricker vad – och hur mycket?</h3>
+        <p>Hur fördelas alkoholkonsumtionen i Sverige? Vad orsakar mest utsläpp?</p>
+        <button onclick="openModal(1)">Läs mer</button>
+      </div>
+      <div class="carousel-card" data-index="2">
+        <div class="image-wrapper">
+          <img src="img/bild3.jpg" alt="Systembolaget och hållbarhet" />
+          <div class="image-overlay"></div>
+        </div>
+        <h3>Systembolaget och hållbarhet</h3>
+        <p>Folkhälsouppdraget möjliggör klimatfokus bortom lönsamhet.</p>
+        <button onclick="openModal(2)">Läs mer</button>
+      </div>
     </div>
-
-    <div class="info-list">
-      <details class="info-box">
-        <summary>Klimatpåverkan per dryck</summary>
-        <div class="info-content">
-          <p>Hallström et al. (2018) visar i sin studie att alkoholhaltiga drycker som konsumeras i Sverige ger upphov till växthusgasutsläpp i spannet 0,73–2,38 kg CO₂e per liter. Starkvin och vanligt vin har den högsta klimatpåverkan per liter, följt av sprit och därefter öl. När man tar hänsyn till konsumtionsmönster förändras dock den relativa påverkan mellan olika dryckesslag. Vanligt vin står då för den största andelen av utsläppen (61 %), följt av öl (33 %), medan sprit och starkvin endast står för cirka 6 %, detta på grund av lägre konsumtionsnivåer (Hallström et al., 2018).</p>
-        </div>
-      </details>
-
-      <details class="info-box">
-        <summary>Vem dricker vad – och hur mycket?</summary>
-        <div class="info-content">
-          <p>Enligt Guttormsson (2024) beräknades den genomsnittliga alkoholkonsumtionen till 8,64 liter ren alkohol per invånare (15 år och äldre) år 2023. Den mest populära drycken är vin (43,7 %), följt av öl (31,6 %), sprit (18,4 %), folköl (4 %) samt cider och blanddrycker (2 %). Alkoholkonsumtion ger i genomsnitt upphov till 52 kg CO₂e per person och år och cirka 3 % av de totala kostrelaterade växthusgasutsläppen. I den grupp som dricker mest kan andelen nå 6–11 % . Mäns alkoholkonsumtion ger 90 % mer utsläpp än kvinnors, vilket hänger ihop med skillnader i volym (Hallström et al., 2018). Folkhälsomyndigheten (2024) visar att cirka 16 % av befolkningen har riskkonsumtion. Mellan 2004 och 2024 har andelen minskat från 87 % till 82 %. Män rapporterar riskkonsumtion i högre grad än kvinnor: 18 % respektive 13 %.</p>
-        </div>
-      </details>
-
-      <details class="info-box">
-        <summary>Systembolaget och hållbarhet</summary>
-        <div class="info-content">
-          <p>En särskilt intressant aspekt av klimatpåverkan från svensk alkoholkonsumtion är att Sverige har ett detaljhandelsmonopol för alkohol, förvaltat av Systembolaget. Till skillnad från många kommersiella aktörer är Systembolaget inte vinstdrivet, de har i stället ett folkhälsouppdrag. Detta gör det möjligt att lägga resurser på att förverkliga hållbarhetsmål utan konflikt med lönsamhet (Claesson et al., 2024).</p>
-        </div>
-      </details>
-
-      <details class="info-box">
-        <summary>Hållbarhet i praktiken</summary>
-        <div class="info-content">
-          <p>Systembolaget har integrerat hållbarhet som en central del i hela verksamheten. Det syns både på huvudkontoret och i butiker, samt i verksamhetsplaner och publika redovisningar. Ledningen har skapat ett tydligt hållbarhetsfokus med hjälp av kommunikation, ansvarsfördelning och strategiska mål. Hållbarhet genomsyrar också produktutveckling, inköp och logistik (Systembolaget, 2024).</p>
-        </div>
-      </details>
     </div>
+    
+    <button class="carousel-btn right" onclick="nextSlide()">›</button>
   </div>
+</div>
+
+<!-- Modal för karusell (nytt ID för att inte krocka med källmodulen) -->
+<div id="carouselModal" class="modal">
+  <div class="modal-content">
+    <span class="modal-close" onclick="closeCarouselModal()">&times;</span>
+    <div id="carousel-modal-text"></div>
+  </div>
+</div>
+
   <!-- Popup-fönstret -->
   <div id="chartModal" class="modal">
     <div class="modal-content chart-card">

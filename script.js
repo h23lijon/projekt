@@ -482,7 +482,76 @@ fetch('swedish_regions.geojson')
     document.getElementById('map').innerText = 'Kartan kunde inte laddas.';
   });
 
-  //Popoup för källorna
+  let currentIndex = 0;
+
+const track = document.querySelector('.carousel-track');
+const cards = document.querySelectorAll('.carousel-card');
+const carouselModal = document.getElementById('carouselModal');
+const modalText = document.getElementById('carousel-modal-text');
+
+// Innehåll till modalen
+const texts = [
+  `<h3>Klimatpåverkan per dryck</h3>
+   <p>Hallström et al. (2018) visar i sin studie att alkoholhaltiga drycker som konsumeras i Sverige ger upphov till växthusgasutsläpp i spannet 0,73–2,38 kg CO₂e per liter. Starkvin och vin har den högsta påverkan, följt av sprit och öl.</p>`,
+
+  `<h3>Vem dricker vad – och hur mycket?</h3>
+   <p>Guttormsson (2024) visar att vin är den mest populära drycken (43,7 %), följt av öl (31,6 %) och sprit (18,4 %). Skillnader i kön, ålder och konsumtionsnivå påverkar utsläppsmönstret.</p>`,
+
+  `<h3>Systembolaget och hållbarhet</h3>
+   <p>Systembolaget är inte vinstdrivet utan har ett folkhälsouppdrag, vilket möjliggör investeringar i hållbarhet som inte styrs av lönsamhetskrav. Detta påverkar hela försörjningskedjan positivt.</p>`
+];
+
+function prevSlide() {
+  currentIndex = (currentIndex - 1 + cards.length) % cards.length;
+  updateCarousel();
+}
+
+function nextSlide() {
+  currentIndex = (currentIndex + 1) % cards.length;
+  updateCarousel();
+}
+
+function updateCarousel() {
+  const offset = currentIndex * -100;
+  track.style.transform = `translateX(${offset}%)`;
+}
+
+function updateCarousel() {
+  const offset = currentIndex * -100;
+  track.style.transform = `translateX(${offset}%)`;
+
+  cards.forEach((card, index) => {
+    card.classList.remove("active");
+    if (index === currentIndex) {
+      card.classList.add("active");
+    }
+  });
+}
+
+function openModal(index) {
+  modalText.innerHTML = texts[index];
+  carouselModal.style.display = 'block';
+}
+
+function closeCarouselModal() {
+  carouselModal.style.display = 'none';
+}
+
+window.addEventListener('click', function (e) {
+  if (e.target === carouselModal) {
+    closeCarouselModal();
+  }
+});
+
+window.prevSlide = prevSlide;
+window.nextSlide = nextSlide;
+window.openModal = openModal;
+window.closeModal = closeCarouselModal;
+
+
+
+
+  //Popoup för källorna ==========================================================
 
   document.addEventListener('DOMContentLoaded', () => {
     const modal = document.getElementById("chartModal");
@@ -507,7 +576,7 @@ fetch('swedish_regions.geojson')
     }
   });
   
-   //Kalkylatorn
+   //Kalkylatorn ==========================================================
    document.addEventListener("DOMContentLoaded", function () {
     const button = document.getElementById("calculate-button");
     if (button) {
@@ -549,4 +618,5 @@ fetch('swedish_regions.geojson')
       `;
     }
   }
+  
   
