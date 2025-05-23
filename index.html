@@ -28,7 +28,7 @@
           <li><a href="#chart3">Konsumtion</a></li> 
           <li><a href="#chart5">Karta per län</a></li>
           <li><a href="#chart1">Förpackningar</a></li>
-          <li><a href="#chart6">Mer läsning</a></li> 
+          <li><a href="#carousel-wrapper">Mer läsning</a></li> 
           <li><a href="#calculator">Kalkylatorn</a></li> 
         </ul>
       </nav>
@@ -133,76 +133,74 @@
         på tillverkning, förpackning och transport. Beräkningar gjorda efter siffror i <i> Climate impact of alcohol consumption in Sweden (2018).</i></div>
     <div id="result"></div>
   </div>
-
- <!-- Karusell före footer -->
-<div class="carousel-container" id="chart6">
-  <h2>Mer läsning</h2>
-  <p>Vetenskaplig fakta om alkoholens klimatpåverkan och förpackningar.</p>
-
-  <div class="carousel">
+  <!---------------------------------Karusellen------------------------------------->
+<div id="carousel-wrapper">
+  <div class="carousel-text">
+    <h2>Alkoholen och klimatet</h2>
+    <p>
+      Utforska våra faktabaserade artiklar som visar hur alkoholens produktion 
+      och konsumtion påverkar klimatet. Här får du insikter i vilka drycker som 
+      orsakar mest utsläpp, konsumtionsmönster i Sverige, och hur Systembolaget 
+      arbetar för att främja hållbarhet.
+    </p>
+  </div>
+  <div class="carousel-container">
     <button class="carousel-btn left" onclick="prevSlide()">‹</button>
-    <div class="carousel-track">
-      <div class="carousel-card" data-index="0">
-        <div class="image-wrapper">
+
+    <div class="carousel">
+      <div class="carousel-track">
+        <div class="carousel-card">
           <img src="img/bild1.jpg" alt="Klimatpåverkan per dryck" />
-          <div class="image-overlay"></div>
+          <h3>Klimatpåverkan per dryck</h3>
+          <p>Vilken dryck påverkar klimatet mest? Starkvin och vin leder listan.</p>
+          <button onclick="openModal(0)">Läs mer</button>
         </div>
-        <h3>Klimatpåverkan per dryck</h3>
-        <p>Vilken dryck påverkar klimatet mest? Starkvin och vin leder listan.</p>
-        <button onclick="openModal(0)">Läs mer</button>
-      </div>
-      <div class="carousel-card" data-index="1">
-        <div class="image-wrapper">
+        <div class="carousel-card">
           <img src="img/bild2.jpg" alt="Vem dricker vad" />
-          <div class="image-overlay"></div>
+          <h3>Vem dricker vad – och hur mycket?</h3>
+          <p>Hur fördelas alkoholkonsumtionen i Sverige? Vad orsakar mest utsläpp?</p>
+          <button onclick="openModal(1)">Läs mer</button>
         </div>
-        <h3>Vem dricker vad – och hur mycket?</h3>
-        <p>Hur fördelas alkoholkonsumtionen i Sverige? Vad orsakar mest utsläpp?</p>
-        <button onclick="openModal(1)">Läs mer</button>
-      </div>
-      <div class="carousel-card" data-index="2">
-        <div class="image-wrapper">
+        <div class="carousel-card">
           <img src="img/bild3.jpg" alt="Systembolaget och hållbarhet" />
-          <div class="image-overlay"></div>
+          <h3>Systembolaget och hållbarhet</h3>
+          <p>Folkhälsouppdraget möjliggör klimatfokus bortom lönsamhet.</p>
+          <button onclick="openModal(2)">Läs mer</button>
         </div>
-        <h3>Systembolaget och hållbarhet</h3>
-        <p>Folkhälsouppdraget möjliggör klimatfokus bortom lönsamhet.</p>
-        <button onclick="openModal(2)">Läs mer</button>
-      </div>
-      <div class="carousel-card" data-index="1">
-        <div class="image-wrapper">
+         <div class="carousel-card">
+          <img src="img/bild1.jpg" alt="Klimatpåverkan per dryck" />
+          <h3>Klimatpåverkan per dryck</h3>
+          <p>Vilken dryck påverkar klimatet mest? Starkvin och vin leder listan.</p>
+          <button onclick="openModal(0)">Läs mer</button>
+        </div>
+        <div class="carousel-card">
           <img src="img/bild2.jpg" alt="Vem dricker vad" />
-          <div class="image-overlay"></div>
+          <h3>Vem dricker vad – och hur mycket?</h3>
+          <p>Hur fördelas alkoholkonsumtionen i Sverige? Vad orsakar mest utsläpp?</p>
+          <button onclick="openModal(1)">Läs mer</button>
         </div>
-        <h3>Vem dricker vad – och hur mycket?</h3>
-        <p>Hur fördelas alkoholkonsumtionen i Sverige? Vad orsakar mest utsläpp?</p>
-        <button onclick="openModal(1)">Läs mer</button>
-      </div>
-      <div class="carousel-card" data-index="2">
-        <div class="image-wrapper">
+        <div class="carousel-card">
           <img src="img/bild3.jpg" alt="Systembolaget och hållbarhet" />
-          <div class="image-overlay"></div>
+          <h3>Systembolaget och hållbarhet</h3>
+          <p>Folkhälsouppdraget möjliggör klimatfokus bortom lönsamhet.</p>
+          <button onclick="openModal(2)">Läs mer</button>
         </div>
-        <h3>Systembolaget och hållbarhet</h3>
-        <p>Folkhälsouppdraget möjliggör klimatfokus bortom lönsamhet.</p>
-        <button onclick="openModal(2)">Läs mer</button>
       </div>
     </div>
-    </div>
-    
+
     <button class="carousel-btn right" onclick="nextSlide()">›</button>
   </div>
 </div>
 
-<!-- Modal för karusell (nytt ID för att inte krocka med källmodulen) -->
-<div id="carouselModal" class="modal">
+<!-- Modal -->
+<div id="carousel-modal" class="modal">
   <div class="modal-content">
     <span class="modal-close" onclick="closeCarouselModal()">&times;</span>
     <div id="carousel-modal-text"></div>
   </div>
 </div>
 
-  <!-- Popup-fönstret -->
+  <!-- Popup-fönstret ------------------->
   <div id="chartModal" class="modal">
     <div class="modal-content chart-card">
       <span class="close">&times;</span>

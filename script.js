@@ -482,100 +482,8 @@ fetch('swedish_regions.geojson')
     document.getElementById('map').innerText = 'Kartan kunde inte laddas.';
   });
 
-  let currentIndex = 0;
-
-const track = document.querySelector('.carousel-track');
-const cards = document.querySelectorAll('.carousel-card');
-const carouselModal = document.getElementById('carouselModal');
-const modalText = document.getElementById('carousel-modal-text');
-
-// Innehåll till modalen
-const texts = [
-  `<h3>Klimatpåverkan per dryck</h3>
-   <p>Hallström et al. (2018) visar i sin studie att alkoholhaltiga drycker som konsumeras i Sverige ger upphov till växthusgasutsläpp i spannet 0,73–2,38 kg CO₂e per liter. Starkvin och vin har den högsta påverkan, följt av sprit och öl.</p>`,
-
-  `<h3>Vem dricker vad – och hur mycket?</h3>
-   <p>Guttormsson (2024) visar att vin är den mest populära drycken (43,7 %), följt av öl (31,6 %) och sprit (18,4 %). Skillnader i kön, ålder och konsumtionsnivå påverkar utsläppsmönstret.</p>`,
-
-  `<h3>Systembolaget och hållbarhet</h3>
-   <p>Systembolaget är inte vinstdrivet utan har ett folkhälsouppdrag, vilket möjliggör investeringar i hållbarhet som inte styrs av lönsamhetskrav. Detta påverkar hela försörjningskedjan positivt.</p>`
-];
-
-function prevSlide() {
-  currentIndex = (currentIndex - 1 + cards.length) % cards.length;
-  updateCarousel();
-}
-
-function nextSlide() {
-  currentIndex = (currentIndex + 1) % cards.length;
-  updateCarousel();
-}
-
-function updateCarousel() {
-  const offset = currentIndex * -100;
-  track.style.transform = `translateX(${offset}%)`;
-}
-
-function updateCarousel() {
-  const offset = currentIndex * -100;
-  track.style.transform = `translateX(${offset}%)`;
-
-  cards.forEach((card, index) => {
-    card.classList.remove("active");
-    if (index === currentIndex) {
-      card.classList.add("active");
-    }
-  });
-}
-
-function openModal(index) {
-  modalText.innerHTML = texts[index];
-  carouselModal.style.display = 'block';
-}
-
-function closeCarouselModal() {
-  carouselModal.style.display = 'none';
-}
-
-window.addEventListener('click', function (e) {
-  if (e.target === carouselModal) {
-    closeCarouselModal();
-  }
-});
-
-window.prevSlide = prevSlide;
-window.nextSlide = nextSlide;
-window.openModal = openModal;
-window.closeModal = closeCarouselModal;
 
 
-
-
-  //Popoup för källorna ==========================================================
-
-  document.addEventListener('DOMContentLoaded', () => {
-    const modal = document.getElementById("chartModal");
-    const link = document.getElementById("openModal");
-    const closeBtn = document.querySelector(".close");
-  
-    if (link && modal && closeBtn) {
-      link.addEventListener("click", (e) => {
-        e.preventDefault(); 
-        modal.style.display = "block";
-      });
-  
-      closeBtn.addEventListener("click", () => {
-        modal.style.display = "none";
-      });
-  
-      window.addEventListener("click", (event) => {
-        if (event.target === modal) {
-          modal.style.display = "none";
-        }
-      });
-    }
-  });
-  
    //Kalkylatorn ==========================================================
    document.addEventListener("DOMContentLoaded", function () {
     const button = document.getElementById("calculate-button");
@@ -618,5 +526,75 @@ window.closeModal = closeCarouselModal;
       `;
     }
   }
-  
+
+  // Karusell ===============================//
+
+
+
+const texts = [
+  `<h3>Klimatpåverkan per dryck</h3><p>Hallström et al. (2018)...</p>`,
+  `<h3>Vem dricker vad – och hur mycket?</h3><p>Guttormsson (2024)...</p>`,
+  `<h3>Systembolaget och hållbarhet</h3><p>Systembolaget är inte vinstdrivet...</p>`
+];
+
+let currentIndex = 1;
+
+function updateCarousel() {
+  const track = document.querySelector('.carousel-track');
+  const cards = document.querySelectorAll('.carousel-card');
+  const container = document.querySelector('.carousel');
+  if (!track || cards.length === 0 || !container) return;
+
+  if (window.innerWidth <= 768) {
+    track.style.transform = 'none';
+    return;
+  }
+
+  const targetCard = cards[currentIndex];
+  const cardLeft = targetCard.offsetLeft;
+  const containerWidth = container.offsetWidth;
+  const cardWidth = targetCard.offsetWidth;
+  const offset = cardLeft - (containerWidth / 2 - cardWidth / 2);
+
+  track.style.transform = `translateX(-${offset}px)`;
+}
+
+function nextSlide() {
+  const cards = document.querySelectorAll('.carousel-card');
+  if (currentIndex < cards.length - 1) {
+    currentIndex++;
+    updateCarousel();
+  }
+}
+
+function prevSlide() {
+  if (currentIndex > 0) {
+    currentIndex--;
+    updateCarousel();
+  }
+}
+
+window.addEventListener('load', updateCarousel);
+window.addEventListener('resize', updateCarousel);
+
+const modal = document.getElementById('carousel-modal');
+const modalText = document.getElementById('carousel-modal-text');
+
+function openModal(index) {
+  modalText.innerHTML = texts[index];
+  modal.style.display = 'block';
+}
+
+function closeCarouselModal() {
+  modal.style.display = 'none';
+}
+
+window.addEventListener('click', (e) => {
+  if (e.target === modal) closeCarouselModal();
+});
+
+window.prevSlide = prevSlide;
+window.nextSlide = nextSlide;
+window.openModal = openModal;
+window.closeCarouselModal = closeCarouselModal;
   
