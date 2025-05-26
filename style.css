@@ -424,6 +424,7 @@
   position: relative;
   overflow: hidden;
 }
+
 .carousel-text p {
   color: #59627a;
   font-size: 1rem;
@@ -431,6 +432,7 @@
   letter-spacing: 0.03rem;
   text-align: left;
 }
+
 .carousel {
   overflow: hidden;
   position: relative;
@@ -469,12 +471,37 @@
   margin-bottom: 0.75rem;
 }
 
+.image-wrapper {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+}
 
-.carousel-card img {
+.image-wrapper img {
   width: 100%;
+  display: block;
   border-radius: 8px;
   margin-bottom: 1rem;
 }
+
+/* Bild-overlay-effekt */
+.image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 95%;
+  background-color: rgba(39, 60, 118, 0.3);
+  border-radius: 0.5rem;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.image-wrapper:hover .image-overlay {
+  opacity: 0;
+}
+
+/* ------------------- PILAR ------------------- */
 
 .carousel-btn {
   position: absolute;
@@ -484,15 +511,13 @@
   border: none;
   cursor: pointer;
   z-index: 2;
-
 }
 
 .carousel-container button:hover {
   opacity: 0.8;
   transition: opacity 0.3s ease;
-  background: none; /* Lägg till detta för att ta bort hover-bakgrunden */
+  background: none;
 }
-
 
 .carousel-btn :hover {
   opacity: 0.8;
@@ -508,11 +533,11 @@
   transform: rotate(180deg);
 }
 
-
 .carousel-btn.left { left: 0; }
 .carousel-btn.right { right: 0; }
 
-/* Modal */
+/* ------------------- MODAL ------------------- */
+
 .modal {
   display: none;
   position: fixed;
@@ -539,36 +564,6 @@
   font-size: 1.5rem;
 }
 
-/* Modal------------------------------------------------ */
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 100;
-  left: 0; top: 0;
-  width: 100%; height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-}
-
-.modal-content {
-  background-color: #fff;
-  margin: 8% auto;
-  padding: 2rem;
-  border-radius: 0.5rem;
-  max-width: 40rem;
-  position: relative;
-  text-align: left;
-}
-
-.modal-close {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #000;
-  cursor: pointer;
-}
-
 #carousel-modal-text h3 {
   color: #273C76;
   font-size: 1.5rem;
@@ -579,25 +574,6 @@
   font-size: 1rem;
   line-height: 1.6;
 }
-
-/* Bild-overlay-effekt */
-.image-wrapper {
-  position: relative;
-}
-
-.image-overlay {
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 90%;
-  background-color: rgba(39, 60, 118, 0.2);
-  border-radius: 0.5rem;
-  transition: opacity 0.3s ease;
-}
-
-.image-wrapper:hover .image-overlay {
-  opacity: 0;
-}
-
 
  /*===kalkylatorn===*/
 .calculator {

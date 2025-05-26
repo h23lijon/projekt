@@ -28,7 +28,7 @@
           <li><a href="#chart3">Konsumtion</a></li> 
           <li><a href="#chart5">Karta per län</a></li>
           <li><a href="#chart1">Förpackningar</a></li>
-          <li><a href="#carousel-wrapper">Mer läsning</a></li> 
+          <li><a href="#carousel-container">Mer läsning</a></li> 
           <li><a href="#calculator">Kalkylatorn</a></li> 
         </ul>
       </nav>
@@ -147,46 +147,63 @@
     </p>
   </div>
 
-  <div class="carousel-container">
- <button class="carousel-btn left" onclick="prevSlide()">
-  <img src="img/right .png" alt="Föregående" />
-</button>
-
+  <div class="carousel-container" id="carousel-container">
+    <button class="carousel-btn left" onclick="prevSlide()">
+      <img src="img/right .png" alt="Föregående" />
+    </button>
 
     <div class="carousel">
       <div class="carousel-track">
         <div class="carousel-card">
-          <img src="img/bild1.jpg" alt="Klimatpåverkan per dryck" />
+          <div class="image-wrapper">
+            <img src="img/bild1.jpg" alt="Klimatpåverkan per dryck" />
+            <div class="image-overlay"></div>
+          </div>
           <h3>Klimatpåverkan per dryck</h3>
           <p>Vilken dryck påverkar klimatet mest? Starkvin och vin leder listan.</p>
           <button onclick="openModal(0)">Läs mer</button>
         </div>
         <div class="carousel-card">
-          <img src="img/bild2.jpg" alt="Vem dricker vad" />
+          <div class="image-wrapper">
+            <img src="img/bild2.jpg" alt="Vem dricker vad" />
+            <div class="image-overlay"></div>
+          </div>
           <h3>Vem dricker vad – och hur mycket?</h3>
           <p>Hur fördelas alkoholkonsumtionen i Sverige? Vad orsakar mest utsläpp?</p>
           <button onclick="openModal(1)">Läs mer</button>
         </div>
         <div class="carousel-card">
-          <img src="img/bild3.jpg" alt="Systembolaget och hållbarhet" />
+          <div class="image-wrapper">
+            <img src="img/bild3.jpg" alt="Systembolaget och hållbarhet" />
+            <div class="image-overlay"></div>
+          </div>
           <h3>Systembolaget och hållbarhet</h3>
           <p>Folkhälsouppdraget möjliggör klimatfokus bortom lönsamhet.</p>
           <button onclick="openModal(2)">Läs mer</button>
         </div>
-         <div class="carousel-card">
-          <img src="img/bild1.jpg" alt="Klimatpåverkan per dryck" />
+        <div class="carousel-card">
+          <div class="image-wrapper">
+            <img src="img/bild1.jpg" alt="Klimatpåverkan per dryck" />
+            <div class="image-overlay"></div>
+          </div>
           <h3>Klimatpåverkan per dryck</h3>
           <p>Vilken dryck påverkar klimatet mest? Starkvin och vin leder listan.</p>
           <button onclick="openModal(0)">Läs mer</button>
         </div>
         <div class="carousel-card">
-          <img src="img/bild2.jpg" alt="Vem dricker vad" />
+          <div class="image-wrapper">
+            <img src="img/bild2.jpg" alt="Vem dricker vad" />
+            <div class="image-overlay"></div>
+          </div>
           <h3>Vem dricker vad – och hur mycket?</h3>
           <p>Hur fördelas alkoholkonsumtionen i Sverige? Vad orsakar mest utsläpp?</p>
           <button onclick="openModal(1)">Läs mer</button>
         </div>
         <div class="carousel-card">
-          <img src="img/bild3.jpg" alt="Systembolaget och hållbarhet" />
+          <div class="image-wrapper">
+            <img src="img/bild3.jpg" alt="Systembolaget och hållbarhet" />
+            <div class="image-overlay"></div>
+          </div>
           <h3>Systembolaget och hållbarhet</h3>
           <p>Folkhälsouppdraget möjliggör klimatfokus bortom lönsamhet.</p>
           <button onclick="openModal(2)">Läs mer</button>
@@ -194,9 +211,9 @@
       </div>
     </div>
 
-<button class="carousel-btn right" onclick="nextSlide()">
-  <img src="img/right .png" alt="Nästa" />
-</button>
+    <button class="carousel-btn right" onclick="nextSlide()">
+      <img src="img/right .png" alt="Nästa" />
+    </button>
   </div>
 </div>
 
