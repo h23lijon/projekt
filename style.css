@@ -409,6 +409,7 @@
   max-width: 65rem;
   margin: 4rem auto;
   gap: 2rem;
+  align-items: flex-start;
 }
 
 .carousel-wrapper h2 {
@@ -420,8 +421,8 @@
 
 .carousel-text {
   flex: 1 1 30%;
+  text-align: left;
 }
-
 .carousel-container {
   flex: 1 1 65%;
   position: relative;
@@ -936,17 +937,25 @@
 }
 
 /* Karusell: mobil och surfplatta */
-@media screen and (max-width: 768px) {
+@media (max-width: 768px) {
   .carousel-wrapper {
     flex-direction: column;
-    gap: 2rem;
-    padding: 1rem;
-    margin: 2rem auto;
+    align-items: center;
+    text-align: center;
   }
 
   .carousel-text,
   .carousel-container {
-    flex: 1 1 100% !important;
+    flex: 1 1 100%;
+    width: 100%;
+  }
+
+  .carousel-text {
+    padding: 0 1rem; /* valfritt – bättre läsbarhet */
+  }
+
+  .carousel-container {
+    margin-top: 1.5rem; /* skapar mellanrum mellan text och karusell */
   }
 
   .carousel {
@@ -971,11 +980,35 @@
   }
 }
 
+
 /* Extra liten mobil: max-width 480px */
 @media screen and (max-width: 480px) {
   .carousel-wrapper {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
     margin: 2rem auto;
     padding: 0.5rem;
+  }
+
+  .carousel-text,
+  .carousel-container {
+    flex: 1 1 100%;
+    width: 100%;
+  }
+
+  .carousel-text {
+    padding: 0 0.75rem; /* lite smalare padding än på 768px */
+  }
+
+  .carousel-container {
+    margin-top: 1rem;
+  }
+
+  .carousel {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
   }
 
   .carousel-track {
@@ -984,6 +1017,12 @@
 
   .carousel-card {
     flex: 0 0 95%;
-    min-width: 250px;
+    min-width: 240px;
+    margin: 0 auto;
+    scroll-snap-align: center;
+  }
+
+  .carousel-btn {
+    display: none !important;
   }
 }
