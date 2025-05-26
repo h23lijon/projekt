@@ -528,9 +528,6 @@ fetch('swedish_regions.geojson')
   }
 
   // Karusell ===============================//
-
-
-
 const texts = [
   `<h3>Klimatpåverkan per dryck</h3><p>Hallström et al. (2018)...</p>`,
   `<h3>Vem dricker vad – och hur mycket?</h3><p>Guttormsson (2024)...</p>`,
@@ -551,12 +548,15 @@ function updateCarousel() {
   }
 
   const targetCard = cards[currentIndex];
-  const cardLeft = targetCard.offsetLeft;
-  const containerWidth = container.offsetWidth;
-  const cardWidth = targetCard.offsetWidth;
-  const offset = cardLeft - (containerWidth / 2 - cardWidth / 2);
+  const containerRect = container.getBoundingClientRect();
+  const cardRect = targetCard.getBoundingClientRect();
+  const offset = (cardRect.left - containerRect.left) - (containerRect.width / 2 - cardRect.width / 2);
 
-  track.style.transform = `translateX(-${offset}px)`;
+  const currentTransform = track.style.transform || "translateX(0px)";
+  const match = currentTransform.match(/translateX\((-?\d+(\.\d+)?)px\)/);
+  const currentOffset = match ? parseFloat(match[1]) : 0;
+
+  track.style.transform = `translateX(${currentOffset - offset}px)`;
 }
 
 function nextSlide() {
@@ -597,4 +597,3 @@ window.prevSlide = prevSlide;
 window.nextSlide = nextSlide;
 window.openModal = openModal;
 window.closeCarouselModal = closeCarouselModal;
-  

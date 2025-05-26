@@ -443,11 +443,8 @@
 
 /* ====================== karusellen ======================================= */
 
-/* ====================== karusellen ======================================= */
-
-#carousel-wrapper {
+.carousel-wrapper {
   display: flex;
-  flex-direction: row; /* Desktop: text bredvid karusell */
   flex-wrap: wrap;
   max-width: 65rem;
   margin: 4rem auto;
@@ -464,7 +461,6 @@
   position: relative;
   overflow: hidden;
 }
-
 .carousel-text p {
   color: #59627a;
   font-size: 1rem;
@@ -472,7 +468,6 @@
   letter-spacing: 0.03rem;
   text-align: left;
 }
-
 .carousel {
   overflow: hidden;
   position: relative;
@@ -480,21 +475,20 @@
 }
 
 .carousel-track {
-  display: flex;
-  transition: transform 0.5s ease;
   padding-left: 10vw;
   padding-right: 10vw;
-  box-sizing: border-box;
+  display: flex;
+  transition: transform 0.5s ease;
+  padding: 0 10%;
 }
 
 .carousel-card {
   flex: 0 0 80%;
   margin: 0 1rem;
-  max-width: 100%;
   background: #fff;
   padding: 1rem;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  border-radius: 8px;
+  border-radius: 0.5rem;
   scroll-snap-align: center;
 }
 
@@ -511,6 +505,7 @@
   letter-spacing: 0.03rem;
   margin-bottom: 0.75rem;
 }
+
 
 .carousel-card img {
   width: 100%;
@@ -531,6 +526,33 @@
 
 .carousel-btn.left { left: 0; }
 .carousel-btn.right { right: 0; }
+
+@media (max-width: 768px) {
+  .carousel-wrapper {
+    flex-direction: column;
+  }
+
+  .carousel-text, .carousel-container {
+    flex: 1 1 100%;
+  }
+
+  .carousel-track {
+  padding-left: 10vw;
+  padding-right: 10vw;
+    padding: 0 5%;
+  }
+
+  .carousel-card {
+    flex: 0 0 90%;
+    min-width: 90%;
+    margin: 0 auto;
+  }
+
+  .carousel-btn {
+    display: none;
+  }
+}
+
 
 /* Modal */
 .modal {
