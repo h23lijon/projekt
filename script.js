@@ -474,8 +474,11 @@ fetch('swedish_regions.geojson')
     };
 
     Plotly.newPlot('map', data, layout, {
-      mapboxAccessToken: 'pk.eyJ1IjoibW9ja3Rva2VuIiwiYSI6ImNrd3UzY3gydzA4dGIyb3A0cWQzYmF0N2cifQ.eYxOUUv-QWHM5cHHzGdrMg'
+      mapboxAccessToken: 'pk.eyJ1IjoibW9ja3Rva2VuIiwiYSI6ImNrd3UzY3gydzA4dGIyb3A0cWQzYmF0N2cifQ.eYxOUUv-QWHM5cHHzGdrMg',
+      responsive: true
     });
+
+
   })
   .catch(error => {
     console.error('Kunde inte ladda kartan:', error);
