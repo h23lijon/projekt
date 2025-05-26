@@ -142,55 +142,14 @@
     font-size: 2rem;
     margin-bottom: 1rem;
     color: white; 
-    border-left: 0.75rem; 
-    border-top-left-radius: 0.5rem;
-    border-bottom-left-radius: 0.5rem; 
   }
   
   .intro-text p {
     font-size: 1.2rem;
     line-height: 1.6;
     color: white;
-    border-left: 0.75rem;
-    border-top-left-radius: 0.5rem;
-    border-bottom-left-radius: 0.5rem;
-  }
-  
-  @media (max-width: 117.8rem) and (min-width: 64rem) {
-  .intro-text {
-    margin: 12rem 8rem 8rem 8rem; 
-  }
   }
 
-  @media (max-width: 64rem) and (min-width: 37.5rem) {
-  .intro-text {
-    margin: 8rem 5rem 5rem 5rem;
-    }
-  .intro-text h1 {
-    font-size: 1.8rem;
-    border-left-width: 0.6rem;
-    border-radius: 0.4rem 0 0 0.4rem;
-   }
-  .intro-text p {
-    font-size: 1.1rem;
-    border-left-width: 0.6rem;
-    border-radius: 0.4rem 0 0 0.4rem;
-   }
-  }
-
-  @media (max-width: 37.5rem) {
-  .intro-text {
-    margin: 6rem 2rem 2rem 2rem;
-    }
-  .intro-text h1 {
-    font-size: 1.3rem;
-    border-left-width: 0.4rem;
-    }
-  .intro-text p {
-    font-size: 0.9rem;
-    border-left-width: 0.4rem;
-    }
-  }
   /* === Hero + Intro Slut === */
 
   /* === Diagramkort === */
@@ -265,7 +224,7 @@
 
   /* Info-box */
   .chart-info-box {
-    margin: 1.6rem auto rem auto;
+    margin: 1.6rem auto 1rem auto;
     max-width: 50rem;
     text-align: left;
     border-top-left-radius: 0.5rem;
@@ -371,7 +330,7 @@
     gap: 1.5rem;
     max-width: 44rem;
     padding: 1rem;
-    margin-left: 1.6;
+    margin-left: 1.6rem;
     width: 100%;
   }
   
@@ -414,9 +373,7 @@
   }
 
   .map-section .chart-card {
-  max-width: 80rem;
-  width: 100%;
-  padding: 1rem 2rem; 
+  max-width: 80rem; 
   box-sizing: border-box;
 }
 
@@ -527,33 +484,6 @@
 .carousel-btn.left { left: 0; }
 .carousel-btn.right { right: 0; }
 
-@media (max-width: 768px) {
-  .carousel-wrapper {
-    flex-direction: column;
-  }
-
-  .carousel-text, .carousel-container {
-    flex: 1 1 100%;
-  }
-
-  .carousel-track {
-  padding-left: 10vw;
-  padding-right: 10vw;
-    padding: 0 5%;
-  }
-
-  .carousel-card {
-    flex: 0 0 90%;
-    min-width: 90%;
-    margin: 0 auto;
-  }
-
-  .carousel-btn {
-    display: none;
-  }
-}
-
-
 /* Modal */
 .modal {
   display: none;
@@ -579,67 +509,6 @@
   right: 1rem;
   cursor: pointer;
   font-size: 1.5rem;
-}
-
-/* ====================== RESPONSIV DESIGN ======================================= */
-
-/* MOBIL OCH TABLET - Text ovanpå karusell */
-@media screen and (max-width: 768px) {
-  #carousel-wrapper {
-    flex-direction: column !important; /* Tvinga kolumn-layout */
-    gap: 2rem;
-    padding: 1rem;
-  }
-
-  .carousel-text {
-    flex: 1 1 100% !important;
-    order: 1; /* Text först */
-  }
-
-  .carousel-container {
-    flex: 1 1 100% !important;
-    order: 2; /* Karusell efter */
-  }
-
-  .carousel {
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-  }
-
-  .carousel-track {
-    padding-left: 5vw;
-    padding-right: 5vw;
-  }
-
-  .carousel-card {
-    flex: 0 0 90%;
-    min-width: 280px;
-    margin: 0 0.5rem;
-    scroll-snap-align: center;
-  }
-
-  .carousel-btn {
-    display: none !important;
-  }
-}
-
-/* EXTRA LITEN MOBIL */
-@media screen and (max-width: 480px) {
-  #carousel-wrapper {
-    margin: 2rem auto;
-    padding: 0.5rem;
-  }
-
-  .carousel-track {
-    padding-left: 2vw;
-    padding-right: 2vw;
-  }
-
-  .carousel-card {
-    flex: 0 0 95%;
-    min-width: 250px;
-  }
 }
 
 /* Modal------------------------------------------------ */
@@ -701,85 +570,6 @@
   opacity: 0;
 }
 
-
-  /* Responsivitet */
-  @media (max-width: 64rem) {
-    .menu-toggle {
-        display: flex;
-        flex-direction: column;
-        cursor: pointer;
-        position: absolute;
-        right: 1.5rem;
-        top: 1.5rem;
-        z-index: 1001;
-      }
-      
-      /* Menyboxen */
-      .navbar ul {
-        display: none;
-        flex-direction: column;
-        align-items: flex-start; 
-        background-color: rgb(39, 60, 118); 
-        padding: 1rem 1.2rem;
-        border-radius: 0.5rem;
-        width: max-content;
-        min-width: 160px;
-        position: absolute;
-        top: 3.5rem; /* under hamburgermenyn */
-        right: 1.5rem; /* samma som .menu-toggle */
-        box-shadow: 0 0.25rem 0.625rem rgba(0, 0, 0, 0.1);
-      }
-      
-      /* När aktiv: visa meny */
-      .navbar ul.active {
-        display: flex;
-      }
-      
-      /* Länkar i meny */
-      .navbar a {
-        color: white;
-        font-size: 0.95rem;
-        text-align: left;
-        padding: 0.2rem 0;
-        width: 100%;
-      }
-      
-  
-    .header-inner {
-      align-items: flex-start;
-    }
-  
-    .header-logo {
-      align-self: flex-start;
-      margin-top: 1rem;
-    }
-  
-    .intro-section {
-      margin-top: 9rem;
-      padding: 1rem;
-    }
-
-  }
-  
-  @media (min-width: 64.0625rem) {
-    .menu-toggle {
-      display: none;
-    }
-  
-    .navbar ul {
-      display: flex !important;
-      flex-direction: row;
-      background-color: transparent;
-      gap: 3rem;
-      justify-content: center;
-      padding: 0;
-    }
-  
-    .navbar a {
-      color: rgb(39, 60, 118);
-      font-size: 0.9rem;
-    }
-  }
 
  /*===kalkylatorn===*/
 .calculator {
@@ -955,38 +745,212 @@
     color: #333;
   }
 
-  /* responsivitet  */
-  @media (max-width: 37.5rem) {
-    .modal-content {
-      padding: 1rem;
-    }
-  
-    .modal-content #map {
-      height: 50vh;
-    }
-  
-    .chart-text {
-      font-size: 1.1rem;
-    }
-    .chart-row .chart-card,
-    .chart-row2 .chart-card {
-    flex-wrap: block;
-    flex: 1 1 100%; 
-    max-width: 100%; 
-    }
-    .calculator h1 {
-    margin-left: 1rem;
-    }
+  /* ==================== MEDIA QUERIES ==================== */
 
-  .calculator-source{
-    margin-left: 1rem;
-    }
-    .calculator form {
-    margin-left: 1rem;
+/* Mellanstora skärmar: 1024px - 1920px (64rem - 117.8rem) */
+@media (max-width: 117.8rem) and (min-width: 64rem) {
+  .intro-text {
+    margin: 12rem 8rem 8rem 8rem;
   }
-   .chart-text {
-    text-align: left;
-   }
 }
 
+/* Surfplattor: 600px - 1024px (37.5rem - 64rem) */
+@media (max-width: 64rem) and (min-width: 37.5rem) {
+  .intro-text {
+    margin: 8rem 5rem 5rem 5rem;
+  }
 
+  .intro-text h1,
+  .intro-text p {
+    border-left-width: 0.6rem;
+    border-radius: 0.4rem 0 0 0.4rem;
+  }
+
+  .intro-text h1 {
+    font-size: 1.8rem;
+  }
+
+  .intro-text p {
+    font-size: 1.1rem;
+  }
+
+  .menu-toggle {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    position: absolute;
+    right: 1.5rem;
+    top: 1.5rem;
+    z-index: 1001;
+  }
+
+  .navbar ul {
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: #fafafa;
+    width: 100%;
+    padding: 1rem;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 999;
+  }
+
+  .navbar ul.active {
+    display: flex;
+  }
+
+  .navbar a {
+    padding: 0.5rem 1rem;
+    width: 100%;
+  }
+
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .chart-row,
+  .chart-row2 {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .chart-row .chart-card,
+  .chart-row2 .chart-card {
+    flex: 1 1 45%;
+    max-width: 45%;
+  }
+
+  .revenue-card {
+    grid-column: span 2;
+  }
+}
+
+/* Mobiler: upp till 600px (max-width: 37.5rem) */
+@media (max-width: 37.5rem) {
+  .intro-text {
+    margin: 6rem 2rem 2rem 2rem;
+  }
+
+  .intro-text h1 {
+    font-size: 1.3rem;
+    border-left-width: 0.4rem;
+  }
+
+  .intro-text p {
+    font-size: 0.9rem;
+    border-left-width: 0.4rem;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .content {
+    margin: 1rem;
+  }
+
+  .chart-row,
+  .chart-row2 {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .chart-card,
+  .chart-row .chart-card,
+  .chart-row2 .chart-card {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+
+  .revenue-card {
+    grid-column: span 1;
+  }
+
+  .menu-toggle {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    position: absolute;
+    right: 1.5rem;
+    top: 1.5rem;
+    z-index: 1001;
+  }
+
+  .navbar ul {
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: #fafafa;
+    width: 100%;
+    padding: 1rem;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 999;
+  }
+
+  .navbar ul.active {
+    display: flex;
+  }
+
+  .navbar a {
+    padding: 0.5rem 1rem;
+    width: 100%;
+  }
+}
+
+/* Karusell: mobil och surfplatta */
+@media screen and (max-width: 768px) {
+  .carousel-wrapper {
+    flex-direction: column;
+    gap: 2rem;
+    padding: 1rem;
+    margin: 2rem auto;
+  }
+
+  .carousel-text,
+  .carousel-container {
+    flex: 1 1 100% !important;
+  }
+
+  .carousel {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .carousel-track {
+    padding: 0 5vw;
+  }
+
+  .carousel-card {
+    flex: 0 0 90%;
+    min-width: 90%;
+    margin: 0 auto;
+    scroll-snap-align: center;
+  }
+
+  .carousel-btn {
+    display: none !important;
+  }
+}
+
+/* Extra liten mobil: max-width 480px */
+@media screen and (max-width: 480px) {
+  .carousel-wrapper {
+    margin: 2rem auto;
+    padding: 0.5rem;
+  }
+
+  .carousel-track {
+    padding: 0 2vw;
+  }
+
+  .carousel-card {
+    flex: 0 0 95%;
+    min-width: 250px;
+  }
+}
