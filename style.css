@@ -41,7 +41,7 @@
     max-height: 2rem;
     margin-top: 0;
     margin-left: 4rem;
-    align-self: center;
+    align-items: flex-start;
   }
   
   /* === Hamburgermeny === */
@@ -224,7 +224,6 @@
 
   /* Info-box */
   .chart-info-box {
-    margin: 1.6rem auto 1rem auto;
     max-width: 50rem;
     text-align: left;
     border-top-left-radius: 0.5rem;
@@ -622,11 +621,23 @@
     margin-left: 10rem;
     font-size: 1.25em;
   }
-
-  .calculator-source{
+ .calculator-source {
+    font-size: 0.75rem;
+    color: #fff;
+    margin-top: 1rem;
+    text-align: left;
+    width: 27rem;
     margin-left: 10rem;
   }
-
+  
+  .calculator-info {
+    font-size: 0.75rem;
+    color: #fff;
+    margin-top: 0.2rem;
+    margin-left: 0.04rem;
+    text-align: left;
+  }
+  
   .label-row {
     display: flex;
     align-items: baseline;
@@ -641,24 +652,7 @@
     letter-spacing: 0.05rem;
     text-align: flex-start;
   }
-  
-  .calculator-source {
-    font-size: 0.75rem;
-    color: #fff;
-    margin-top: 1rem;
-    text-align: left;
-    width: 27rem;
-  }
-  
-  .calculator-info {
-    font-size: 0.75rem;
-    color: #fff;
-    margin-top: 0.2rem;
-    margin-left: 0.04rem;
-    text-align: left;
-  }
-  
-  
+   
   label {
     display: block;
     margin: 1rem 0 0.5rem;
@@ -830,6 +824,12 @@
   .revenue-card {
     grid-column: span 2;
   }
+
+  .calculator form,
+  .calculator h1,
+  .calculator-source {
+    margin-left: 3rem;
+  }
 }
 
 /* Mobiler: upp till 600px (max-width: 37.5rem) */
@@ -903,6 +903,31 @@
   .navbar a {
     padding: 0.5rem 1rem;
     width: 100%;
+  }
+
+   .calculator {
+    padding: 2rem 1rem;
+    text-align: left;
+  }
+
+  .calculator form,
+  .calculator h1,
+  .calculator-source {
+    margin-left: 0;
+    max-width: 100%;
+  }
+
+  .calculator h1 {
+    font-size: 1.1em;
+  }
+
+  .calculator form {
+    align-items: stretch;
+  }
+
+  .calculator-source {
+    width: 100%;
+    text-align: left;
   }
 }
 
