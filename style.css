@@ -405,8 +405,14 @@
   flex-wrap: wrap;
   max-width: 65rem;
   margin: 4rem auto;
-  padding: 2rem;
   gap: 2rem;
+}
+
+.carousel-wrapper h2 {
+  font-size: 1.25em;
+  margin-bottom: 0.625rem;
+  color: #2f3b57;
+  letter-spacing: 0.02rem;
 }
 
 .carousel-text {
@@ -473,13 +479,35 @@
 .carousel-btn {
   position: absolute;
   top: 50%;
-  transform: translateY(-50%);
-  font-size: 2rem;
+  transform: translateY(-30%);
   background: none;
   border: none;
   cursor: pointer;
   z-index: 2;
+
 }
+
+.carousel-container button:hover {
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+  background: none; /* Lägg till detta för att ta bort hover-bakgrunden */
+}
+
+
+.carousel-btn :hover {
+  opacity: 0.8;
+}
+
+.carousel-btn img {
+  width: 3rem;
+  height: auto;
+  margin: none;
+}
+
+.carousel-btn.left img {
+  transform: rotate(180deg);
+}
+
 
 .carousel-btn.left { left: 0; }
 .carousel-btn.right { right: 0; }
