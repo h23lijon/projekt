@@ -263,14 +263,6 @@
     text-align: left;
   }
 
-  #myChart4 {
-  padding: 0rem;
-  margin: 1.6rem auto 3.75rem auto;
-  max-width: 30rem;
-  max-height: 30rem;
-  align-self: center;
-  }
-
   /* Info-box */
   .chart-info-box {
     margin: 1.6rem auto rem auto;

@@ -376,7 +376,7 @@ new Chart(ctx4, {
         display: true,
       },
       legend: {
-        position: 'bottom'
+        position: 'right'
       },
       tooltip: {
         callbacks: {
