@@ -68,7 +68,7 @@
     display: flex;
     justify-content: flex-end;
     margin-right: 4rem;
-    
+    font-family: "Akhand";
   }
   
   .navbar ul {
@@ -99,13 +99,15 @@
     bottom: 0;
     width: 0%;
     height: 0.1rem;
-    background-color: rgb(39, 60, 118);
+    background-color: #F0EBE5;;
     transition: width 0.4s ease;
   }
   
   .navbar a:hover::after {
     width: 100%;
+    background-color: ;
   }
+
 
   /* Hero + Intro  */
 .hero-section {
@@ -186,6 +188,13 @@
   color: #333;
   }
 
+/* === Sektion alkoholkonsumtion === */
+
+  .alcohol-consumption h1 {
+    font-size: 6rem;
+    color: #263A99;
+    font-family: "Akhand";
+  }
 
   /* === Diagramkort === */
   .chart-row {
@@ -193,13 +202,11 @@
   gap: 1rem;
   justify-content: center;
   flex-wrap: wrap;
-  max-width: 80rem;
-  margin: 0 auto 1rem;
-  color: #99AEAE;
+  margin: 0 auto 1rem; 
 }
 
   .chart-row .chart-card {
-    flex: 1 1 45%; /* Tar ungefär 45% bredd vardera, med viss flexibilitet */
+    flex: 1 1 40%; /* Tar ungefär 45% bredd vardera, med viss flexibilitet */
     min-width: 5rem; /* Säkerställer att de inte blir för smala */
   }
 
@@ -210,6 +217,12 @@
     flex-wrap: wrap; /* Gör att de kan radbrytas på små skärmar */
     max-width: 80rem;
     margin: 0 auto 1rem;
+  }
+
+  .emissions h1 {
+    font-size: 6rem;
+    color: #263A99;
+    font-family: "Akhand";
   }
 
   .chart-row2 .chart-card {
@@ -228,9 +241,9 @@
   }
   
   .chart-card {
-    background-color: #ffffff;
-    border: 0.05rem solid #ddd;
-    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+ /*    background-color: #ffffff; */
+   /*  border: 0.05rem solid #ddd; */
+/*     box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1); */
     border-radius: 0.5rem;
     padding: 2rem 1.25rem 2rem 1.25rem;
     margin: 0 auto 5rem auto;
@@ -439,19 +452,25 @@
 /* ====================== karusellen ======================================= */
 
 .carousel-wrapper {
+ /*  max-width: 65rem; */
+  background-size: cover;
+  background-position: center;
+  height: 100vh; 
+  width: 100vw;  
   display: flex;
-  flex-wrap: wrap;
-  max-width: 65rem;
+  position: relative;
   margin: 4rem auto;
-  gap: 2rem;
-  align-items: flex-start;
+  flex-direction: column;  
+  gap: 1.5rem;
+ align-items: flex-start; */
 }
 
 .carousel-wrapper h2 {
-  font-size: 1.25em;
+  font-size: 6rem;
   margin-bottom: 0.625rem;
-  color: #2f3b57;
+  color: #263A99;
   letter-spacing: 0.02rem;
+  font-family: "Akhand";
 }
 
 .carousel-text {
@@ -487,7 +506,7 @@
 }
 
 .carousel-card {
-  flex: 0 0 80%;
+  flex: 0 0 30%;
   margin: 0 1rem;
   background: #fff;
   padding: 1rem;
