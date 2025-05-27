@@ -552,3 +552,19 @@ window.prevSlide = prevSlide;
 window.nextSlide = nextSlide;
 window.openModal = openModal;
 window.closeCarouselModal = closeCarouselModal;
+
+document.addEventListener('DOMContentLoaded', function () {
+  const header = document.querySelector('.site-header');
+  const hero = document.querySelector('.hero-section');
+
+  window.addEventListener('scroll', () => {
+    const heroBottom = hero.getBoundingClientRect().bottom;
+
+    if (heroBottom <= 0) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
+  });
+});
+
