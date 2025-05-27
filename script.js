@@ -295,8 +295,8 @@ new Chart(ctx4, {
     datasets: [{
       data: co2Values,
       backgroundColor: backgroundColors,
-      borderColor: '#ffffff',
-      borderWidth: 2
+      borderColor: 'transparent',
+      borderWidth: 1
     }]
   },
   options: {
@@ -306,8 +306,15 @@ new Chart(ctx4, {
         display: true,
       },
       legend: {
-        position: 'right'
-      },
+  position: 'right',
+  labels: {
+    color: '#F0EBE5',
+    font: {
+      size: 16,
+      weight: 'bold'
+    }
+  }
+},
       tooltip: {
         callbacks: {
           label: function(context) {
