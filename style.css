@@ -171,22 +171,79 @@
   }
 
   .about-section h1 {
-    font-size: 15rem;
+    font-size: 12rem;
     font-family: "Akhand";
     color: #263A99;
     writing-mode: vertical-rl;
     transform: rotate(180deg);
     text-align: center;
+    margin-bottom: 3rem;
   }
 
   .about-section p {
-  max-width: 40rem; /* Begränsa bredden så texten inte blir för lång */
+  max-width: 30rem; /* Begränsa bredden så texten inte blir för lång */
   margin-left: 2rem; /* lite avstånd från h1 */
+  margin-right: 3rem;
   margin-top: 6rem;
   font-size: 1.2rem;
   line-height: 1.5;
   color: #333;
   }
+
+
+/*===Sektion om globala målen===*/
+body {
+  margin: 0;
+  background-color: #F0EBE5;
+  font-family: 'Akhand', sans-serif;
+  color: #333;
+}
+
+.process-section {
+  padding: 4rem 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.step {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin: 2rem 0;
+}
+
+.step-image {
+  width: 180px;
+  height: auto;
+  flex-shrink: 0;
+}
+
+.step-text {
+  flex: 1;
+  min-width: 15rem;
+  max-width: 18rem;
+}
+
+.step-text h2 {
+  margin: 0;
+  font-size: 1.8rem;
+  color: #263A99;
+}
+
+.step-text p {
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  line-height: 1.6;
+    margin-left: 0;
+  margin-right: 0;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  margin: 0;
+}
 
 /* === Sektion alkoholkonsumtion === */
 
@@ -459,7 +516,7 @@
   width: 100vw;  
   display: flex;
   position: relative;
-  margin: 4rem auto;
+  margin: 2rem auto;
   flex-direction: column;  
   gap: 1.5rem;
  align-items: flex-start; */
@@ -476,6 +533,7 @@
 .carousel-text {
   flex: 1 1 30%;
   text-align: left;
+  margin-left: 3rem;
 }
 .carousel-container {
   flex: 1 1 65%;
@@ -489,6 +547,7 @@
   line-height: 1.6;
   letter-spacing: 0.03rem;
   text-align: left;
+  max-width: 50%; 
 }
 
 .carousel {
@@ -548,7 +607,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 95%;
+  height: 93%;
   background-color: rgba(39, 60, 118, 0.3);
   border-radius: 0.5rem;
   transition: opacity 0.3s ease;

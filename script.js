@@ -467,7 +467,7 @@ const texts = [
   `<h3>Systembolaget och hållbarhet</h3><p>Systembolaget är inte vinstdrivet...</p>`
 ];
 
-let currentIndex = 1;
+let currentIndex = 2;
 
 function updateCarousel() {
   const track = document.querySelector('.carousel-track');
