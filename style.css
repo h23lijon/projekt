@@ -233,9 +233,11 @@ body {
 
 .step-text p {
   margin-top: 0.5rem;
+  color: #59627a;
   font-size: 1rem;
   line-height: 1.6;
-    margin-left: 0;
+  letter-spacing: 0.03rem;
+  margin-left: 0;
   margin-right: 0;
 }
 
