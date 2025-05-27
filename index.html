@@ -167,59 +167,39 @@
   </div>
 </div>
 
-  <div class="chart-row">
-    <!-- Info + Diagram 2 -->
-    <div class="chart-card">
-      <div class="chart-info-box" id="chart2">
-        <h2>Vad köper vi mest?</h2>
-        <p>Försäljningen av alkoholhaltiga drycker i Sverige domineras av vin vilket stämmer överens med konsumtionsmönstret ovan, följt av öl och spritdrycker. Eftersom vin till största delen säljs i glasflaskor innebär detta att vinsortimentet bidrar särskilt mycket till förpackningarnas totala klimatpåverkan.</p>
-      </div>
-      <canvas id="myChart2"></canvas>
-      <div class="chart-source">Källa: SCB, försäljningsår 2023</div>
-    </div>
+<section class="grid-section">
+  <div class="chart-item">
+    <h2>Vad köper vi mest?</h2>
+    <p>Försäljningen av alkoholhaltiga drycker i Sverige domineras av vin vilket stämmer överens med konsumtionsmönstret ovan, följt av öl och spritdrycker. Eftersom vin till största delen säljs i glasflaskor innebär detta att vinsortimentet bidrar särskilt mycket till förpackningarnas totala klimatpåverkan.</p>
+    <canvas id="myChart2"></canvas>
+    <div class="chart-source">Källa: SCB, 2023</div>
   </div>
 
-  <!-- Karta -->
-<section class="map-section">
-  <div class="chart-card">
-    <div class="chart-info-box" id="chart5">
-      <h2>Konsumtionen län för län</h2>
-      <p>
-        Mörkare färg representerar högre genomsnittlig konsumtion av alkohol (liter ren alkohol per person och år).
+  <div class="chart-item">
+    <h2>Konsumtionen län för län</h2>
+    <p>Mörkare färg representerar högre genomsnittlig konsumtion av alkohol (liter ren alkohol per person och år).
         Visualiseringen tydliggör regionala skillnader i konsumtionsmönster över landet, åren 2017–2019.
-        Genom att peka på ett län visas även skillnader från rikssnittet på 3,66 liter.
-      </p>
-    </div>
-    <div class="map-container">
+        Genom att peka på ett län visas även skillnader från rikssnittet på 3,66 liter.</p>
     <div id="map"></div>
-    </div>
-    <div class="chart-source">Källa: CAN, 2020 </div>
+    <div class="chart-source">Källa: CAN, 2020</div>
+  </div>
+
+<div class="chart-item custom-bg">
+  <h2>Förändring av tillförd mängd förpackningar över tid</h2>
+  <p>Alkoholens klimatpåverkan handlar inte bara om produkten i flaskan utan också om själva behållaren eller förpackningen. Genom att minska mängden förpackningsmaterial och öka återvinningen kan vi tillsammans bidra till FN:s globala mål för hållbar konsumtion och produktion <i>(Mål 12)</i> och bekämpning av klimatförändringar <i>(Mål 13)</i>. Diagrammet visar tydligt att glas löpande står för den största volymen.</p>
+  <canvas id="myChart1"></canvas>
+  <div class="chart-source">Källa: SCB, 2024</div>
+</div>
+
+
+  <div class="chart-item chart-bg">
+    <h2>Vilken förpackning släpper ut mest CO₂?</h2>
+    <p>Klimatpåverkan varierar kraftigt beroende på förpackningstyp. Nedan ser du utsläpp i gram CO₂ per liter för olika typer av förpackningar. Tunga glasflaskor står för det högsta utsläppet.</p>
+    <canvas id="myChart4"></canvas>
+    <div class="chart-source">Källa: Systembolaget, 2023</div>
   </div>
 </section>
 
-  <!-- Info + Diagram 1 -->
-  <div class="chart-row2">
-    <div class="chart-card">
-      <div class="chart-info-box" id="chart1">
-        <h2>Förändring av tillförd mängd förpackningar över tid</h2>
-        <p>Alkoholens klimatpåverkan handlar inte bara om produkten i flaskan – utan också om själva behållaren eller förpackningen. Genom att minska mängden förpackningsmaterial och öka återvinningen kan vi tillsammans bidra till FN:s globala mål för hållbar konsumtion och produktion <i>(Mål 12)</i> och bekämpning av klimatförändringar <i>(Mål 13)</i>. Diagrammet visar tydligt att glas löpande står för den största volymen.</p>
-      </div>
-      <canvas id="myChart1"></canvas>
-      <div class="chart-source">Källa: SCB, 2024</div>
-    </div>
-
-    <!-- Info + Diagram 4 -->
-    <div class="chart-card">
-      <div class="chart-info-box" id="chart4">
-        <h2>Vilken förpackning släpper ut mest CO₂?</h2>
-        <p>Klimatpåverkan varierar kraftigt beroende på förpackningstyp. Nedan ser du utsläpp i gram CO₂ per liter för olika typer av förpackningar. Tunga glasflaskor står för det högsta utsläppet.</p>
-      </div>
-      <div class="chart-container">
-      <canvas id="myChart4"></canvas>
-      </div>
-      <div class="chart-source">Källa: Systembolaget, 2023</div>
-    </div>
-  </div>
 
   <!-- Kalkylatorn  -->
   <div id="calculator" class="calculator">
