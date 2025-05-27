@@ -3,7 +3,7 @@
   margin: 0;
   padding: 0; 
   box-sizing: border-box;
-}
+}  
 
 html {
   scroll-behavior: smooth;
@@ -457,17 +457,13 @@ hr {
 /* ====================== karusellen ======================================= */
 
 .carousel-wrapper {
- /*  max-width: 65rem; */
-  background-size: cover;
-  background-position: center;
-  height: 100vh; 
-  width: 100vw;  
+  width: 100%;
   display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
   position: relative;
   margin: 2rem auto;
-  flex-direction: column;  
-  gap: 1.5rem;
- align-items: flex-start; */
+  align-items: flex-start;
 }
 
 .carousel-wrapper h2 {
@@ -487,8 +483,8 @@ hr {
   flex: 1 1 65%;
   position: relative;
   overflow: hidden;
+  padding: 0 3rem; /* lägger samma vänster- och högermarginal som .carousel-text */
 }
-
 .carousel-text p {
   color: #59627a;
   font-size: 1rem;
@@ -505,12 +501,11 @@ hr {
 }
 
 .carousel-track {
-  padding-left: 10vw;
-  padding-right: 10vw;
   display: flex;
   transition: transform 0.5s ease;
-  padding: 0 10%;
+  gap: 1.5rem; 
 }
+
 
 .carousel-card {
   flex: 0 0 30%;
@@ -965,6 +960,37 @@ hr {
     width: 100%;
     text-align: left;
   }
+
+   .carousel-wrapper h2 {
+    font-size: 3rem; /* Mindre rubrik på mobiler */
+    text-align: center;
+    margin-left: 0;
+  }
+
+  .carousel-text {
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+    text-align: center;
+  }
+
+  .carousel-text p {
+    max-width: 100%; /* Låt p-text ta full bredd */
+    font-size: 1rem;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .carousel-container {
+    padding: 0 1rem; /* Mindre sidomarginal */
+  }
+
+  .carousel-card {
+    flex: 0 0 80%; /* Visa en i taget på mindre skärmar */
+  }
+
+  .carousel-btn img {
+    width: 2rem;
+  }
 }
 
 /* Karusell: mobil och surfplatta */
@@ -1058,7 +1084,18 @@ hr {
     max-width: 85%; /* centrera men håll bredd lagom */
   }
 }
+/* Behövs för karusellen */
+@media (max-width: 640px) {
+  .carousel-text {
+    padding: 0 1.5rem;
+    margin: 0 auto;
+  }
 
+  .carousel-text p {
+    max-width: 100%;
+    text-align: left;
+  }
+}
 
 /* Extra liten mobil: max-width 480px */
 @media screen and (max-width: 480px) {
