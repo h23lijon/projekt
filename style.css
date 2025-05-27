@@ -980,7 +980,65 @@ hr {
   .carousel-btn {
     display: none !important;
   }
+
+  /* OM OSS - gör h1 liggande */
+  .about-section {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 2rem;
+    height: auto;
+  }
+
+  .about-section h1 {
+    writing-mode: horizontal-tb;
+    transform: none;
+    font-size: 3rem;
+    text-align: left;
+    margin-bottom: 1rem;
+  }
+
+  .about-section p {
+    margin: 1rem 0;
+    font-size: 1rem;
+    max-width: 100%;
+  }
+
+  /* Gör att process-sektionen lägger sig under på mindre skärm */
+  .process-section {
+    padding: 2rem 0 0 0;
+    max-width: 100%;
+    width: 100%;
+    align-items: center;
+  }
+
+ .step {
+    flex-direction: column;
+    align-items: center;
+    text-align: center; /* detta påverkar textinnehållet */
+  }
+
+  .step-image {
+    width: 100px;
+    margin-bottom: 1rem;
+  }
+
+  .step-text {
+    max-width: 100%;
+  }
+
+  .step-text h2,
+  .step-text p {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .step-text p {
+    font-size: 0.95rem;
+    max-width: 85%; /* centrera men håll bredd lagom */
+  }
 }
+
 
 /* Extra liten mobil: max-width 480px */
 @media screen and (max-width: 480px) {
@@ -1032,19 +1090,32 @@ hr {
     align-items: flex-start;
   }
 
+   .step {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
   .step-image {
     width: 100px;
+    margin-bottom: 1rem;
   }
 
   .step-text {
     max-width: 100%;
+    padding: 0 1rem; /* så det inte går kant-i-kant */
   }
 
-  .step-text h2 {
-    font-size: 1.4rem;
+  .step-text h2,
+  .step-text p {
+    text-align: center;
+    margin-left: 0;
+    margin-right: 0;
   }
 
   .step-text p {
+    max-width: 100%; /* ta bort 50% */
     font-size: 0.95rem;
   }
+
 }
