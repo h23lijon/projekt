@@ -1,7 +1,7 @@
 /* === Grund === */
 * {
     margin: 0;
-    padding: 0;
+    padding: 0; 
     box-sizing: border-box;
   }
   
@@ -17,7 +17,7 @@
   
   /* === Header och navbar == */
   .site-header {
-    background-color: #fafafa;
+   /*  background-color: #fafafa; */
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
     position: fixed;
@@ -57,7 +57,7 @@
   .menu-toggle span {
     height: 0.2rem;
     width: 1.5rem;
-    background-color: rgb(39, 60, 118);
+    background-color: #F0EBE5;
     margin: 0.25rem 0;
     border-radius: 0.5rem;
   }
@@ -82,7 +82,7 @@
   
   .navbar a {
     position: relative;
-    color:rgb(39, 60, 118);
+    color:#F0EBE5;
     text-decoration: none;
     font-size: 0.9rem;
     font-weight: 600;
@@ -109,23 +109,24 @@
 
   /* Hero + Intro  */
 .hero-section {
-    background-image: url(img/flaskor.jpg); 
+    background-image: url(img/vingård.avif); 
     background-size: cover;
     background-position: center;
-    height: 31.25rem; 
-    width: 100%;
+    height: 100vh; /* Tar hela fönstrets höjd */
+    width: 100vw;  /* Tar hela fönstrets bredd */
     display: flex;
     position: relative;
-    margin-bottom: 5rem;
-  }
+    margin: 0;     /* Inget mellanrum under */
+    padding: 0;
+}
   
   .hero-content {
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.2);
     width: 100%;
     height: 100%;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: right;
+    justify-content: right;
   }
 
 /* Behövs för att inte sticky headern ska hamna i vägen */
@@ -134,23 +135,57 @@
   }
   
   .intro-text{
-    text-align: left;
-    margin: 22rem 22rem 15rem 22rem;
+    text-align: right;
+    font-family: "Akhand";
   }
 
-  .intro-text h1 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-    color: white; 
-  }
+  .intro-text h1 { 
+      font-size: 10rem;
+      color: #F0EBE5;
+ }
   
   .intro-text p {
     font-size: 1.2rem;
     line-height: 1.6;
-    color: white;
-  }
+    color: #F0EBE5;
+    margin-left: 30rem;
+  } 
 
   /* === Hero + Intro Slut === */
+
+  /* === Om oss === */
+
+  .about-section {
+    display: flex;
+    flex-direction: row; 
+    align-items: top; 
+    background-size: cover;
+    background-position: center;
+    height: 100vh; /* Tar hela fönstrets höjd */
+    width: 100vw;  /* Tar hela fönstrets bredd */
+    display: flex;
+   /*  position: relative; */
+    background-color: #F0EBE5;
+  }
+
+  .about-section h1 {
+    font-size: 15rem;
+    font-family: "Akhand";
+    color: #263A99;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    text-align: center;
+  }
+
+  .about-section p {
+  max-width: 40rem; /* Begränsa bredden så texten inte blir för lång */
+  margin-left: 2rem; /* lite avstånd från h1 */
+  margin-top: 6rem;
+  font-size: 1.2rem;
+  line-height: 1.5;
+  color: #333;
+  }
+
 
   /* === Diagramkort === */
   .chart-row {
@@ -775,6 +810,7 @@
 
   .intro-text p {
     font-size: 1.1rem;
+    margin-right: 5rem;
   }
 
   .menu-toggle {

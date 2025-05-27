@@ -266,76 +266,6 @@ Promise.all([vinPromise, ölPromise, spritPromise])
       });
   });
 
-
-// Konsumtion från CAN ==================================================================== CAN
-
-const labels = ["2003", "2008", "2013", "2018", "2020", "2021", "2022", "2023"];
-const rawDatasets = [
-  { label: "Sprit", data: [27.6, 26.1, 26.0, 27.8, 27.9, 26.9, 25.1, 25.1, 23.5, 23.7, 22.1, 22.2, 23.5, 21.7, 22.2, 20.7, 20.4, 18.8, 18.5, 18.6, 16.9, 17.7, 18.1, 18.4] },
-  { label: "Vin", data: [34.1, 35.6, 35.2, 34.0, 34.0, 34.3, 36.6, 37.3, 39.4, 40.4, 41.6, 41.7, 41.0, 41.9, 41.0, 41.8, 42.0, 42.7, 42.8, 42.3, 45.1, 44.5, 43.7, 43.7] },
-  { label: "Cider", data: [1.0, 1.2, 1.3, 1.1, 1.2, 1.4, 1.4, 1.6, 1.5, 1.4, 1.7, 1.6, 1.7, 1.4, 1.6, 1.4, 1.7, 1.7, 1.9, 1.9, 2.1, 2.1, 2.1, 2.2] },
-  { label: "Folköl", data: [9.4, 8.7, 8.1, 6.9, 6.9, 7.3, 6.9, 6.4, 6.5, 6.7, 6.0, 5.8, 5.2, 5.3, 5.2, 5.2, 4.9, 4.9, 4.8, 4.7, 4.8, 4.6, 4.3, 4.0] },
-  { label: "Starköl", data: [27.8, 28.4, 29.4, 30.2, 30.1, 30.1, 30.0, 29.7, 29.1, 27.8, 28.5, 28.7, 28.6, 29.7, 30.1, 30.8, 31.1, 31.9, 31.9, 32.5, 31.1, 31.1, 31.8, 31.6] },
-  { label: "Öl - totalt", data: [37.2, 37.1, 37.5, 37.1, 37.0, 37.4, 36.9, 36.1, 35.5, 34.5, 34.5, 34.5, 33.8, 35.0, 35.3, 36.0, 36.0, 36.8, 36.7, 37.1, 35.9, 35.7, 36.0, 35.7] }
-];
-
-const colorBase = ['rgb(220, 134, 153)',
-  'rgb(136, 176, 75)',
-  'rgb(60, 125, 144)',
-  'rgb(39, 60, 118)',
-  'rgb(153, 174, 174)',
-  'rgb(254, 231, 21)']
-const borderColorBase = ['rgb(220, 134, 153)',
-  'rgb(136, 176, 75)',
-  'rgb(60, 125, 144)',
-  'rgb(39, 60, 118)',
-  'rgb(153, 174, 174)',
-  'rgb(254, 231, 21)']
-
-const styledDatasets = rawDatasets.map((dataset, index) => ({
-  ...dataset,
-  backgroundColor: colorBase[index % colorBase.length],
-  borderColor: borderColorBase[index % borderColorBase.length],
-  borderWidth: 2,
-  fill: false,
-  tension: 0.3,
-  pointRadius: 3,
-  pointHoverRadius: 4
-}));
-
-const config = {
-  type: "line",
-  data: {
-    labels: labels,
-    datasets: styledDatasets
-  },
-  options: {
-    responsive: true,
-    plugins: {
-      title: {
-        display: true,
-      },
-      legend: {
-        position: 'top'
-      }
-    },
-    scales: {
-      y: {
-        title: {
-          display: true,
-          text: "Liter"
-        }
-      },
-      x: {
-        title: {
-          display: true,
-          text: "År"
-        }
-      }
-    }
-  }
-};
-
 window.addEventListener("load", () => {
   const ctx3 = document.getElementById("myChart3").getContext("2d");
   new Chart(ctx3, config);
@@ -583,10 +513,25 @@ window.addEventListener('resize', updateCarousel);
 const modal = document.getElementById('carousel-modal');
 const modalText = document.getElementById('carousel-modal-text');
 
-function openModal(index) {
-  modalText.innerHTML = texts[index];
-  modal.style.display = 'block';
-}
+ const chartModal = document.getElementById('chartModal');
+  const openChartModal = document.getElementById('openModal');
+  const closeChartModalBtn = chartModal.querySelector('.close');
+
+
+  openChartModal.addEventListener('click', (e) => {
+    e.preventDefault(); // förhindra att länken scrollar uppåt
+    chartModal.style.display = 'block';
+  });
+
+  closeChartModalBtn.addEventListener('click', () => {
+    chartModal.style.display = 'none';
+  });
+
+  window.addEventListener('click', (e) => {
+    if (e.target === chartModal) {
+      chartModal.style.display = 'none';
+    }
+  });
 
 function closeCarouselModal() {
   modal.style.display = 'none';
