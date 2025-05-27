@@ -274,19 +274,22 @@ hr {
   }
 
   /* === Diagramkort === */
-  .chart-row {
-  display: flex;
+.grid-section {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Två kolumner */
   gap: 1rem;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin: 0 auto 1rem; 
+  padding: 2rem;
+  max-width: 100vw;
+  margin: 0 auto;
+  box-sizing: border-box;
 }
 
 .chart-item {
-  background: #fff; 
+  background: #fff;
   padding: 1.5rem;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   height: 100%;
 }
 
@@ -301,30 +304,31 @@ hr {
   margin-bottom: 1rem;
 }
 
+.chart-item canvas,
+.chart-item #map {
+  width: 100%;
+  height: 18.75rem;
+  max-width: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+
+.chart-photo {
+  background-image: url('img/vingårdtwo.avif'); 
+  background-size: cover;
+  color: #fff; 
+}
+
 .chart-bg  {
-  background-image: url('img/transport.jpg'); /* Ändra till din bilds sökväg */
+  background-image: url('img/transport.jpg'); 
   background-size: cover;
   color: #fff; 
 }
 
 .chart-item.custom-bg {
-  background-color: #F0EBE5; /* Din önskade färg */
+  background-color: #F0EBE5; 
 }
-
-.chart-item canvas,
-.chart-item #map {
-  width: 100%;
-  height: 300px;
-  max-width: 100%;
-  border-radius: 0.5rem;
-}
-
-/* Begränsa kartans maxhöjd så den inte sväller */
-.chart-item #map {
-  height: 300px;
-}
-
-
 
   .footer-logo {
     font-size: 1.4rem;
