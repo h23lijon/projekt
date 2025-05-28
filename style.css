@@ -219,13 +219,8 @@ body {
   margin: 6rem 2rem 0 2rem;
 }
 
-/*Sektion om globala målen===*/
-body { /* vi måste nog byta ut body här*/ 
-  margin: 0;
-  background-color: #F0EBE5;
-  font-family: 'Akhand', sans-serif;
-  color: #333;
-}
+/*Sektion om globala målen===*/ 
+
 
 .process-section {
   padding: 4rem 2rem;
@@ -257,6 +252,7 @@ body { /* vi måste nog byta ut body här*/
   margin: 0;
   font-size: 1.8rem;
   color: #263A99;
+  font-family: "Akhand";  
 }
 
 .step-text p {
