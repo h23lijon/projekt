@@ -1261,7 +1261,7 @@ hr {
     font-size: 0.95rem;
     max-width: 85%; /* centrera men håll bredd lagom */
   }
-}
+
 /* Extra liten mobil: max-width 480px */
 @media (max-width: 640px) {
    .intro-text {
