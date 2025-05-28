@@ -151,7 +151,7 @@ body {
 
 /* Behövs för att inte sticky headern ska hamna i vägen */
 [id] {
-  scroll-margin-top: 12.5rem; 
+  scroll-margin-top: 14.5rem; 
 }
 
 .intro-text {
@@ -195,7 +195,7 @@ body {
     writing-mode: vertical-rl;
     transform: rotate(180deg);
     text-align: center;
-    margin-bottom: 3rem;
+    margin-top: 2.5rem;
   }
 
   .about-section p {
@@ -912,6 +912,13 @@ hr {
   .calculator-source, #result {
     margin-left: 3rem;
   }
+
+     .carousel-wrapper h2 {
+    font-size: 3rem; /* Mindre rubrik på mobiler */
+    text-align: left;
+    margin-left: 0;
+  }
+
 
 }
 
