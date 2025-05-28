@@ -40,14 +40,14 @@ fetch(urlSCB1, {
     const uniqueYears = [...new Set(data.data.map(item => item.key[1]))];
 
     const colorBase = [
-    'rgb(220, 134, 153)',
-    'rgb(136, 176, 75)',
-    'rgb(60, 125, 144)'   
+     '#9FAAE1',
+  '#4459C6', 
+  '#1C2E7C' 
     ];
     const borderColorBase = [
-    'rgb(220, 134, 153)',
-    'rgb(136, 176, 75)',
-    'rgb(60, 125, 144)'   
+    '#9FAAE1',
+  '#4459C6', 
+  '#1C2E7C' 
     ];
 
     const datasets = uniquePackages.map((pkg, index) => {
