@@ -188,14 +188,14 @@ body h1, h2, h3{
     align-items: top; 
     background-size: cover;
     background-position: center;
-    width: 100vw; 
-    height:100vh; 
+    width: 100vw;  
     position: relative;  
     background-color: #F0EBE5;
   }
 
   .about-section h1 {
     font-size: 12rem;
+    font-family: "Akhand";
     color: #263A99;
     writing-mode: vertical-rl;
     transform: rotate(180deg);
@@ -204,8 +204,8 @@ body h1, h2, h3{
   }
 
   .about-section p {
-  max-width: 30rem; /* Begränsa bredden så texten inte blir för lång */
-  margin-left: 2rem; /* lite avstånd från h1 */
+  max-width: 30rem; 
+  margin-left: 2rem; 
   margin-right: 3rem;
   margin-top: 6rem;
   margin-bottom: 1rem;
@@ -216,13 +216,14 @@ body h1, h2, h3{
 
   .vertical-line {
   width: 1px;
-  background-color: rgba(0, 0, 0, 0.1); /* samma som horisontella */
+  background-color: rgba(0, 0, 0, 0.1); 
   height: auto;
-  min-height: 300px; /* justera efter behov */
+  min-height: 300px; 
   margin: 6rem 2rem 0 2rem;
 }
 
-/*Sektion om globala målen===*/
+/*Sektion om globala målen===*/ 
+
 
 .process-section {
   padding: 4rem 2rem;
@@ -254,7 +255,7 @@ body h1, h2, h3{
   margin: 0;
   font-size: 1.8rem;
   color: #263A99;
-  font-family: "Akhand";  
+  font-family: "Akhand";
 }
 
 .step-text p {
@@ -1200,8 +1201,8 @@ hr {
   }
 }
 
-  /* ========================= OM OSS -  h1 liggande============================================ */
-  .about-section {
+  /* /* ========================= OM OSS -  h1 liggande============================================ */
+ /* .about-section {
     flex-direction: column;
     align-items: flex-start;
     padding: 2rem;
@@ -1221,7 +1222,7 @@ hr {
     margin: 1rem 0;
     font-size: 1rem;
     max-width: 100%;
-  }
+  }   */
 
   /* Gör att process-sektionen lägger sig under på mindre skärm */
   .process-section {
