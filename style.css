@@ -135,7 +135,7 @@ body h1, h2, h3{
 
 /* === Hero + Intro === */
 .hero-section {
-  background-image: url(img/vingård.avif); 
+  background-image: url(img/bakgrund.png); 
   background-size: cover;
   background-position: center;
   height: 100vh;
