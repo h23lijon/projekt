@@ -189,9 +189,9 @@ body h1, h2, h3{
     background-size: cover;
     background-position: center;
     width: 100vw; 
- /*    height:100vh; */
+    height:100vh; 
     display: flex;
-/*   position: relative;  */
+ position: relative;  
     background-color: #F0EBE5;
   }
 
@@ -420,6 +420,13 @@ hr {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  position: fixed;
+  bottom: 1.25rem;   
+  right: 1.25rem;    
+  width: 3.125rem;   
+  height: 3.125rem;  
+  cursor: pointer;
+  z-index: 1000;
 }
 
 
@@ -430,17 +437,6 @@ hr {
   height: auto;
   transform: rotate(270deg)
 }
-
- .top-button {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  width: 50px;
-  height: 50px;
-  cursor: pointer;
-  z-index: 1000;
-} 
-
 
  /*  .footer-logo {
     font-size: 1.4rem;
