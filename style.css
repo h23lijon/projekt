@@ -157,6 +157,7 @@ body {
 .intro-text {
   text-align: right;
   font-family: "Akhand";
+  margin: 10rem 5rem;
 }
 
 .intro-text h1 { 
@@ -272,14 +273,6 @@ hr {
   border-top: 1px solid rgba(0, 0, 0, 0.1);
   margin: 0;
 }
-
-/* === Sektion alkoholkonsumtion === */
-
-  .alcohol-consumption h1 {
-    font-size: 6rem;
-    color: #263A99;
-    font-family: "Akhand";
-  }
 
   /* === Diagramkort === */
 .grid-section {
@@ -456,11 +449,6 @@ hr {
     background-color: #fff;
   }
 */
-
-  #map {
-    width: 100vw;
-    height: 100vh;
-  }
 
   .top-button {
   position: fixed;
@@ -849,16 +837,23 @@ hr {
   }
 
   /* ==================== MEDIA QUERIES ==================== */
-
-/* Mellanstora skärmar: 1024px - 1920px (64rem - 117.8rem) */
-@media (max-width: 117.8rem) and (min-width: 64rem) {
-  .intro-text {
-    margin: 12rem 8rem 8rem 8rem;
-  }
-}
-
 @media (max-width: 740px) {
-  .vertical-line {
+  .intro-text {
+    text-align: center;
+  }
+
+  .intro-text p {
+    margin: 0 1rem;
+    text-align: center;
+  }
+
+  .intro-text h1 {
+    font-size: 4rem;
+    margin: 0 1rem;
+    text-align: center;
+  }
+
+.vertical-line {
     display: none;
   }
 }
@@ -866,24 +861,10 @@ hr {
 /* Surfplattor: 600px - 1024px (37.5rem - 64rem) */
 @media (max-width: 64rem) and (min-width: 37.5rem) {
   .intro-text {
-    margin: 8rem 5rem 5rem 5rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    text-align: right;
   }
-
-  .intro-text h1,
-  .intro-text p {
-    border-left-width: 0.6rem;
-    border-radius: 0.4rem 0 0 0.4rem;
-  }
-
-  .intro-text h1 {
-    font-size: 1.8rem;
-  }
-
-  .intro-text p {
-    font-size: 1.1rem;
-    margin-right: 5rem;
-  }
-
 
   .menu-toggle {
     display: flex;
@@ -937,20 +918,10 @@ hr {
 
 /* Mobiler: upp till 600px (max-width: 37.5rem) */
 @media (max-width: 37.5rem) {
-  .intro-text {
-    margin: 6rem 2rem 2rem 2rem;
+    .intro-text {
+    margin-left: 2rem;
+    margin-right: 2rem;
   }
-
-  .intro-text h1 {
-    font-size: 1.3rem;
-    border-left-width: 0.4rem;
-  }
-
-  .intro-text p {
-    font-size: 0.9rem;
-    border-left-width: 0.4rem;
-  }
-  
   .cards {
     grid-template-columns: 1fr;
   }
@@ -1063,6 +1034,11 @@ hr {
 
 /* Karusell: mobil och surfplatta */
 @media (max-width: 768px) {
+    .intro-text {
+    margin-left: 2rem;
+    margin-right: 2rem;
+  }
+
   .carousel-wrapper {
     flex-direction: column;
     align-items: center;
@@ -1159,6 +1135,11 @@ hr {
 }
 /* Extra liten mobil: max-width 480px */
 @media (max-width: 640px) {
+   .intro-text {
+    margin-left: 2rem;
+    margin-right: 2rem;
+  }
+
   .carousel-text {
     padding: 0 1.5rem;
     margin: 0 auto;
@@ -1172,6 +1153,11 @@ hr {
 
 /* Extra liten mobil: max-width 480px */
 @media screen and (max-width: 480px) {
+  .intro-text {
+    margin-left: 2rem;
+    margin-right: 2rem;
+  }
+
   .carousel-wrapper {
     margin: 2rem auto;
     padding: 0.5rem;
