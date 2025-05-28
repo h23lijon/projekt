@@ -158,7 +158,7 @@ body {
 .intro-text {
   text-align: right;
   font-family: "Akhand";
-  margin: 10rem 5rem;
+  margin: 10rem 5rem 10rem 5rem;
 }
 
 .intro-text h1 { 
@@ -219,8 +219,8 @@ body {
   margin: 6rem 2rem 0 2rem;
 }
 
-/*===Sektion om globala målen===*/
-body {
+/*Sektion om globala målen===*/
+body { /* vi måste nog byta ut body här*/ 
   margin: 0;
   background-color: #F0EBE5;
   font-family: 'Akhand', sans-serif;
@@ -308,16 +308,6 @@ hr {
   margin-bottom: 1rem;
 }
 
-.chart-bg  {
-  background-image: url('img/transport.jpg'); /* Ändra till din bilds sökväg */
-  background-size: cover;
-  color: #fff; 
-}
-
-.chart-item.custom-bg {
-  background-color: #F0EBE5; /* Din önskade färg */
-}
-
 .chart-item canvas,
 .chart-item #map {
   width: 100%;
@@ -327,15 +317,14 @@ hr {
   box-sizing: border-box;
 }
 
-
 .chart-photo {
-  background-image: url('img/vingårdtwo.avif'); 
+  background-image: url('img/lastbil.png');
   background-size: cover;
   color: #fff; 
 }
 
 .chart-bg  {
-  background-image: url('img/transport.jpg'); 
+  background-image: url('img/transport.png');
   background-size: cover;
   color: #fff; 
 }

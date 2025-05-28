@@ -193,7 +193,7 @@ Promise.all([vinPromise, ölPromise, spritPromise])
           datasets: [{
             label: 'Konsumtion',
             data: rawData.map(d => d.value),
-            backgroundColor: 'transparent'
+            backgroundColor: 'transparent',
           }]
         };
 
@@ -212,9 +212,13 @@ Promise.all([vinPromise, ölPromise, spritPromise])
             responsive: true,
             plugins: {
               legend: { display: false },
+              labels:{
+                color: '#F0EBE5'
+              },
               title: {
                 display: true,
-                text: 'Konsumtion av vin, öl och sprit (miljoner kr, 2023)'
+                text: 'Konsumtion av vin, öl och sprit (miljoner kr, 2023)',
+                color: '#F0EBE5'
               }
             },
             scales: {
@@ -222,13 +226,26 @@ Promise.all([vinPromise, ölPromise, spritPromise])
                 beginAtZero: true,
                 title: {
                   display: true,
-                  text: 'Miljoner kronor'
-                }
+                  text: 'Miljoner kronor',
+                  color: '#F0EBE5',
+                },
+                ticks: {
+                  color: '#F0EBE5',
+                  font: {
+                    size: 16,
+                    weight:'Bold',
+                  }
+                },
+                grid: {
+                  color: '#F0EBE5',
+                },
               },
               x: {
                 ticks: {
+                  color: '#F0EBE5',
                   font: {
-                    size: 14
+                    size: 16,
+                    weight: 'Bold',
                   }
                 }
               }
