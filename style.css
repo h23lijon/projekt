@@ -209,6 +209,13 @@ body {
   color: #333;
   }
 
+  .vertical-line {
+  width: 1px;
+  background-color: rgba(0, 0, 0, 0.1); /* samma som horisontella */
+  height: auto;
+  min-height: 300px; /* justera efter behov */
+  margin: 6rem 2rem 0 2rem;
+}
 
 /*===Sektion om globala målen===*/
 body {
@@ -847,6 +854,12 @@ hr {
 @media (max-width: 117.8rem) and (min-width: 64rem) {
   .intro-text {
     margin: 12rem 8rem 8rem 8rem;
+  }
+}
+
+@media (max-width: 740px) {
+  .vertical-line {
+    display: none;
   }
 }
 
