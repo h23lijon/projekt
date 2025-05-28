@@ -40,14 +40,14 @@ fetch(urlSCB1, {
     const uniqueYears = [...new Set(data.data.map(item => item.key[1]))];
 
     const colorBase = [
-    'rgb(220, 134, 153)',
-    'rgb(136, 176, 75)',
-    'rgb(60, 125, 144)'   
+     '#9FAAE1',
+  '#4459C6', 
+  '#1C2E7C' 
     ];
     const borderColorBase = [
-    'rgb(220, 134, 153)',
-    'rgb(136, 176, 75)',
-    'rgb(60, 125, 144)'   
+    '#9FAAE1',
+  '#4459C6', 
+  '#1C2E7C' 
     ];
 
     const datasets = uniquePackages.map((pkg, index) => {
@@ -81,7 +81,13 @@ fetch(urlSCB1, {
             display: true,
           },
           legend: {
-            position: 'top'
+            position: 'top',
+            labels: {
+              font: {
+                size: 16,
+                weight: 'bold'
+              }
+            }
           }
         },
         scales: {
@@ -89,13 +95,33 @@ fetch(urlSCB1, {
             beginAtZero: true,
             title: {
               display: true,
-              text: 'Ton'
+              text: 'Ton',
+              font: {
+                size:16,
+                weight: 'Bold'
+              }
+            },
+            ticks: {
+              font:{
+                size:16,
+                weight:'bold'
+              }
             }
           },
           x: {
             title: {
               display: true,
-              text: 'År'
+              text: 'År',
+              font: {
+                size:16,
+                weight:'Bold'
+              }
+            },
+            ticks: {
+              font:{
+                size:16,
+                weight:'bold'
+              }
             }
           }
         }
@@ -301,16 +327,17 @@ window.addEventListener("load", () => {
 const co2Labels = ["Box (3 l)", "Påse (2 l)", "Papp (1 l)", "Returglas (0.5 l)", "Burk (0.375 l)", "PET (0.75 l)", "Lättare glasflaska (0.75 l)", "Glasflaska (0.75 l)", "Tung glasflaska (0.75 l, mousserande)"];
 const co2Values = [68, 71, 76, 110, 176, 243, 532, 664, 894];
 const backgroundColors = [
-  'rgb(220, 134, 153)',
-  'rgb(136, 176, 75)',
-  'rgb(60, 125, 144)',
-  'rgb(39, 60, 118)',
-  'rgb(153, 174, 174)',
-  'rgb(254, 231, 21)',
-  'rgb(255, 111, 97)',
-  'rgb(150, 45, 73)',
-  'rgb(198, 35, 104)'
+  '#C3CAE9', 
+  '#9FAAE1',
+  '#7C8ADA',
+  '#586AD2',
+  '#4459C6',
+  '#3A4EB6',
+  '#3043A6',
+  '#263A99', 
+  '#1C2E7C'  
 ];
+
 
 const ctx4 = document.getElementById('myChart4').getContext('2d');
 new Chart(ctx4, {
@@ -428,13 +455,12 @@ fetch('swedish_regions.geojson')
 
     const layout = {
       mapbox: {
-        style: 'carto-positron',
-        center: { lon: 17, lat: 63 },
-        zoom: 3.3
+      style: 'carto-positron',
+      center: { lon: 17, lat: 63 },
+      zoom:2.5,
       },
-      margin: { t: 0, b: 0, l: 0, r: 0 }
+     margin: { t: 0, b: 0, l: 0, r: 0 }
     };
-
     Plotly.newPlot('map', data, layout, {
       mapboxAccessToken: 'pk.eyJ1IjoibW9ja3Rva2VuIiwiYSI6ImNrd3UzY3gydzA4dGIyb3A0cWQzYmF0N2cifQ.eYxOUUv-QWHM5cHHzGdrMg',
       responsive: true
