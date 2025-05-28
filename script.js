@@ -218,7 +218,11 @@ Promise.all([vinPromise, ölPromise, spritPromise])
               title: {
                 display: true,
                 text: 'Konsumtion av vin, öl och sprit (miljoner kr, 2023)',
-                color: '#F0EBE5'
+                color: '#F0EBE5',
+                font: {
+                  size:16,
+                  weight:'Bold'
+                }
               }
             },
             scales: {
@@ -228,6 +232,10 @@ Promise.all([vinPromise, ölPromise, spritPromise])
                   display: true,
                   text: 'Miljoner kronor',
                   color: '#F0EBE5',
+                  font: {
+                    size: 16,
+                    weight:'Bold'
+                  }
                 },
                 ticks: {
                   color: '#F0EBE5',
