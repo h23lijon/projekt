@@ -573,21 +573,28 @@ window.closeCarouselModal = closeCarouselModal;
 document.addEventListener('DOMContentLoaded', function () {
   const header = document.querySelector('.site-header');
   const hero = document.querySelector('.hero-section');
+  const logo = document.querySelector('.header-logo');
+  
+  const modal = document.getElementById('carousel-modal');
+  const modalText = document.getElementById('carousel-modal-text');
 
   window.addEventListener('scroll', () => {
     const heroBottom = hero.getBoundingClientRect().bottom;
 
     if (heroBottom <= 0) {
       header.classList.add('scrolled');
+      if (logo) logo.src = 'img/coctail_blå.svg';
     } else {
       header.classList.remove('scrolled');
+      if (logo) logo.src = 'img/coctail_vit.svg';
     }
   });
-});
 
-function openModal(index) {
-  if (!modal || !modalText) return;
-  modalText.innerHTML = texts[index];
-  modal.style.display = 'block';
-}
+  // Flytta in openModal om du vill ha lokal åtkomst till modalText
+  window.openModal = function(index) {
+    if (!modal || !modalText) return;
+    modalText.innerHTML = texts[index];
+    modal.style.display = 'block';
+  };
+});
 
