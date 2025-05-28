@@ -225,12 +225,6 @@ body h1, h2, h3{
 }
 
 /*Sektion om globala målen===*/
-body { /* vi måste nog byta ut body här*/ 
-  margin: 0;
-  background-color: #F0EBE5;
-  font-family: 'Akhand', sans-serif;
-  color: #333;
-}
 
 .process-section {
   padding: 4rem 2rem;
