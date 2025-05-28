@@ -89,13 +89,33 @@ fetch(urlSCB1, {
             beginAtZero: true,
             title: {
               display: true,
-              text: 'Ton'
+              text: 'Ton',
+              font: {
+                size:16,
+                weight: 'Bold'
+              }
+            },
+            ticks: {
+              font:{
+                size:16,
+                weight:'bold'
+              }
             }
           },
           x: {
             title: {
               display: true,
-              text: 'År'
+              text: 'År',
+              font: {
+                size:16,
+                weight:'Bold'
+              }
+            },
+            ticks: {
+              font:{
+                size:16,
+                weight:'bold'
+              }
             }
           }
         }
