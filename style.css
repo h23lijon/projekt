@@ -157,7 +157,7 @@ body h1, h2, h3{
 
 /* Behövs för att inte sticky headern ska hamna i vägen */
 [id] {
-  scroll-margin-top: 14.5rem; 
+  scroll-margin-top: 7rem; 
 }
 
 .intro-text {
@@ -1003,6 +1003,32 @@ hr {
     margin-left: 0;
   }
 
+   .about-section {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 2rem;
+    height: auto;
+    margin-bottom: 1rem;
+  }
+
+  .about-section h1 {
+    writing-mode: horizontal-tb;
+    transform: none;
+    font-size: 3rem;
+    text-align: left;
+  
+  }
+
+  .about-section p {
+    margin: 1rem 0;
+    font-size: 1rem;
+    max-width: 100%;
+  }   
+
+  .vertical-line {
+    display: none;
+  }
+
 
 }
 
@@ -1199,10 +1225,7 @@ hr {
   .site-footer {
     padding: 1rem; 
   }
-}
-
-  /* /* ========================= OM OSS -  h1 liggande============================================ */
- /* .about-section {
+   .about-section {
     flex-direction: column;
     align-items: flex-start;
     padding: 2rem;
@@ -1215,14 +1238,16 @@ hr {
     transform: none;
     font-size: 3rem;
     text-align: left;
-    margin-bottom: 1rem;
+  
   }
 
   .about-section p {
     margin: 1rem 0;
     font-size: 1rem;
     max-width: 100%;
-  }   */
+  }   
+
+
 
   /* Gör att process-sektionen lägger sig under på mindre skärm */
   .process-section {
@@ -1262,6 +1287,9 @@ hr {
     font-size: 0.95rem;
     max-width: 85%; /* centrera men håll bredd lagom */
   }
+ 
+
+}
 
 /* Extra liten mobil: max-width 480px */
 @media (max-width: 640px) {
@@ -1368,3 +1396,5 @@ hr {
   }
 
 }
+
+
