@@ -81,7 +81,13 @@ fetch(urlSCB1, {
             display: true,
           },
           legend: {
-            position: 'top'
+            position: 'top',
+            labels: {
+              font: {
+                size: 16,
+                weight: 'bold'
+              }
+            }
           }
         },
         scales: {
