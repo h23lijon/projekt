@@ -448,13 +448,12 @@ fetch('swedish_regions.geojson')
 
     const layout = {
       mapbox: {
-        style: 'carto-positron',
-        center: { lon: 17, lat: 63 },
-        zoom: 3.3
+      style: 'carto-positron',
+      center: { lon: 17, lat: 63 },
+      zoom:2.5,
       },
-      margin: { t: 0, b: 0, l: 0, r: 0 }
+     margin: { t: 0, b: 0, l: 0, r: 0 }
     };
-
     Plotly.newPlot('map', data, layout, {
       mapboxAccessToken: 'pk.eyJ1IjoibW9ja3Rva2VuIiwiYSI6ImNrd3UzY3gydzA4dGIyb3A0cWQzYmF0N2cifQ.eYxOUUv-QWHM5cHHzGdrMg',
       responsive: true

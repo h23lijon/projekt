@@ -288,7 +288,7 @@ hr {
 }
 
 .chart-item {
-  background: #fff;
+  background: #F7F7F7;
   padding: 1.5rem;
   display: flex;
   flex-direction: column;
@@ -329,9 +329,8 @@ hr {
   color: #fff; 
 }
 
-.chart-item.custom-bg {
-  background-color: #F0EBE5; 
-}
+
+  /* === Footer*/
 
   .footer-logo {
     font-size: 1.4rem;
