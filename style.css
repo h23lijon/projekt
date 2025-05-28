@@ -934,6 +934,10 @@ hr {
     grid-column: span 1;
   }
 
+    .vertical-line {
+    display: none;
+  }
+
   .menu-toggle {
     display: flex;
     flex-direction: column;
@@ -1021,6 +1025,10 @@ hr {
 
   .carousel-btn img {
     width: 2rem;
+  }
+
+    .vertical-line {
+    display: none;
   }
 }
 
@@ -1116,6 +1124,10 @@ hr {
     margin-right: auto;
   }
 
+    .vertical-line {
+    display: none;
+  }
+
   .step-text p {
     font-size: 0.95rem;
     max-width: 85%; /* centrera men håll bredd lagom */
@@ -1189,6 +1201,9 @@ hr {
     width: 100%;
   }
 
+    .vertical-line {
+    display: none;
+  }
   .step {
     flex-direction: column;
     align-items: flex-start;
