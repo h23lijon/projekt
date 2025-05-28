@@ -321,16 +321,17 @@ window.addEventListener("load", () => {
 const co2Labels = ["Box (3 l)", "Påse (2 l)", "Papp (1 l)", "Returglas (0.5 l)", "Burk (0.375 l)", "PET (0.75 l)", "Lättare glasflaska (0.75 l)", "Glasflaska (0.75 l)", "Tung glasflaska (0.75 l, mousserande)"];
 const co2Values = [68, 71, 76, 110, 176, 243, 532, 664, 894];
 const backgroundColors = [
-  'rgb(220, 134, 153)',
-  'rgb(136, 176, 75)',
-  'rgb(60, 125, 144)',
-  'rgb(39, 60, 118)',
-  'rgb(153, 174, 174)',
-  'rgb(254, 231, 21)',
-  'rgb(255, 111, 97)',
-  'rgb(150, 45, 73)',
-  'rgb(198, 35, 104)'
+  '#C3CAE9', 
+  '#9FAAE1',
+  '#7C8ADA',
+  '#586AD2',
+  '#4459C6',
+  '#3A4EB6',
+  '#3043A6',
+  '#263A99', 
+  '#1C2E7C'  
 ];
+
 
 const ctx4 = document.getElementById('myChart4').getContext('2d');
 new Chart(ctx4, {
