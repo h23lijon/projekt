@@ -776,7 +776,7 @@ hr {
     line-height: 1.6;
     letter-spacing: 0.02rem;
     margin-top: 1rem;
-
+    margin-left: 10rem;
     color: #fff;
     font-family: 'Segoe UI', sans-serif;
   }
@@ -894,9 +894,10 @@ hr {
 
   .calculator form,
   .calculator h1,
-  .calculator-source {
+  .calculator-source, #result {
     margin-left: 3rem;
   }
+
 }
 
 /* Mobiler: upp till 600px (max-width: 37.5rem) */
@@ -966,7 +967,8 @@ hr {
 
   .calculator form,
   .calculator h1,
-  .calculator-source {
+  .calculator-source,
+  #result {
     margin-left: 0;
     max-width: 100%;
   }
