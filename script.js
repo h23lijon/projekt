@@ -622,34 +622,42 @@ if (chartModal && openChartModal && closeChartModalBtn) {
 
 const hero = document.querySelector('.hero-section');
 const header = document.querySelector('.site-header');
-const logo = document.querySelector('.header-logo'); // om du använder logobyte
+const logo = document.querySelector('.header-logo');
 
+// Scroll: lägger till 'scrolled' klass och byter logga
+window.addEventListener('scroll', () => {
+  const heroBottom = hero.getBoundingClientRect().bottom;
 
-  window.addEventListener('scroll', () => {
-    const heroBottom = hero.getBoundingClientRect().bottom;
-
-    if (heroBottom <= 0) {
-      header.classList.add('scrolled');
-      if (logo) logo.src = 'img/coctail_blå.svg';
-    } else {
-      header.classList.remove('scrolled');
-      if (logo) logo.src = 'img/coctail_vit.svg';
-    }
-
-    header.addEventListener('mouseenter', () => {
-  if (!header.classList.contains('scrolled')) {
-    header.classList.add('hover-scrolled');
+  if (heroBottom <= 0) {
+    header.classList.add('scrolled');
+    header.classList.remove('hover-scrolled'); // ta bort ev. hoverklass
+    if (logo) logo.src = 'img/coctail_blå.svg';
+  } else {
+    header.classList.remove('scrolled');
+    if (logo) logo.src = 'img/coctail_vit.svg';
   }
 });
 
+// Hover: lägg till 'hover-scrolled' och byt logga till blå
+header.addEventListener('mouseenter', () => {
+  if (!header.classList.contains('scrolled')) {
+    header.classList.add('hover-scrolled');
+    if (logo) logo.src = 'img/coctail_blå.svg';
+  }
+});
+
+// Tar bort hoverklass och byt tillbaka till vit logga om i hero
 header.addEventListener('mouseleave', () => {
   header.classList.remove('hover-scrolled');
+  const heroBottom = hero.getBoundingClientRect().bottom;
+  if (heroBottom > 0 && logo) {
+    logo.src = 'img/coctail_vit.svg';
+  }
 });
-  });
 
-// Modal för karusell
 
-  // Flytta in openModal om man vill ha lokal åtkomst till modalText
+// Modal för karusell =====================================================
+// Flytta in openModal om man vill ha lokal åtkomst till modalText
 window.openModal = function(index) {
   if (!modal || !modalText) return;
   modalText.innerHTML = texts[index];

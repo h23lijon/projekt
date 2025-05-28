@@ -599,8 +599,8 @@ hr {
   flex: 1 1 65%;
   position: relative;
   overflow: hidden;
-  padding: 0 3rem; /* lägger samma vänster- och högermarginal som .carousel-text */
-  margin-bottom: 3rem; /* lägger till lite marginal under karusellen */
+  padding: 0 3rem; /*  samma vänster- och högermarginal som .carousel-text */
+  margin-bottom: 3rem; /* lite marginal under karusellen */
 }
 .carousel-text p {
   color: #59627a;
