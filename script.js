@@ -568,3 +568,9 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 
+function openModal(index) {
+  if (!modal || !modalText) return;
+  modalText.innerHTML = texts[index];
+  modal.style.display = 'block';
+}
+

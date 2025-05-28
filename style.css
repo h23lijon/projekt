@@ -181,7 +181,7 @@ body {
     align-items: top; 
     background-size: cover;
     background-position: center;
-    height: 100vh; /* Tar hela fönstrets höjd */
+
     width: 100vw;  /* Tar hela fönstrets bredd */
     display: flex;
    /*  position: relative; */
@@ -203,6 +203,7 @@ body {
   margin-left: 2rem; /* lite avstånd från h1 */
   margin-right: 3rem;
   margin-top: 6rem;
+  margin-bottom: 1rem;
   font-size: 1.2rem;
   line-height: 1.5;
   color: #333;
@@ -302,13 +303,13 @@ hr {
 }
 
 .chart-bg  {
-  background-image: url('img/transport.jpg'); /* Ändra till din bilds sökväg */
+  background-image: url('img/transport.jpg'); 
   background-size: cover;
   color: #fff; 
 }
 
 .chart-item.custom-bg {
-  background-color: #F0EBE5; /* Din önskade färg */
+  background-color: #F0EBE5; 
 }
 
 .chart-item canvas,
@@ -369,7 +370,7 @@ hr {
     opacity: 0.8;
   }
   
-  /* Sektion */
+  /* Sektion 
   .information {
     max-width: 50rem;
     margin: 4rem auto;
@@ -383,7 +384,7 @@ hr {
     letter-spacing: 0.02rem;
   }
   
-  /*  Lista med staplade boxar  */
+    Lista med staplade boxar  TA BORT?
   .info-list {
     display: flex;
     flex-direction: column;
@@ -394,7 +395,7 @@ hr {
     width: 100%;
   }
   
-  /* Varje utfällbar ruta  */
+
   .info-box {
     border: 0.0625rem solid #ccc;
     border-radius: 0.375rem;
@@ -431,7 +432,7 @@ hr {
     line-height: 1.6;
     background-color: #fff;
   }
-
+*/
 
   #map {
     width: 100vw;
@@ -464,26 +465,30 @@ hr {
   position: relative;
   margin: 2rem auto;
   align-items: flex-start;
+  background-color: #f7f7f7;
 }
 
 .carousel-wrapper h2 {
-  font-size: 6rem;
+  font-size: 4rem;
   margin-bottom: 0.625rem;
+  margin-top: 3rem;
   color: #263A99;
   letter-spacing: 0.02rem;
   font-family: "Akhand";
+
 }
 
 .carousel-text {
   flex: 1 1 30%;
   text-align: left;
-  margin-left: 3rem;
+  margin-left: 4.5rem;
 }
 .carousel-container {
   flex: 1 1 65%;
   position: relative;
   overflow: hidden;
   padding: 0 3rem; /* lägger samma vänster- och högermarginal som .carousel-text */
+  margin-bottom: 3rem; /* lägger till lite marginal under karusellen */
 }
 .carousel-text p {
   color: #59627a;
@@ -542,6 +547,22 @@ hr {
   display: block;
   border-radius: 8px;
   margin-bottom: 1rem;
+}
+.read-more-btn {
+  background-color: #263A99;
+  border: 2px solid #263A99;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.read-more-btn:hover {
+  background-color: #12193a !important;
+  border-color: #12193a !important;
+  color: white !important;
 }
 
 /* Bild-overlay-effekt */
@@ -811,6 +832,7 @@ hr {
   .intro-text {
     margin: 12rem 8rem 8rem 8rem;
   }
+
 }
 
 /* Surfplattor: 600px - 1024px (37.5rem - 64rem) */
@@ -826,13 +848,14 @@ hr {
   }
 
   .intro-text h1 {
-    font-size: 1.8rem;
+    font-size: 8rem;
   }
 
   .intro-text p {
     font-size: 1.1rem;
     margin-right: 5rem;
   }
+
 
   .menu-toggle {
     display: flex;
@@ -883,7 +906,7 @@ hr {
   }
 
   .intro-text h1 {
-    font-size: 1.3rem;
+    font-size: 6em;
     border-left-width: 0.4rem;
   }
 
@@ -1027,12 +1050,13 @@ hr {
     display: none !important;
   }
 
-  /* OM OSS - gör h1 liggande */
+  /* ========================= OM OSS -  h1 liggande============================================ */
   .about-section {
     flex-direction: column;
     align-items: flex-start;
     padding: 2rem;
     height: auto;
+    margin-bottom: 1rem;
   }
 
   .about-section h1 {
@@ -1084,7 +1108,7 @@ hr {
     max-width: 85%; /* centrera men håll bredd lagom */
   }
 }
-/* Behövs för karusellen */
+/* Extra liten mobil: max-width 480px */
 @media (max-width: 640px) {
   .carousel-text {
     padding: 0 1.5rem;
