@@ -635,7 +635,19 @@ const logo = document.querySelector('.header-logo'); // om du använder logobyte
       header.classList.remove('scrolled');
       if (logo) logo.src = 'img/coctail_vit.svg';
     }
+
+    header.addEventListener('mouseenter', () => {
+  if (!header.classList.contains('scrolled')) {
+    header.classList.add('hover-scrolled');
+  }
+});
+
+header.addEventListener('mouseleave', () => {
+  header.classList.remove('hover-scrolled');
+});
   });
+
+// Modal för karusell
 
   // Flytta in openModal om man vill ha lokal åtkomst till modalText
 window.openModal = function(index) {
