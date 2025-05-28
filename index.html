@@ -47,7 +47,6 @@
   </section>
 
 <!-- Om oss -->
-<!-- Om oss -->
 <section class="about-section" id="about">
     <h1>OM OSS</h1>
       <p>
@@ -80,7 +79,7 @@
 
 <!---------------------------------Karusellen------------------------------------->
  
-<!--karusell  -->
+<!-- Karusell -->
 <div class="carousel-wrapper" id="carousel">
   <div class="carousel-text">
     <h2>ALKOHOL OCH KLIMATET</h2>
@@ -99,44 +98,50 @@
 
     <div class="carousel">
       <div class="carousel-track">
-        <div class="carousel-card">
+
+        <!-- Kort 1 -->
+        <div class="carousel-card" data-modal-id="modal-1">
           <div class="image-wrapper">
             <img src="img/bild1.jpg" alt="Klimatpåverkan per dryck" />
             <div class="image-overlay"></div>
           </div>
           <h3>Klimatpåverkan per dryck</h3>
           <p>Vilken dryck påverkar klimatet mest? Starkvin och vin leder listan.</p>
-          <button class="read-more-btn" onclick="openModal(0)">Läs mer</button>
+          <button class="read-more-btn">Läs mer</button>
         </div>
-        <div class="carousel-card">
+
+        <!-- Kort 2 -->
+        <div class="carousel-card" data-modal-id="modal-2">
           <div class="image-wrapper">
             <img src="img/bild2.jpg" alt="Vem dricker vad" />
             <div class="image-overlay"></div>
           </div>
           <h3>Vem dricker vad – och hur mycket?</h3>
           <p>Hur fördelas alkoholkonsumtionen i Sverige? Vad orsakar mest utsläpp?</p>
-        <button class="read-more-btn" onclick="openModal(1)">Läs mer</button>
+          <button class="read-more-btn">Läs mer</button>
         </div>
-        <div class="carousel-card">
+
+        <!-- Kort 3 -->
+        <div class="carousel-card" data-modal-id="modal-3">
           <div class="image-wrapper">
             <img src="img/bild3.jpg" alt="Systembolaget och hållbarhet" />
             <div class="image-overlay"></div>
           </div>
           <h3>Systembolaget och hållbarhet</h3>
-           <p>Hur fördelas alkoholkonsumtionen i Sverige? Vad orsakar mest utsläpp?</p>
-          <button class="read-more-btn" onclick="openModal(2)">Läs mer</button>
+          <p>Hur arbetar Systembolaget med hållbarhet?</p>
+          <button class="read-more-btn">Läs mer</button>
         </div>
-        <div class="carousel-card">
-          <div class="image-wrapper">
-            <img src="img/bild1.jpg" alt="Klimatpåverkan per dryck" />
-            <div class="image-overlay"></div>
-          </div>
-          <h3>Klimatpåverkan per dryck</h3>
-          <p>Vilken dryck påverkar klimatet mest? Starkvin och vin leder listan.</p>
-            <button class="read-more-btn" onclick="openModal(0)">Läs mer</button>
-        </div>
-  
-       
+
+        <!-- Kort 4  -->
+       <div class="carousel-card" data-modal-id="modal-4">
+  <div class="image-wrapper">
+    <img src="img/bild4.jpg" alt="Klimatpåverkan per dryck" />
+    <div class="image-overlay"></div> 
+  </div>
+  <h3>Hållbarhet i praktiken</h3>
+  <p>Hur praktiska val kan minska utsläppen.</p>
+  <button class="read-more-btn">Läs mer</button>
+</div>
       </div>
     </div>
 
@@ -146,7 +151,7 @@
   </div>
 </div>
 
-<!-- Modal karusell -->
+<!-- Modal som visas vid "Läs mer" -->
 <div id="carousel-modal" class="modal">
   <div class="modal-content">
     <span class="modal-close" onclick="closeCarouselModal()">&times;</span>
@@ -154,6 +159,55 @@
   </div>
 </div>
 
+<!-- Templates för modalinnehåll -->
+<template id="modal-1">
+  <h3>Klimatpåverkan per dryck</h3>
+  <p>Hallström et al. (2018) visar i sin studie att alkoholhaltiga drycker som konsumeras
+             i Sverige ger upphov till växthusgasutsläpp i spannet 0,73–2,38 kg CO₂e per liter. Starkvin och 
+             vanligt vin har den högsta klimatpåverkan per liter, följt av sprit och därefter öl. När man tar
+              hänsyn till konsumtionsmönster förändras dock den relativa påverkan mellan olika dryckesslag. 
+              Vanligt vin står då för den största andelen av utsläppen (61 %), följt av öl (33 %), medan sprit
+               och starkvin endast står för cirka 6 %, detta på grund av lägre konsumtionsnivåer (Hallström et al., 2018).</p>
+</template>
+
+<template id="modal-2">
+  <h3>Vem dricker vad – och hur mycket?</h3>
+  <p>Enligt Guttormsson (2024) beräknades den genomsnittliga alkoholkonsumtionen till 8,64 liter 
+            ren alkohol per invånare (15 år och äldre) år 2023. Den mest populära drycken är vin (43,7 %), 
+            följt av öl (31,6 %), sprit (18,4 %), folköl (4 %) samt cider och blanddrycker (2 %). Alkoholkonsumtion 
+            ger i genomsnitt upphov till 52 kg CO₂e per person och år och cirka 3 % av de totala kostrelaterade 
+            växthusgasutsläppen. I den grupp som dricker mest kan andelen nå 6–11 % . </p>
+            <p>Mäns alkoholkonsumtion ger 90 % 
+            mer utsläpp än kvinnors, vilket hänger ihop med skillnader i volym (Hallström et al., 2018). 
+            Folkhälsomyndigheten (2024) visar att cirka 16 % av befolkningen har riskkonsumtion. 
+            Mellan 2004 och 2024 har andelen minskat från 87 % till 82 %. Män rapporterar riskkonsumtion
+             i högre grad än kvinnor: 18 % respektive 13 %.</p>
+
+</template>
+
+<template id="modal-3">
+  <h3>Systembolaget och hållbarhet</h3>
+  <p>En särskilt intressant aspekt av klimatpåverkan från svensk alkoholkonsumtion är att 
+            Sverige har ett detaljhandelsmonopol för alkohol, förvaltat av Systembolaget. Till skillnad från
+             många kommersiella aktörer är Systembolaget inte vinstdrivet, de har i stället ett folkhälsouppdrag. 
+             Detta gör det möjligt att lägga resurser på att förverkliga hållbarhetsmål utan konflikt med lönsamhet 
+             (Claesson et al., 2024).</p>
+</template>
+
+<template id="modal-4">
+  <h3>Hållbarhet i praktiken</h3>
+  <p>Även transporter bidrar till klimatpåverkan. 
+            Enligt Gierling & Blanke (2021) ger en vinflaska som levereras lokalt utsläpp på bara 6–9 gram CO₂, 
+            medan en importerad flaska kan ge upp till 250 gram, beroende på 
+            avstånd och transportsätt. Dessutom står bilresor till vingården för en stor andel av vinets totala 
+            limatavtryck – i vissa fall lika mycket som själva produktionen. Att välja närproducerat och att samordna 
+            inköp 
+            kan därför göra skillnad (Gierling & Blanke, 2021).</p>
+</template>
+
+
+
+<!-- Diagram----------------------------------->
 <section class="grid-section" id="grid1">
   <div class="chart-item chart-photo">
     <div class="text-row">
@@ -194,7 +248,7 @@
   </div>
 </section>
 
-  <!-- Kalkylatorn  -->
+  <!-- Kalkylatorn  ------------------------->
   <div id="calculator" class="calculator">
     <h1>Beräkna klimatpåverkan av din alkoholkonsumtion*</h1>
     <p></p>

@@ -519,14 +519,9 @@ fetch('swedish_regions.geojson')
   }
 
   // Karusell ===============================//
-const texts = [
-  `<h3>Klimatpåverkan per dryck</h3><p>Hallström et al. (2018)...</p>`,
-  `<h3>Vem dricker vad – och hur mycket?</h3><p>Guttormsson (2024)...</p>`,
-  `<h3>Systembolaget och hållbarhet</h3><p>Systembolaget är inte vinstdrivet...</p>`
-];
+let currentIndex = 1;
 
-let currentIndex = 2;
-
+// Justera karusellens position för desktop
 function updateCarousel() {
   const track = document.querySelector('.carousel-track');
   const cards = document.querySelectorAll('.carousel-card');
@@ -550,6 +545,7 @@ function updateCarousel() {
   track.style.transform = `translateX(${currentOffset - offset}px)`;
 }
 
+// Navigering i karusellen
 function nextSlide() {
   const cards = document.querySelectorAll('.carousel-card');
   if (currentIndex < cards.length - 1) {
@@ -565,19 +561,49 @@ function prevSlide() {
   }
 }
 
+// Initiera karusell
 window.addEventListener('load', updateCarousel);
 window.addEventListener('resize', updateCarousel);
 
+// Modal för karusell
 const modal = document.getElementById('carousel-modal');
 const modalText = document.getElementById('carousel-modal-text');
 
- const chartModal = document.getElementById('chartModal');
-  const openChartModal = document.getElementById('openModal');
-  const closeChartModalBtn = chartModal.querySelector('.close');
+// Läs in innehåll från <template>
+document.querySelectorAll('.carousel-card .read-more-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const card = btn.closest('.carousel-card');
+    const modalId = card.getAttribute('data-modal-id');
+    const template = document.getElementById(modalId);
+    if (template) {
+      modalText.innerHTML = template.innerHTML;
+      modal.style.display = 'block';
+    }
+  });
+});
 
+// Stäng modal om användaren klickar utanför
+function closeCarouselModal() {
+  modal.style.display = 'none';
+}
 
+window.addEventListener('click', (e) => {
+  if (e.target === modal) closeCarouselModal();
+});
+
+// Export till global scope 
+window.prevSlide = prevSlide;
+window.nextSlide = nextSlide;
+window.closeCarouselModal = closeCarouselModal;
+
+// Modal för diagram 
+const chartModal = document.getElementById('chartModal');
+const openChartModal = document.getElementById('openModal');
+const closeChartModalBtn = chartModal?.querySelector('.close');
+
+if (chartModal && openChartModal && closeChartModalBtn) {
   openChartModal.addEventListener('click', (e) => {
-    e.preventDefault(); // förhindra att länken scrollar uppåt
+    e.preventDefault();
     chartModal.style.display = 'block';
   });
 
@@ -590,27 +616,14 @@ const modalText = document.getElementById('carousel-modal-text');
       chartModal.style.display = 'none';
     }
   });
-
-function closeCarouselModal() {
-  modal.style.display = 'none';
 }
 
-window.addEventListener('click', (e) => {
-  if (e.target === modal) closeCarouselModal();
-});
+//navbaren vid scroll//
 
-window.prevSlide = prevSlide;
-window.nextSlide = nextSlide;
-window.openModal = openModal;
-window.closeCarouselModal = closeCarouselModal;
+const hero = document.querySelector('.hero-section');
+const header = document.querySelector('.site-header');
+const logo = document.querySelector('.header-logo'); // om du använder logobyte
 
-document.addEventListener('DOMContentLoaded', function () {
-  const header = document.querySelector('.site-header');
-  const hero = document.querySelector('.hero-section');
-  const logo = document.querySelector('.header-logo');
-  
-  const modal = document.getElementById('carousel-modal');
-  const modalText = document.getElementById('carousel-modal-text');
 
   window.addEventListener('scroll', () => {
     const heroBottom = hero.getBoundingClientRect().bottom;
@@ -624,11 +637,10 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
-  // Flytta in openModal om du vill ha lokal åtkomst till modalText
-  window.openModal = function(index) {
-    if (!modal || !modalText) return;
-    modalText.innerHTML = texts[index];
-    modal.style.display = 'block';
-  };
-});
+  // Flytta in openModal om man vill ha lokal åtkomst till modalText
+window.openModal = function(index) {
+  if (!modal || !modalText) return;
+  modalText.innerHTML = texts[index];
+  modal.style.display = 'block';
+};
 
