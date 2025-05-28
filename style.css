@@ -339,8 +339,114 @@ hr {
 }
 
   /* === Footer*/
+.site-footer {
+  padding: 2rem 1rem;
+  background-color: #f5f5f5;
+  font-family: 'Arial', sans-serif;
+}
 
-  .footer-logo {
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 1.5rem; /* mindre gap */
+  max-width: 75rem;
+  margin: 0 auto;
+}
+
+.footer-branding {
+  max-width: 18.75rem;
+  flex: 1 1 250px; /* mindre min-bredd */
+}
+
+.footer-branding .footer-logo {
+  height: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.footer-branding p {
+  font-size: 0.875rem;
+  color: #333;
+  margin: 0.25rem 0;
+}
+
+.footer-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  flex: 1 1 200px;
+  justify-content: flex-end;
+}
+
+.footer-nav a {
+  color: #263A99;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+
+.footer-nav a:hover {
+  color: #F0EBE5;
+}
+
+.footer-line {
+  border: none;
+  border-top: 1px solid #333;
+  margin: 1.5rem auto 0.5rem;
+  max-width: 75rem;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: 75rem;
+  margin: 0 auto;
+  padding-bottom: 0.5rem;
+}
+
+.footer-copy {
+  font-size: 0.8125rem;
+  color: #333;
+  text-align: right;
+  flex: 1 1 auto;
+}
+
+.top-button {
+  background-color: #263A99;
+  padding: 0.5rem;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.top-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}
+
+.top-button img {
+  width: 40px;
+  height: auto;
+}
+
+
+.top-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}
+
+.top-button img {
+  width: 40px;
+  height: auto;
+}
+
+ /*  .footer-logo {
     font-size: 1.4rem;
     font-weight: bold;
     margin-bottom: 1rem;
@@ -382,7 +488,7 @@ hr {
     font-size: 0.9rem;
     opacity: 0.8;
   }
-  
+   */
   /* Sektion 
   .information {
     max-width: 50rem;
@@ -1072,6 +1178,46 @@ hr {
   .carousel-btn {
     display: none !important;
   }
+
+ .footer-container {
+    flex-direction: column;
+    gap: 0.75rem; /* Mindre avstånd */
+    align-items: center; /* Centrera innehållet */
+    padding: 0; /* Ta bort extra padding */
+  }
+
+.footer-branding {
+    max-width: 100%;
+    flex: 0 0 auto; /* Förhindra att den växer */
+    text-align: center;
+    margin-bottom: 0.5rem; /* Minska bottenspacing */
+  }
+  .footer-nav {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.25rem; /* Tätt mellan länkar */
+    margin: 0.5rem 0;
+  }
+
+  .footer-bottom {
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 0.25rem;
+    text-align: center;
+    padding-bottom: 0.5rem;
+  }
+
+  .footer-copy {
+    text-align: center;
+    flex: none;
+    margin-top: 0.5rem;
+  }
+
+  .site-footer {
+    padding: 1rem; /* Kompaktare padding */
+  }
+}
 
   /* ========================= OM OSS -  h1 liggande============================================ */
   .about-section {
