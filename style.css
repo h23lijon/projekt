@@ -331,6 +331,9 @@ hr {
   background-position: center;
   color: #F0EBE5;
 }
+.chart-source {
+  font-size: x-small;
+}
 
 .custom-bg {
   background-color: #f0f0f0;
