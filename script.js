@@ -833,3 +833,12 @@ window.openModal = function(index) {
   modal.style.display = 'block';
 };
 
+function flipCard() {
+  document.getElementById("cardFront").classList.add("hidden");
+  document.getElementById("cardBack").classList.remove("hidden");
+}
+
+function flipCardBack() {
+  document.getElementById("cardBack").classList.add("hidden");
+  document.getElementById("cardFront").classList.remove("hidden");
+}
