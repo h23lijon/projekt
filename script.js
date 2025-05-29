@@ -518,7 +518,176 @@ fetch('swedish_regions.geojson')
     }
   }
 
-  // Karusell ===============================//
+  const urlPopulation = "https://api.scb.se/OV0104/v1/doris/sv/ssd/START/BE/BE0101/BE0101A/FolkmangdNov";
+const urlArea = "https://api.scb.se/OV0104/v1/doris/sv/ssd/START/MI/MI0802/Areal2012NN";
+
+const regionCodeToName = {
+  "01": "Stockholm", "03": "Uppsala", "04": "Södermanland", "05": "Östergötland",
+  "06": "Jönköping", "07": "Kronoberg", "08": "Kalmar", "09": "Gotland",
+  "10": "Blekinge", "12": "Skåne", "13": "Halland", "14": "Västra Götaland",
+  "17": "Värmland", "18": "Örebro", "19": "Västmanland", "20": "Dalarna",
+  "21": "Gävleborg", "22": "Västernorrland", "23": "Jämtland",
+  "24": "Västerbotten", "25": "Norrbotten"
+};
+
+const consumptionData2 = {
+  "Stockholm": 4.4, "Uppsala": 3.9, "Södermanland": 3.6, "Östergötland": 3.9,
+  "Jönköping": 3.3, "Kronoberg": 3.6, "Kalmar": 3.5, "Gotland": 4.0,
+  "Blekinge": 3.6, "Skåne": 3.9, "Halland": 3.7, "Västra Götaland": 3.9,
+  "Värmland": 3.6, "Örebro": 3.5, "Västmanland": 3.4, "Dalarna": 3.4,
+  "Gävleborg": 3.5, "Västernorrland": 3.5, "Jämtland": 3.5,
+  "Västerbotten": 3.6, "Norrbotten": 3.5
+};
+
+const regionCodes = Object.keys(regionCodeToName);
+
+const querySCB4 = {
+  query: [
+    { code: "Region", selection: { filter: "vs:RegionLän07", values: regionCodes }},
+    { code: "Alder", selection: { filter: "vs:ÅlderTotA", values: ["tot"] }},
+    { code: "Kon", selection: { filter: "item", values: ["1", "2"] }},
+    { code: "Tid", selection: { filter: "item", values: ["2019"] }}
+  ],
+  response: { format: "JSON" }
+};
+
+const queryArea = {
+  query: [
+    { code: "Region", selection: { filter: "vs:BRegionLän07N", values: regionCodes }},
+    { code: "ArealTyp", selection: { filter: "item", values: ["01"] }},
+    { code: "ContentsCode", selection: { filter: "item", values: ["000001O3"] }},
+    { code: "Tid", selection: { filter: "item", values: ["2019"] }}
+  ],
+  response: { format: "JSON" }
+};
+
+const gradientColors = [
+  '#C3CAE9', '#9FAAE1', '#7C8ADA', '#586AD2',
+  '#4459C6', '#3A4EB6', '#3043A6', '#263A99', '#1C2E7C'
+];
+
+function getColor(value, min, max) {
+  const index = Math.floor((value - min) / (max - min) * (gradientColors.length - 1));
+  return gradientColors[Math.max(0, Math.min(index, gradientColors.length - 1))];
+}
+
+function fetchAndDrawChart() {
+  const popReq = new Request(urlPopulation, {
+    method: 'POST',
+    body: JSON.stringify(querySCB4)
+  });
+
+  const areaReq = new Request(urlArea, {
+    method: 'POST',
+    body: JSON.stringify(queryArea)
+  });
+
+  Promise.all([
+    fetch(popReq).then(res => res.json()),
+    fetch(areaReq).then(res => res.json())
+  ])
+  .then(([popData, areaData]) => {
+    const populationMap = {};
+    const areaMap = {};
+
+    popData.data.forEach(entry => {
+      const code = entry.key[0];
+      const value = parseInt(entry.values[0].replace(/\s/g, ""), 10);
+      if (!populationMap[code]) populationMap[code] = 0;
+      populationMap[code] += value;
+    });
+
+    areaData.data.forEach(entry => {
+      const code = entry.key[0];
+      const area = parseFloat(entry.values[0].replace(/\s/g, "").replace(",", "."));
+      areaMap[code] = area;
+    });
+
+    const dataPoints = [];
+    const consumptions = [];
+
+    regionCodes.forEach(code => {
+      const name = regionCodeToName[code];
+      const pop = populationMap[code];
+      const area = areaMap[code];
+      const density = pop && area ? pop / area : null;
+      const consumption = consumptionData2[name];
+
+      if (pop && area && density && consumption) {
+        dataPoints.push({
+          x: parseFloat(density.toFixed(1)),
+          y: parseFloat(consumption.toFixed(2)),
+          r: Math.sqrt(pop) / 100 * 2,
+          label: name,
+          consumption: consumption
+        });
+        consumptions.push(consumption);
+      }
+    });
+
+    const minC = Math.min(...consumptions);
+    const maxC = Math.max(...consumptions);
+
+    // Skapa canvas och layout
+    const container = document.getElementById("chartContainer");
+    container.innerHTML = ""; // Rensa
+    container.style.display = "block"; // enbart chart – inget bredvid
+
+    const chartCanvas = document.createElement("canvas");
+    chartCanvas.style.width = "100%";
+    chartCanvas.style.maxWidth = "100%";
+    chartCanvas.style.height = "400px";
+
+    container.appendChild(chartCanvas);
+
+    new Chart(chartCanvas, {
+      type: "bubble",
+      data: {
+        datasets: [{
+          label: "Alkoholkonsumtion vs Befolkningstäthet (2019)",
+          data: dataPoints,
+          backgroundColor: ctx => getColor(ctx.raw.consumption, minC, maxC),
+          borderColor: "#fff",
+          borderWidth: 1
+        }]
+      },
+      options: {
+        plugins: {
+          tooltip: {
+            callbacks: {
+              label: context => {
+                const dp = context.raw;
+                return `${dp.label}: ${dp.y} l/person, ${dp.x} inv/km²`;
+              }
+            }
+            
+          },
+          legend: { display: false }
+        },
+        maintainAspectRatio: false,
+        scales: {
+          x: {
+            title: { display: true, text: "Invånare per km²" }
+          },
+          y: {
+            title: { display: true, text: "Liter alkohol/person/år" },
+            min: 3,
+            max: 5
+          }
+        }
+      }
+    });
+  })
+  .catch(err => {
+    console.error("Fel vid hämtning:", err);
+    document.getElementById("chartContainer").innerText = "Kunde inte hämta data.";
+  });
+}
+
+fetchAndDrawChart();
+
+
+  // Karusell ================================================================================//
 let currentIndex = 1;
 
 // Justera karusellens position för desktop
