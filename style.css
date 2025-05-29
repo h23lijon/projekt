@@ -316,6 +316,7 @@ hr {
 
 .chart-item h2 {
   margin-top: 0;
+  margin-bottom: 0.5rem;
   font-size: 1.4rem;
 }
 
@@ -323,6 +324,7 @@ hr {
   font-size: 1rem;
   line-height: 1.5;
   margin-bottom: 1rem;
+  letter-spacing: 0.02rem;
 }
 
 .chart-item canvas,
