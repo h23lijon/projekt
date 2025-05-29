@@ -457,7 +457,7 @@ fetch('swedish_regions.geojson')
       mapbox: {
       style: 'carto-positron',
       center: { lon: 17, lat: 63 },
-      zoom:2.5,
+      zoom:3,
       },
      margin: { t: 0, b: 0, l: 0, r: 0 }
     };
@@ -833,12 +833,11 @@ window.openModal = function(index) {
   modal.style.display = 'block';
 };
 
+// Funktioner för att flippa korten i karusellen
 function flipCard() {
-  document.getElementById("cardFront").classList.add("hidden");
-  document.getElementById("cardBack").classList.remove("hidden");
+  document.getElementById("flipContainer").classList.add("flipped");
 }
 
 function flipCardBack() {
-  document.getElementById("cardBack").classList.add("hidden");
-  document.getElementById("cardFront").classList.remove("hidden");
+  document.getElementById("flipContainer").classList.remove("flipped");
 }
