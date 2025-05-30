@@ -457,7 +457,7 @@ fetch('swedish_regions.geojson')
       mapbox: {
       style: 'carto-positron',
       center: { lon: 17, lat: 63 },
-      zoom:3,
+      zoom:2.6,
       },
      margin: { t: 0, b: 0, l: 0, r: 0 }
     };
@@ -518,7 +518,9 @@ fetch('swedish_regions.geojson')
     }
   }
 
-  const urlPopulation = "https://api.scb.se/OV0104/v1/doris/sv/ssd/START/BE/BE0101/BE0101A/FolkmangdNov";
+// Bubble chart över alkoholkonsumtion och befolkningstäthet i Sverige (2019) ===============================================
+
+const urlPopulation = "https://api.scb.se/OV0104/v1/doris/sv/ssd/START/BE/BE0101/BE0101A/FolkmangdNov";
 const urlArea = "https://api.scb.se/OV0104/v1/doris/sv/ssd/START/MI/MI0802/Areal2012NN";
 
 const regionCodeToName = {
@@ -667,12 +669,21 @@ function fetchAndDrawChart() {
         maintainAspectRatio: false,
         scales: {
           x: {
-            title: { display: true, text: "Invånare per km²" }
+            title: { display: true, text: "Invånare per km²", 
+              color: '#fff', font: {weight: 'bold'}}, 
+              ticks: {color: '#fff', font: {weight: 'bold'}},
           },
           y: {
-            title: { display: true, text: "Liter alkohol/person/år" },
-            min: 3,
-            max: 5
+            title: { 
+        display: true, 
+        text: "Liter alkohol/person/år",
+        color: '#fff',
+        font: { weight: 'bold', size: 16 }
+      },
+      ticks: { color: '#fff' },
+      grid: { color: '#fff' },
+      min: 3,
+      max: 4.6
           }
         }
       }
