@@ -400,7 +400,7 @@ hr {
   max-width: 100%;
   overflow: hidden;
   box-sizing: border-box;
-  border-radius: 4px;
+  border-radius: 0.5rem;
 }
 
 .chart-photo {
