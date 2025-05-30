@@ -402,8 +402,12 @@ hr {
   color: #F0EBE5;
 }
 
-#myChart4 p{
+.chart-photo p{
     color: #F0EBE5;
+}
+
+#card2 p {
+   color: #F0EBE5;
 }
 
 .chart-item canvas,

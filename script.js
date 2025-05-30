@@ -40,14 +40,14 @@ fetch(urlSCB1, {
     const uniqueYears = [...new Set(data.data.map(item => item.key[1]))];
 
     const colorBase = [
-     '#9FAAE1',
-  '#4459C6', 
-  '#1C2E7C' 
+    '#9FAAE1',
+    '#4459C6', 
+    '#1C2E7C' 
     ];
     const borderColorBase = [
     '#9FAAE1',
-  '#4459C6', 
-  '#1C2E7C' 
+    '#4459C6', 
+    '#1C2E7C' 
     ];
 
     const datasets = uniquePackages.map((pkg, index) => {
@@ -324,20 +324,18 @@ window.addEventListener("load", () => {
 
 // CO₂-utsläpp per förpackning, Systembolaget
 
-const co2Labels = ["Box (3 l)", "Påse (2 l)", "Papp (1 l)", "Returglas (0.5 l)", "Burk (0.375 l)", "PET (0.75 l)", "Lättare glasflaska (0.75 l)", "Glasflaska (0.75 l)", "Tung glasflaska (0.75 l, mousserande)"];
-const co2Values = [68, 71, 76, 110, 176, 243, 532, 664, 894];
-const backgroundColors = [
-  '#C3CAE9', 
-  '#9FAAE1',
-  '#7C8ADA',
-  '#586AD2',
-  '#4459C6',
-  '#3A4EB6',
-  '#3043A6',
-  '#263A99', 
-  '#1C2E7C'  
+const co2Labels = [
+  "Box (3 l)", "Påse (2 l)", "Papp (1 l)", "Returglas (0.5 l)",
+  "Burk (0.375 l)", "PET (0.75 l)", "Lättare glasflaska (0.75 l)",
+  "Glasflaska (0.75 l)", "Tung glasflaska (0.75 l, mousserande)"
 ];
 
+const co2Values = [68, 71, 76, 110, 176, 243, 532, 664, 894];
+
+const backgroundColors = [
+  '#C3CAE9', '#9FAAE1', '#7C8ADA', '#586AD2',
+  '#4459C6', '#3A4EB6', '#3043A6', '#263A99', '#1C2E7C'
+];
 
 const ctx4 = document.getElementById('myChart4').getContext('2d');
 new Chart(ctx4, {
@@ -345,43 +343,84 @@ new Chart(ctx4, {
   data: {
     labels: co2Labels,
     datasets: [{
+      label: 'CO₂-utsläpp (g/l)',
       data: co2Values,
       backgroundColor: backgroundColors,
       borderColor: 'transparent',
       borderWidth: 1
     }]
   },
-  options: {
-    responsive: true, 
-    cutout: '40%',
-     layout: {
+options: {
+  responsive: true,
+  layout: {
     padding: 0
   },
-    plugins: {
+  scales: {
+    y: {
+      beginAtZero: true,
+      ticks: {
+        color: '#F0EBE5',
+        font: {
+          size: 16,
+          weight: 'bold'
+        }
+      },
       title: {
         display: true,
+        text: 'g CO₂ per liter',
+        color: '#F0EBE5',
+        font: {
+          size: 16,
+          weight: 'bold'
+        }
       },
-      legend: {
-  position: 'right',
-  labels: {
-    color: '#F0EBE5',
-    font: {
-      size: 16,
-      weight: 'bold'
+      grid: {
+        color:  '#F0EBE5',
+      }
+    },
+    x: {
+      ticks: {
+        color: '#F0EBE5',
+        font: {
+          size: 16,
+          weight: 'bold'
+        },
+        maxRotation: 45,
+        minRotation: 0
+      }
     }
-  }
-},
-      tooltip: {
-        callbacks: {
-          label: function(context) {
-            const label = context.label || '';
-            const value = context.parsed;
-            return `${label}: ${value} g CO₂/l`;
-          }
+  },
+  plugins: {
+    title: {
+      display: true,
+      text: 'CO₂-utsläpp per förpackningstyp',
+      color: '#F0EBE5',
+      font: {
+        size: 16,
+        weight: 'bold'
+      }
+    },
+    legend: {
+      display: false
+    },
+    tooltip: {
+      titleFont: {
+        size: 16,
+        weight: 'bold'
+      },
+      bodyFont: {
+        size: 16,
+        weight: 'bold'
+      },
+      callbacks: {
+        label: function (context) {
+          const value = context.parsed.y;
+          return `${value} g CO₂/l`;
         }
       }
     }
   }
+}
 });
 
 document.addEventListener('DOMContentLoaded', function () {
