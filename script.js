@@ -457,7 +457,7 @@ fetch('swedish_regions.geojson')
       mapbox: {
       style: 'carto-positron',
       center: { lon: 17, lat: 63 },
-      zoom:2.6,
+      zoom: 2.8,
       },
      margin: { t: 0, b: 0, l: 0, r: 0 }
     };
