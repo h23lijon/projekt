@@ -645,47 +645,52 @@ function fetchAndDrawChart() {
     new Chart(chartCanvas, {
       type: "bubble",
       data: {
-        datasets: [{
-          label: "Alkoholkonsumtion vs Befolkningstäthet (2019)",
-          data: dataPoints,
-          backgroundColor: ctx => getColor(ctx.raw.consumption, minC, maxC),
-          borderColor: "#fff",
-          borderWidth: 1
-        }]
+      datasets: [{
+        label: "Alkoholkonsumtion vs Befolkningstäthet (2019)",
+        data: dataPoints,
+        backgroundColor: ctx => getColor(ctx.raw.consumption, minC, maxC),
+        borderColor: "#fff",
+        borderWidth: 1
+      }]
       },
       options: {
-        plugins: {
-          tooltip: {
-            callbacks: {
-              label: context => {
-                const dp = context.raw;
-                return `${dp.label}: ${dp.y} l/person, ${dp.x} inv/km²`;
-              }
-            }
-            
-          },
-          legend: { display: false }
-        },
-        maintainAspectRatio: false,
-        scales: {
-          x: {
-            title: { display: true, text: "Invånare per km²", 
-              color: '#fff', font: {weight: 'bold'}}, 
-              ticks: {color: '#fff', font: {weight: 'bold'}},
-          },
-          y: {
-            title: { 
-        display: true, 
-        text: "Liter alkohol/person/år",
-        color: '#fff',
-        font: { weight: 'bold', size: 16 }
+      responsive: true,
+      maintainAspectRatio: false,
+      layout: {
+        padding: {
+        bottom: 30 // eller mer 
+        }
       },
-      ticks: { color: '#fff' },
-      grid: { color: '#fff' },
-      min: 3,
-      max: 4.6
+      plugins: {
+        tooltip: {
+        callbacks: {
+          label: context => {
+          const dp = context.raw;
+          return `${dp.label}: ${dp.y} l/person, ${dp.x} inv/km²`;
           }
         }
+        },
+        legend: { display: false }
+      },
+      scales: {
+        x: {
+        title: { display: true, text: "Invånare per km²", 
+          color: '#fff', font: {weight: 'bold'}}, 
+          ticks: {color: '#fff', font: {weight: 'bold'}},
+        },
+        y: {
+        title: { 
+          display: true, 
+          text: "Liter alkohol/person/år",
+          color: '#fff',
+          font: { weight: 'bold', size: 16 }
+        },
+        ticks: { color: '#fff' },
+        grid: { color: '#fff' },
+        min: 3,
+        max: 4.6
+        }
+      }
       }
     });
   })
