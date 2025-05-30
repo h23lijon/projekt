@@ -372,6 +372,14 @@ hr {
   text-decoration: none;
 }
 
+#card2 .card-link {
+  color: #fff;
+}
+
+#card2 .card-link:hover {
+  color: #f0f0f0;
+}
+
 .chart-item h2 {
   margin-top: 0;
   margin-bottom: 0.5rem;
