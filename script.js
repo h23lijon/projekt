@@ -341,7 +341,7 @@ const backgroundColors = [
 
 const ctx4 = document.getElementById('myChart4').getContext('2d');
 new Chart(ctx4, {
-  type: 'doughnut',
+  type: 'bar',
   data: {
     labels: co2Labels,
     datasets: [{
@@ -353,6 +353,10 @@ new Chart(ctx4, {
   },
   options: {
     responsive: true, 
+    cutout: '40%',
+     layout: {
+    padding: 0
+  },
     plugins: {
       title: {
         display: true,
