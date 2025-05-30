@@ -221,38 +221,35 @@
     <canvas id="myChart2"></canvas>
     <div class="chart-source">Källa: SCB, 2023</div>
   </div>
-<!--vändbara kort-->
-<div class="flip-container" id="flipContainer">
-  <div class="flipper">
-    <!-- Framsida -->
-    <div class="front">
-      <div class="chart-item">
-        <div class="text-row">
-          <h2>Konsumtionen län för län</h2>
-          <p>...</p>
-          <button onclick="flipCard()">Visa konsumtion relaterat till befolkningstäthet</button>
-        </div>
-        <div id="map"></div>
-        <div class="chart-source">Källa: CAN, 2020</div>
+<!-- vanliga kort -->
+<div id="cardContainer">
+  <!-- Framsida -->
+  <div class="card" id="card1">
+    <div class="chart-item">
+      <div class="text-row">
+        <h2>Konsumtionen län för län</h2>
+        <p>...</p>
+        <button onclick="showCard2()">Visa konsumtion relaterat till befolkningstäthet</button>
       </div>
+      <div id="map"></div>
+      <div class="chart-source">Källa: CAN, 2020</div>
     </div>
+  </div>
 
-    <!-- Baksida -->
-    <div class="back">
-      <div class="chart-item chart-pic">
-        <div class="text-row">
-          <h2>Konsumtion relaterat till befolkningstäthet</h2>
-          <p>...</p>
-          <button onclick="flipCardBack()">Tillbaka till kartan</button>
-        </div>
-        <div id="chartContainer"></div>
-        <div class="chart-source">Källa: SCB, CAN</div>
+  <!-- Baksida -->
+  <div class="card hidden" id="card2">
+    <div class="chart-item chart-pic">
+      <div class="text-row">
+        <h2>Konsumtion relaterat till befolkningstäthet</h2>
+        <p>...</p>
+        <button onclick="showCard1()">Tillbaka till kartan</button>
       </div>
+      <div id="chartContainer"></div>
+      <div class="chart-source">Källa: SCB, CAN</div>
     </div>
   </div>
 </div>
 
-<!-- slut vändbara kort -->
 </section>
 
 <section class="grid-section" id="grid2">

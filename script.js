@@ -833,11 +833,12 @@ window.openModal = function(index) {
   modal.style.display = 'block';
 };
 
-// Funktioner för att flippa korten i karusellen
-function flipCard() {
-  document.getElementById("flipContainer").classList.add("flipped");
+function showCard2() {
+    document.getElementById('card1').classList.add('hidden');
+    document.getElementById('card2').classList.remove('hidden');
 }
 
-function flipCardBack() {
-  document.getElementById("flipContainer").classList.remove("flipped");
+function showCard1() {
+    document.getElementById('card2').classList.add('hidden');
+    document.getElementById('card1').classList.remove('hidden');
 }
