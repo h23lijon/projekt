@@ -481,9 +481,8 @@ hr {
   justify-content: space-between;
   align-items: flex-start;
   flex-wrap: wrap;
-  gap: 1.5rem; /* mindre gap */
-  max-width: 75rem;
-  margin: 0 auto;
+  gap: 1.5rem; 
+  margin-left: 4rem;
 }
 
 .footer-branding {
@@ -494,12 +493,14 @@ hr {
 .footer-branding .footer-logo {
   height: 2.5rem;
   margin-bottom: 0.5rem;
+  margin-right:4rem;
 }
 
 .footer-branding p {
   font-size: 0.875rem;
   color: #333;
   margin: 0.25rem 0;
+  margin-right:4rem;
 }
 
 .footer-nav {
@@ -508,6 +509,7 @@ hr {
   gap: 0.75rem;
   flex: 1 1 200px;
   justify-content: flex-end;
+  margin-right:4rem;
 }
 
 .footer-nav a {
@@ -525,7 +527,7 @@ hr {
   border: none;
   border-top: 1px solid #333;
   margin: 1.5rem auto 0.5rem;
-  max-width: 75rem;
+  max-width: 100%;
 }
 
 .footer-bottom {
@@ -543,6 +545,7 @@ hr {
   color: #333;
   text-align: right;
   flex: 1 1 auto;
+  margin-right:4rem; 
 }
 
 .top-button {
@@ -568,115 +571,6 @@ hr {
   height: auto;
   transform: rotate(270deg)
 }
-
- /*  .footer-logo {
-    font-size: 1.4rem;
-    font-weight: bold;
-    margin-bottom: 1rem;
-    text-transform: uppercase;
-  }
-  
-  .footer-nav {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 14rem;
-    margin-bottom: 1rem;
-  }
-  
-  .footer-nav a {
-    color: white;
-    text-decoration: none;
-    font-size: small;
-    font-weight: 500;
-    text-transform: uppercase;
-    position: relative;
-  }
-  
-  .footer-nav a::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: -0.1875rem;
-    width: 0%;
-    height: 0.125rem;
-    background-color: white;
-    transition: width 0.3s ease;
-  }
-  
-  .footer-nav a:hover::after {
-    width: 100%;
-  }
-  
-  .footer-copy {
-    font-size: 0.9rem;
-    opacity: 0.8;
-  }
-   */
-  /* Sektion 
-  .information {
-    max-width: 50rem;
-    margin: 4rem auto;
-    padding: 1rem;
-  }
-  
-  .information h2 {
-    text-align: center;
-    color: rgb(39, 60, 118);
-    margin-bottom: 2rem;
-    letter-spacing: 0.02rem;
-  }
-  
-    Lista med staplade boxar  TA BORT?
-  .info-list {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    max-width: 44rem;
-    padding: 1rem;
-    margin-left: 1.6rem;
-    width: 100%;
-  }
-  
-
-  .info-box {
-    border: 0.0625rem solid #ccc;
-    border-radius: 0.375rem;
-    background-color: #f7f7f7;
-    overflow: hidden;
-    width: 100%;
-  }
-  
-  .info-box p {
-    font-size: 1em;
-    margin-bottom: 0.625rem;
-    color: rgb(39, 60, 118);
-    letter-spacing: 0.02rem;
-  }
-  
-  .info-box summary {
-    padding: 1rem;
-    background-color: rgb(39, 60, 118);
-    color: white;
-    outline: none;
-    font-weight: 600;
-    font-size: 1.1rem;
-    cursor: pointer;
-    transition: background-color 0.5s ease;
-  }
-  
-  .info-box[open] summary {
-    background-color: rgb(39, 60, 118);
-  }
-  
-  .info-content {
-    padding: 1rem 1.2rem;
-    font-size: 0.95rem;
-    line-height: 1.6;
-    background-color: #fff;
-  }
-*/
-
-
 
 /* ====================== karusellen ======================================= */
 
@@ -1330,14 +1224,15 @@ hr {
     flex: 0 0 auto; 
     text-align: center;
     margin-bottom: 0.5rem; 
+    margin-right: 0rem;
   }
-  .footer-nav {
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 0.25rem;
-    margin: 0.5rem 0;
-  }
+
+ .footer-nav {
+  flex-direction: column;
+  align-items: center;    
+  justify-content: center;
+  gap: 0.25rem;    
+}
 
   .footer-bottom {
     flex-direction: column-reverse;
@@ -1345,16 +1240,18 @@ hr {
     gap: 0.25rem;
     text-align: center;
     padding-bottom: 0.5rem;
+     margin-right: 0rem;
   }
 
   .footer-copy {
     text-align: center;
     flex: none;
-    margin-top: 0.5rem;
+    margin-left:4rem;
   }
 
   .site-footer {
     padding: 1rem; 
+    margin-right: 0rem;
   }
    .about-section {
     flex-direction: column;
