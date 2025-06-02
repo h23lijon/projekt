@@ -514,6 +514,10 @@ hr {
   flex: 1 1 200px;
   justify-content: flex-end;
   margin-right:5rem;
+  font-family: "Akhand";
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.02rem;
 }
 
 .footer-nav a {
@@ -971,8 +975,6 @@ hr {
     margin-left: 2rem;
   }
 }
-
-  
   /*===kalkylator slut===*/ 
   
   /* Modal, bakgrund  */
@@ -1020,18 +1022,19 @@ hr {
   /* ==================== MEDIA QUERIES ================================================================== */
 @media (max-width: 740px) {
   .intro-text {
-    text-align: center;
+    text-align: right;
+    margin-bottom:2rem;
   }
 
   .intro-text p {
     margin: 0 1rem;
-    text-align: center;
+    text-align: right;
   }
 
   .intro-text h1 {
-    font-size: 4rem;
+    font-size: 6rem;
     margin: 0 1rem;
-    text-align: center;
+    text-align: right;
   }
 
     .grid-section {
@@ -1049,7 +1052,7 @@ hr {
   .intro-text {
     margin-left: 2rem;
     margin-right: 2rem;
-    text-align: right;
+    margin-bottom:2rem;
   }
 
   .menu-toggle {
@@ -1112,27 +1115,34 @@ hr {
     transform: none;
     font-size: 3rem;
     text-align: left;
-  
+    margin-left: 2rem;
   }
 
   .about-section p {
-    margin: 1rem 0;
     font-size: 1rem;
     max-width: 100%;
-  }   
+  }    
 
   .vertical-line {
     display: none;
   }
 
+    .process-section {
+    padding: 2rem 0 0 0;
+    max-width: 100%;
+    width: 100%;
+    align-items: center;
+    margin-left: 2rem;
+  }
 
 }
 
 /* Mobiler: upp till 600px (max-width: 37.5rem) */
 @media (max-width: 37.5rem) {
-    .intro-text {
+  .intro-text {
     margin-left: 2rem;
     margin-right: 2rem;
+    margin-bottom:2rem;
   }
   .cards {
     grid-template-columns: 1fr;
@@ -1217,7 +1227,7 @@ hr {
   .carousel-text {
     margin-left: 1.5rem;
     margin-right: 1.5rem;
-    text-align: center;
+    text-align: left;
   }
 
   .carousel-text p {
@@ -1249,6 +1259,7 @@ hr {
     .intro-text {
     margin-left: 2rem;
     margin-right: 2rem;
+    margin-bottom:2rem;
   }
 
   .carousel-wrapper {
@@ -1327,7 +1338,7 @@ hr {
    .about-section {
     flex-direction: column;
     align-items: flex-start;
-    padding: 2rem;
+    padding: 2rem; 
     height: auto;
     margin-bottom: 1rem;
   }
@@ -1337,7 +1348,7 @@ hr {
     transform: none;
     font-size: 3rem;
     text-align: left;
-  
+    margin-left: 0;
   }
 
   .about-section p {
@@ -1349,17 +1360,17 @@ hr {
 
 
   /* Gör att process-sektionen lägger sig under på mindre skärm */
-  .process-section {
-    padding: 2rem 0 0 0;
+/*   .process-section {
+    padding: 2rem 0 0 0; 
     max-width: 100%;
     width: 100%;
-    align-items: center;
+    align-items: left;
   }
 
  .step {
     flex-direction: column;
-    align-items: center;
-    text-align: center; /* detta påverkar textinnehållet */
+    align-items: left;
+    text-align: left; 
   }
 
   .step-image {
@@ -1373,9 +1384,7 @@ hr {
 
   .step-text h2,
   .step-text p {
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
+    text-align: left;
   }
 
     .vertical-line {
@@ -1384,17 +1393,16 @@ hr {
 
   .step-text p {
     font-size: 0.95rem;
-    max-width: 85%; /* centrera men håll bredd lagom */
-  }
+  } */
  
 
 }
 
-/* Extra liten mobil: max-width 480px */
 @media (max-width: 640px) {
    .intro-text {
     margin-left: 2rem;
     margin-right: 2rem;
+    margin-bottom:2rem;
   }
 
   .carousel-text {
@@ -1408,7 +1416,6 @@ hr {
   }
 }
 
-/* Extra liten mobil: max-width 480px */
 @media screen and (max-width: 480px) {
   .intro-text {
     margin-left: 2rem;
@@ -1429,29 +1436,11 @@ hr {
     min-width: 250px;
   }
 
-  /* OM OSS - gör h1 liggande */
-  .about-section {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 2rem;
-    height: auto;
+  .about-text-content {
+    margin-left: 0.5rem;
+    margin-top: 3rem;
   }
 
-  .about-section h1 {
-    writing-mode: horizontal-tb;
-    transform: none;
-    font-size: 3rem;
-    text-align: left;
-    margin-bottom: 1rem;
-  }
-
-  .about-section p {
-    margin: 1rem 0;
-    font-size: 1rem;
-    max-width: 100%;
-  }
-
-  /* Gör att process-sektionen lägger sig under på mindre skärm */
   .process-section {
     padding: 2rem 0 0 0;
     max-width: 100%;
@@ -1479,18 +1468,18 @@ hr {
 
   .step-text {
     max-width: 100%;
-    padding: 0 1rem; /* så det inte går kant-i-kant */
+    padding: 0 1rem; 
   }
 
   .step-text h2,
   .step-text p {
-    text-align: center;
+    text-align: left;
     margin-left: 0;
     margin-right: 0;
   }
 
   .step-text p {
-    max-width: 100%; /* ta bort 50% */
+    max-width: 100%; 
     font-size: 0.95rem;
   }
 
