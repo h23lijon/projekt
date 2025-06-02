@@ -611,8 +611,8 @@ hr {
   flex: 1 1 65%;
   position: relative;
   overflow: hidden;
-  padding: 0 3rem; /*  samma vänster- och högermarginal som .carousel-text */
-  margin-bottom: 3rem; /* lite marginal under karusellen */
+  padding: 0 3rem; 
+  margin-bottom: 3rem; 
 }
 .carousel-text p {
   color: #59627a;
@@ -958,23 +958,6 @@ hr {
 .hidden {
   display: none;
 }
-
-/* Desktop-läge: formulär och resultat sida vid sida */
-@media (min-width: 768px) {
-  .calculator-layout {
-    flex-direction: row;
-    align-items: flex-start;
-  }
-
-  #climate-form {
-    flex: 1;
-  }
-
-  .result-box {
-    flex: 1;
-    margin-left: 2rem;
-  }
-}
   /*===kalkylator slut===*/ 
   
   /* Modal, bakgrund  */
@@ -1020,6 +1003,24 @@ hr {
   }
 
   /* ==================== MEDIA QUERIES ================================================================== */
+
+  /* Desktop-läge: formulär och resultat sida vid sida */
+@media (min-width: 768px) {
+  .calculator-layout {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  #climate-form {
+    flex: 1;
+  }
+
+  .result-box {
+    flex: 1;
+    margin-left: 2rem;
+  }
+}
+
 @media (max-width: 740px) {
   .intro-text {
     text-align: right;
@@ -1027,7 +1028,7 @@ hr {
   }
 
   .intro-text p {
-    margin: 0 1rem;
+/*     margin: 0 1rem; */
     text-align: right;
   }
 
@@ -1262,6 +1263,16 @@ hr {
     margin-bottom:2rem;
   }
 
+  .intro-text h1{
+    font-size: 6rem;
+  }
+
+  .intro-text p {
+    font-size: 2rem;
+    margin-left: 6rem;
+    margin-right: 1rem; 
+  }
+
   .carousel-wrapper {
     flex-direction: column;
     align-items: center;
@@ -1348,7 +1359,7 @@ hr {
     transform: none;
     font-size: 3rem;
     text-align: left;
-    margin-left: 0;
+    margin-left: 1rem;
   }
 
   .about-section p {
@@ -1405,9 +1416,23 @@ hr {
     margin-bottom:2rem;
   }
 
+   .intro-text h1{
+    font-size: 6rem;
+  }
+
+  .intro-text p {
+    font-size: 1rem;
+    margin-left: 6rem;
+    margin-right: 1rem; 
+  }
+
   .carousel-text {
-    padding: 0 1.5rem;
+    padding: 0 1.5rem; 
     margin: 0 auto;
+  }
+
+  .carousel-text  h2{
+    text-align: left;
   }
 
   .carousel-text p {
@@ -1420,6 +1445,16 @@ hr {
   .intro-text {
     margin-left: 2rem;
     margin-right: 2rem;
+  }
+
+  .intro-text h1{
+    font-size: 6rem;
+  }
+
+  .intro-text p {
+    font-size: 1rem;
+    margin-left: 6rem;
+    margin-right: 1rem; 
   }
 
   .carousel-wrapper {
