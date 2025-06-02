@@ -815,7 +815,7 @@ hr {
     align-items: flex-start;
     max-width: 22rem;
     width: 100%;
-    margin-left: 10rem;
+    margin-left: 1rem;
   }
   
   .calculator p {
@@ -824,7 +824,7 @@ hr {
   }
 
   .calculator h1 {
-    margin-left: 10rem;
+    margin-left: 1rem;
     font-size: 1.25em;
   }
  .calculator-source {
@@ -833,7 +833,7 @@ hr {
     margin-top: 1rem;
     text-align: left;
     width: 27rem;
-    margin-left: 10rem;
+    margin-left: 1rem;
   }
   
   .calculator-info {
