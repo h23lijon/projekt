@@ -4,6 +4,7 @@ const urlSCB1 = 'https://api.scb.se/OV0104/v1/doris/sv/ssd/START/MI/MI0307/MI030
 
 const querySCB1 = {
   "query": [
+    
     {
       "code": "Forpackning",
       "selection": {
@@ -555,11 +556,11 @@ document.getElementById('calculate-button').addEventListener('click', function(e
   // Samla ihop meddelanden
 let message = "";
 if (totalCO2 < avgSwedeCO2) {
-  message += "<strong class='result-heading'>🌱 Härligt! Du bidrar till mindre utsläpp än genomsnittet.</strong>";
-  resultBox.style.backgroundColor = "rgba(60, 80, 60, 0.65)";
+  message += "<strong class='result-heading'>🌱 Härligt! Du bidrar till mindre utsläpp än genomsnittet</strong>";
+  resultBox.style.backgroundColor = "rgba(39, 60, 118, 0.7)";
 } else {
-  message += "<strong class='result-heading'>😬 Ooops! Du bidrar till mer utsläpp än genomsnittet.</strong>";
-  resultBox.style.backgroundColor = "rgba(100, 0, 50, 0.45)";
+  message += "<strong class='result-heading'>⚡ Ooops! Du bidrar till mer utsläpp än genomsnittet.</strong>";
+  resultBox.style.backgroundColor = "rgba(39, 60, 118, 0.7)";
 }
 
 if (totalAlcoholLiters < avgSwedeAlcohol) {
