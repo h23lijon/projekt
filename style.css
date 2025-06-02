@@ -540,7 +540,6 @@ hr {
   align-items: center;
   flex-wrap: wrap;
   max-width: 75rem;
-  margin: 0 auto;
   padding-bottom: 0.5rem;
 }
 
@@ -549,7 +548,7 @@ hr {
   color: #333;
   text-align: right;
   flex: 1 1 auto;
-  margin-right:4rem; 
+  margin-right:3rem; 
 }
 
 .top-button {
