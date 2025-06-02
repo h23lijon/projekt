@@ -518,48 +518,59 @@ fetch('swedish_regions.geojson')
 
 
 
-   //Kalkylatorn ==========================================================
-   document.addEventListener("DOMContentLoaded", function () {
-    const button = document.getElementById("calculate-button");
-    if (button) {
-      button.addEventListener("click", function (e) {
-        e.preventDefault(); // Förhindrar formuläruppdatering
-        calculateImpact();
-      });
-    }
-  });
-  
-  function calculateImpact() {
-    const drinks = {
-      beer:    { co2: 0.73, label: "öl",     volume: 0.33 }, // 33 cl
-      wine:    { co2: 1.52, label: "vin",    volume: 0.15 }, // 15 cl
-      spirits: { co2: 2.38, label: "sprit",  volume: 0.04 }  // 4 cl
-    };
-  
-    let totalEmission = 0;
-    let summary = [];
-  
-    for (const type in drinks) {
-      const value = parseInt(document.getElementById(type).value);
-      if (!isNaN(value) && value > 0) {
-        const litres = value * drinks[type].volume * 12; // per år
-        const emission = litres * drinks[type].co2;
-        totalEmission += emission;
-        summary.push(`${value} glas ${drinks[type].label}`);
-      }
-    }
-  
-    const result = document.getElementById("result");
-  
-    if (totalEmission === 0) {
-      result.innerHTML = "Vänligen fyll i minst ett dryckesalternativ med ett giltigt antal glas.";
-    } else {
-      result.innerHTML = `
-        Din uppskattade klimatpåverkan från ${summary.join(" och ")} per månad är 
-        <strong>${totalEmission.toFixed(1)} kg CO₂e/år</strong>.<br><br>
-      `;
-    }
+   //==================================kalkylatorn ===========
+document.getElementById('calculate-button').addEventListener('click', function(e) {
+  e.preventDefault();
+
+  const beer = parseInt(document.getElementById('beer').value) || 0;
+  const wine = parseInt(document.getElementById('wine').value) || 0;
+  const spirits = parseInt(document.getElementById('spirits').value) || 0;
+
+  const totalCO2 = beer * 176 + wine * 664 + spirits * 894; // gram CO₂
+  const avgSwedeCO2 = 10000;
+
+  const resultBox = document.getElementById('result');
+  const errorMessage = document.getElementById('error-message');
+
+  // Återställ båda meddelandena
+  resultBox.classList.add('hidden');
+  errorMessage.classList.add('hidden');
+  errorMessage.textContent = "";
+
+  // Visa felmeddelande om inget är ifyllt
+  if (beer === 0 && wine === 0 && spirits === 0) {
+    errorMessage.textContent = "Fyll i minst ett dryckesalternativ för att se uträkningen";
+    errorMessage.classList.remove('hidden');
+    return;
   }
+
+  // Beräkna ren alkohol i liter per år
+  const beerAlcohol = beer * 0.0165 * 12;     // 0.33 l * 5% * 12 mån
+  const wineAlcohol = wine * 0.018 * 12;      // 0.15 l * 12% * 12 mån
+  const spiritsAlcohol = spirits * 0.016 * 12; // 0.04 l * 40% * 12 mån
+
+  const totalAlcoholLiters = beerAlcohol + wineAlcohol + spiritsAlcohol;
+  const avgSwedeAlcohol = 3.66;
+
+  // Samla ihop meddelanden
+let message = "";
+if (totalCO2 < avgSwedeCO2) {
+  message += "<strong class='result-heading'>🌱 Härligt! Du bidrar till mindre utsläpp än genomsnittet.</strong>";
+  resultBox.style.backgroundColor = "rgba(60, 80, 60, 0.65)";
+} else {
+  message += "<strong class='result-heading'>😬 Ooops! Du bidrar till mer utsläpp än genomsnittet.</strong>";
+  resultBox.style.backgroundColor = "rgba(100, 0, 50, 0.45)";
+}
+
+if (totalAlcoholLiters < avgSwedeAlcohol) {
+  message += "<div class='result-subtext'>Du konsumerar mindre ren alkohol per år än genomsnittet i Sverige. Din klimatpåverkan vad gäller alkoholkonsumtion är låg – och det skålar vi för (med måtta)! 🥂</div>";
+} else {
+  message += "<div class='result-subtext'>Det kanske blivit ett par glas för mycket – för både dig och klimatet 😅 Men små förändringar gör stor skillnad. Nästa steg? Testa alkoholfritt nästa gång!</div>";
+}
+
+resultBox.innerHTML = message;
+  resultBox.classList.remove('hidden');
+});
 
 // Bubble chart över alkoholkonsumtion och befolkningstäthet i Sverige (2019) ===============================================
 

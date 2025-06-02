@@ -14,7 +14,7 @@
   <script src="script.js" defer></script>
 </head>
 <body>
-
+  <!-- AKTUELL -->
   <header class="site-header">
     <div class="header-inner">
 
@@ -270,42 +270,50 @@
     <canvas id="myChart4"></canvas>
     <div class="chart-source">Källa: Systembolaget, 2023</div>
   </div>
- <!--- <div class="chart-item chart-pic">
-    <div class="text-row">
-      <h2>Konsumtion relaterat till befolkningstäthet</h2>
-      <p>Det ses variationer i konsumtionsmönstret sett till befolkningstäthet, de län med högre befolkningstäthet tenderar att också ha en högre konsumtion.</p>
-    </div>
-    <div id="chartContainer"></div>
-    <div class="chart-source">Källa: SCB, CAN</div>
-  </div>-->
-</section>
 
-  <!---------------------------------------------- Kalkylatorn  ------------------------->
+</section>
+<!-- Kalkylatorn -------------------------------------------------------------------->
   <div id="calculator" class="calculator">
-    <h1>Beräkna klimatpåverkan av din alkoholkonsumtion*</h1>
-    <p></p>
-    <form>
+  <h1>Beräkna klimatpåverkan av din alkoholkonsumtion*</h1>
+  <p></p>
+
+  <!-- Innehåller både formulär och resultat -->
+  <div class="calculator-layout">
+    <!-- FORMULÄR -->
+    <form id="climate-form">
       <div class="label-row">
-        <label for="beer">Antal glas öl per månad </label> <div class="calculator-info"> (1 glas öl = 33 cl)</div>
+        <label for="beer">Antal glas öl per månad</label>
+        <div class="calculator-info">(1 glas öl = 33 cl)</div>
         <input type="number" id="beer" placeholder="t.ex. 4" min="0" />
       </div>
       <div class="label-row">
-        <label for="wine">Antal glas vin per månad </label> <div class="calculator-info"> (1 glas vin = 15 cl)</div>
+        <label for="wine">Antal glas vin per månad</label>
+        <div class="calculator-info">(1 glas vin = 15 cl)</div>
         <input type="number" id="wine" placeholder="t.ex. 2" min="0" />
       </div>
       <div class="label-row">
-        <label for="spirits">Antal glas sprit per månad </label><div class="calculator-info"> (1 glas sprit = 4 cl)</div>
+        <label for="spirits">Antal glas sprit per månad</label>
+        <div class="calculator-info">(1 glas sprit = 4 cl)</div>
         <input type="number" id="spirits" placeholder="t.ex. 1" min="0" />
       </div>
 
       <button id="calculate-button">Beräkna</button>
+
+      <p id="error-message" class="error-message hidden"></p>
     </form>
-    <div class="calculator-source">*Uträkningen baseras på genomsnittliga utsläpp per dryckestyp och
-        bör ses som en ungefärlig uppskattning. Den faktiska klimatpåverkan kan variera beroende 
-        på tillverkning, förpackning och transport. Beräkningar gjorda efter siffror i <i> Climate impact of alcohol consumption in Sweden (2018).</i></div>
-    <div id="result"></div>
+
+    <div id="result" class="result-box hidden"></div>
   </div>
 
+  <div class="calculator-source">
+    *Uträkningen baseras på genomsnittliga utsläpp per dryckestyp och
+    bör ses som en ungefärlig uppskattning. Den faktiska klimatpåverkan kan variera beroende 
+    på tillverkning, förpackning och transport. Beräkningar gjorda efter siffror i 
+    <i>Climate impact of alcohol consumption in Sweden (2018).</i>
+  </div>
+</div>
+
+<!--------------------------------------Slut kalkylator ------------------------------------->
   <!-- Popup-fönstret ------------------->
   <div id="chartModal" class="modal">
     <div class="modal-content chart-card">

@@ -901,6 +901,75 @@ hr {
     color: #fff;
     font-family: 'Segoe UI', sans-serif;
   }
+
+  .error-message {
+  font-weight: bold;
+  color: #F7F7F7;
+  margin-top: 1rem;
+  width: 100%;
+  max-width: 22rem;
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 0.9rem;
+}
+
+
+
+.calculator-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.result-box {
+  background-color: #f2f8f4;
+  padding: 1.5rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  max-width: 32rem;
+  color: #2e4d3a;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.03);
+  transition: all 0.3s ease;
+  margin-top: 2.5rem !important;
+}
+
+.result-heading {
+  font-family: "Akhand";
+  font-size: 1.25em;
+  font-weight: 700;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.result-subtext {
+  font-size: 0.95rem;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0.02rem;
+}
+
+
+.hidden {
+  display: none;
+}
+
+/* Desktop-läge: formulär och resultat sida vid sida */
+@media (min-width: 768px) {
+  .calculator-layout {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  #climate-form {
+    flex: 1;
+  }
+
+  .result-box {
+    flex: 1;
+    margin-left: 2rem;
+  }
+}
+
   
   /*===kalkylator slut===*/ 
   
