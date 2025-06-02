@@ -79,14 +79,15 @@ fetch(urlSCB1, {
         responsive: true,
         plugins: {
           title: {
-            display: true,
+            display: true
           },
           legend: {
             position: 'top',
             labels: {
               font: {
                 size: 14,
-              }
+              },
+              padding: 20 // Detta är OK här
             }
           }
         },
@@ -342,71 +343,77 @@ new Chart(ctx4, {
       borderWidth: 1
     }]
   },
-options: {
-  responsive: true,
-  layout: {
-    padding: 0
-  },
-  scales: {
-    y: {
-      beginAtZero: true,
-      ticks: {
-        color: '#F0EBE5',
-        font: {
-          size: 14,
+  options: {
+    responsive: true,
+    layout: {
+      padding: 0
+    },
+    scales: {
+      y: {
+        beginAtZero: true,
+        ticks: {
+          color: '#F0EBE5',
+          font: {
+            size: 14,
+          }
+        },
+        title: {
+          display: true,
+          text: 'g CO₂ per liter',
+          color: '#F0EBE5',
+          font: {
+            size: 14,
+          }
+        },
+        grid: {
+          color: '#F0EBE5',
         }
       },
+      x: {
+        ticks: {
+          color: '#F0EBE5',
+          font: {
+            size: function(context) {
+              const width = context.chart.width;
+              if (width < 400) return 8;
+              else if (width < 600) return 10;
+              else return 14;
+            }
+          },
+          maxRotation: 90,
+          minRotation: 45,
+          autoSkip: false
+        }
+      }
+    },
+    plugins: {
       title: {
         display: true,
-        text: 'g CO₂ per liter',
+        text: 'CO₂-utsläpp per förpackningstyp',
         color: '#F0EBE5',
         font: {
           size: 14,
         }
       },
-      grid: {
-        color:  '#F0EBE5',
-      }
-    },
-    x: {
-      ticks: {
-        color: '#F0EBE5',
-        font: {
+      legend: {
+        display: false
+      },
+      tooltip: {
+        titleFont: {
           size: 14,
         },
-        maxRotation: 45,
-        minRotation: 0
-      }
-    }
-  },
-  plugins: {
-    title: {
-      display: true,
-      text: 'CO₂-utsläpp per förpackningstyp',
-      color: '#F0EBE5',
-      font: {
-        size: 14,
-      }
-    },
-    legend: {
-      display: false
-    },
-    tooltip: {
-      titleFont: {
-        size: 14,
-      },
-      bodyFont: {
-        size: 14,
-      },
-      callbacks: {
-        label: function (context) {
-          const value = context.parsed.y;
-          return `${value} g CO₂/l`;
+        bodyFont: {
+          size: 14,
+        },
+        callbacks: {
+          label: function (context) {
+            const value = context.parsed.y;
+            return `${value} g CO₂/l`;
+          }
         }
       }
     }
   }
-}
 });
 
 document.addEventListener('DOMContentLoaded', function () {
