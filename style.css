@@ -482,7 +482,7 @@ hr {
   align-items: flex-start;
   flex-wrap: wrap;
   gap: 1.5rem; 
-  margin-left: 4rem;
+  margin-left: 5rem;
 }
 
 .footer-branding {
@@ -493,14 +493,14 @@ hr {
 .footer-branding .footer-logo {
   height: 2.5rem;
   margin-bottom: 0.5rem;
-  margin-right:4rem;
+  margin-right:5rem;
 }
 
 .footer-branding p {
   font-size: 0.875rem;
   color: #333;
   margin: 0.25rem 0;
-  margin-right:4rem;
+  margin-right:5rem;
 }
 
 .footer-nav {
@@ -509,7 +509,7 @@ hr {
   gap: 0.75rem;
   flex: 1 1 200px;
   justify-content: flex-end;
-  margin-right:4rem;
+  margin-right:5rem;
 }
 
 .footer-nav a {
