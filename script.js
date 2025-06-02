@@ -85,8 +85,7 @@ fetch(urlSCB1, {
             position: 'top',
             labels: {
               font: {
-                size: 16,
-                weight: 'bold'
+                size: 14,
               }
             }
           }
@@ -98,14 +97,12 @@ fetch(urlSCB1, {
               display: true,
               text: 'Ton',
               font: {
-                size:16,
-                weight: 'Bold'
+                size:14,
               }
             },
             ticks: {
               font:{
-                size:16,
-                weight:'bold'
+                size:14,
               }
             }
           },
@@ -114,14 +111,12 @@ fetch(urlSCB1, {
               display: true,
               text: 'År',
               font: {
-                size:16,
-                weight:'Bold'
+                size:14,
               }
             },
             ticks: {
               font:{
-                size:16,
-                weight:'bold'
+                size:1,
               }
             }
           }
@@ -175,7 +170,7 @@ const querySCB2 = {
 };
 
 const beverageNames = {
-  '02.1.1': 'Spritdrycker',
+  '02.1.1': 'Sprit',
   '02.1.2': 'Vin',
   '02.1.3': 'Öl'
 };
@@ -227,7 +222,7 @@ Promise.all([vinPromise, ölPromise, spritPromise])
         const ctx2 = document.getElementById('myChart2').getContext('2d');
 
         const imageMap = {
-          'Spritdrycker': spritImg,
+          'Sprit': spritImg,
           'Vin': vinImg,
           'Öl': ölImg
         };
@@ -247,8 +242,7 @@ Promise.all([vinPromise, ölPromise, spritPromise])
                 text: 'Konsumtion av vin, öl och sprit (miljoner kr, 2023)',
                 color: '#F0EBE5',
                 font: {
-                  size:16,
-                  weight:'Bold'
+                  size:14,
                 }
               }
             },
@@ -260,15 +254,13 @@ Promise.all([vinPromise, ölPromise, spritPromise])
                   text: 'Miljoner kronor',
                   color: '#F0EBE5',
                   font: {
-                    size: 16,
-                    weight:'Bold'
+                    size: 14,
                   }
                 },
                 ticks: {
                   color: '#F0EBE5',
                   font: {
-                    size: 16,
-                    weight:'Bold',
+                    size: 14,
                   }
                 },
                 grid: {
@@ -279,8 +271,7 @@ Promise.all([vinPromise, ölPromise, spritPromise])
                 ticks: {
                   color: '#F0EBE5',
                   font: {
-                    size: 16,
-                    weight: 'Bold',
+                    size: 14,
                   }
                 }
               }
@@ -362,8 +353,7 @@ options: {
       ticks: {
         color: '#F0EBE5',
         font: {
-          size: 16,
-          weight: 'bold'
+          size: 14,
         }
       },
       title: {
@@ -371,8 +361,7 @@ options: {
         text: 'g CO₂ per liter',
         color: '#F0EBE5',
         font: {
-          size: 16,
-          weight: 'bold'
+          size: 14,
         }
       },
       grid: {
@@ -383,8 +372,7 @@ options: {
       ticks: {
         color: '#F0EBE5',
         font: {
-          size: 16,
-          weight: 'bold'
+          size: 14,
         },
         maxRotation: 45,
         minRotation: 0
@@ -406,12 +394,10 @@ options: {
     },
     tooltip: {
       titleFont: {
-        size: 16,
-        weight: 'bold'
+        size: 14,
       },
       bodyFont: {
-        size: 16,
-        weight: 'bold'
+        size: 14,
       },
       callbacks: {
         label: function (context) {
