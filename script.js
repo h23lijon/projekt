@@ -385,8 +385,7 @@ options: {
       text: 'CO₂-utsläpp per förpackningstyp',
       color: '#F0EBE5',
       font: {
-        size: 16,
-        weight: 'bold'
+        size: 14,
       }
     },
     legend: {
@@ -446,16 +445,17 @@ const consumptionData = {
 };
 
 fetch('swedish_regions.geojson')
-  .then(res => res.json())
+  .then(res => {
+    if (!res.ok) throw new Error('GeoJSON kunde inte hämtas');
+    return res.json();
+  })
   .then(geojson => {
     const locations = Object.keys(consumptionData);
     const zValues = Object.values(consumptionData);
 
-    // Beräknar snittet
     const total = zValues.reduce((sum, val) => sum + val, 0);
     const average = (total / zValues.length).toFixed(2);
 
-    // Hovertext med skillnad från snitt
     const hoverTexts = locations.map(region => {
       const value = consumptionData[region];
       const diff = (value - average).toFixed(2);
@@ -469,40 +469,33 @@ fetch('swedish_regions.geojson')
       locations: locations,
       z: zValues,
       colorscale: 'YlGnBu',
-      colorbar: {
-        title: 'Liter per invånare'
-      },
+      colorbar: { title: 'Liter per invånare' },
       text: hoverTexts,
       hoverinfo: 'text',
-      marker: {
-        line: {
-          width: 0.5,
-          color: 'gray'
-        }
-      },
+      marker: { line: { width: 0.5, color: 'gray' } },
       featureidkey: 'properties.name'
     }];
 
+    const isMobile = window.innerWidth < 600;
     const layout = {
       mapbox: {
-      style: 'carto-positron',
-      center: { lon: 17, lat: 63 },
-      zoom: 2.8,
+        style: 'carto-positron',
+        center: { lon: 17, lat: 63 },
+        zoom: isMobile ? 2.2 : 2.8
       },
-     margin: { t: 0, b: 0, l: 0, r: 0 }
+      margin: { t: 0, b: 0, l: 0, r: 0 }
     };
+
     Plotly.newPlot('map', data, layout, {
       mapboxAccessToken: 'pk.eyJ1IjoibW9ja3Rva2VuIiwiYSI6ImNrd3UzY3gydzA4dGIyb3A0cWQzYmF0N2cifQ.eYxOUUv-QWHM5cHHzGdrMg',
       responsive: true
     });
-
-
   })
+
   .catch(error => {
-    console.error('Kunde inte ladda kartan:', error);
+    console.error('Kartan kunde inte laddas:', error);
     document.getElementById('map').innerText = 'Kartan kunde inte laddas.';
   });
-
 
 
    //==================================kalkylatorn ===========
