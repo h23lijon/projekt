@@ -743,7 +743,7 @@ function fetchAndDrawChart() {
         ticks: { color: '#fff' },
         grid: { color: '#fff' },
         min: 3,
-        max: 4.6
+        max: 4.8
         }
       }
       }
