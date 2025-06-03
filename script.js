@@ -724,7 +724,7 @@ function fetchAndDrawChart() {
           display: true, 
           text: "Liter alkohol/person/år",
           color: '#fff',
-          font: { weight: 'bold', size: 16 }
+          font: { size: 14 }
         },
         ticks: { color: '#fff' },
         grid: { color: '#fff' },
