@@ -197,6 +197,8 @@ body p {
   color: #F0EBE5;
   margin-left: 30rem;
 }
+
+
 /*slut på hero + intro */
 
 
@@ -466,8 +468,6 @@ hr {
 .chart-source {
   font-size: x-small;
 }
-
-
 
 .custom-bg {
   background-color: #f0f0f0;
@@ -831,6 +831,7 @@ hr {
     margin-left: 1rem;
     font-size: 1.25em;
   }
+
  .calculator-source {
     font-size: 0.75rem;
     color: #fff;
@@ -1002,7 +1003,7 @@ hr {
     color: #333;
   }
 
-  /* ==================== MEDIA QUERIES ================================================================== */
+ /* ==================== MEDIA QUERIES ================================================================== */
 
   /* Desktop-läge: formulär och resultat sida vid sida */
 @media (min-width: 768px) {
@@ -1028,7 +1029,7 @@ hr {
   }
 
   .intro-text p {
-/*     margin: 0 1rem; */
+    margin: 0 1rem; 
     text-align: right;
   }
 
@@ -1055,6 +1056,7 @@ hr {
     margin-right: 2rem;
     margin-bottom:2rem;
   }
+
 
   .menu-toggle {
     display: flex;
@@ -1264,11 +1266,11 @@ hr {
   }
 
   .intro-text h1{
-    font-size: 6rem;
+    font-size: 4rem;
   }
 
   .intro-text p {
-    font-size: 2rem;
+    font-size: 1rem;
     margin-left: 6rem;
     margin-right: 1rem; 
   }
@@ -1367,45 +1369,6 @@ hr {
     font-size: 1rem;
     max-width: 100%;
   }   
-
-
-
-  /* Gör att process-sektionen lägger sig under på mindre skärm */
-/*   .process-section {
-    padding: 2rem 0 0 0; 
-    max-width: 100%;
-    width: 100%;
-    align-items: left;
-  }
-
- .step {
-    flex-direction: column;
-    align-items: left;
-    text-align: left; 
-  }
-
-  .step-image {
-    width: 100px;
-    margin-bottom: 1rem;
-  }
-
-  .step-text {
-    max-width: 100%;
-  }
-
-  .step-text h2,
-  .step-text p {
-    text-align: left;
-  }
-
-    .vertical-line {
-    display: none;
-  }
-
-  .step-text p {
-    font-size: 0.95rem;
-  } */
- 
 
 }
 
@@ -1519,5 +1482,3 @@ hr {
   }
 
 }
-
-
