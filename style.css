@@ -481,6 +481,37 @@ hr {
 .custom-bg {
   background-color: #f0f0f0;
 }
+
+/*tooltip*/
+.tooltip-hover {
+  position: relative;
+  display: inline-block;
+  cursor: help;
+}
+
+.tooltip-hover .tooltip-text {
+  visibility: hidden;
+  opacity: 0;
+  bottom: 120%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #333;
+  color: #fff;
+  padding: 0.4rem 0.6rem;
+  border-radius: 0.25rem;
+  font-size: 0.75rem;
+  white-space: normal;
+  max-width: 250px;
+  box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.2);
+  transition: opacity 0.1s ease-in-out, visibility 0.1s ease-in-out;
+  z-index: 10;
+}
+
+.tooltip-hover:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
+
 /*bubble pop up*/
 /* === Bubble Modal === */
 .bubble-modal {
