@@ -1507,6 +1507,7 @@ hr {
   .about-text-content {
     margin-left: 0.5rem;
     margin-top: 1rem;
+    width: 90%;
   }
 
   .about-text-content h2 {
