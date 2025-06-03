@@ -95,6 +95,7 @@ body p {
   position: absolute;
   right: 1.5rem;
   top: 1.5rem;
+
 }
 
 .menu-toggle span {
@@ -1105,7 +1106,7 @@ hr {
     cursor: pointer;
     position: absolute;
     right: 1.5rem;
-    top: 1.5rem;
+    top: 0.8rem;
     z-index: 1001;
   }
 
@@ -1220,7 +1221,7 @@ hr {
     cursor: pointer;
     position: absolute;
     right: 1.5rem;
-    top: 1.5rem;
+    top: 0.8rem;
     z-index: 1001;
   }
 
