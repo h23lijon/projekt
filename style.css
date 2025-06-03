@@ -483,6 +483,16 @@ hr {
 }
 
 /*tooltip*/
+
+.tooltip-text a {
+  color: #273c76;
+  text-decoration: underline;
+}
+
+.tooltip-text a:hover {
+  color: #ffffff;
+  text-decoration: none;
+}
 .tooltip-hover {
   position: relative;
   display: inline-block;
@@ -495,8 +505,8 @@ hr {
   bottom: 120%;
   left: 50%;
   transform: translateX(-50%);
-  background-color: #333;
-  color: #fff;
+  background-color: #fff;
+  color: #273c76;
   padding: 0.4rem 0.6rem;
   border-radius: 0.25rem;
   font-size: 0.75rem;
