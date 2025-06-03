@@ -105,6 +105,12 @@ body p {
   border-radius: 0.5rem;
 }
 
+/* När navbar är scrolled eller hovered */
+.site-header.scrolled .menu-toggle span,
+.site-header.hover-scrolled .menu-toggle span {
+  background-color: #273c76; /* blå färg */
+}
+
 /* === Navbar === */
 .navbar {
   width: 100%;
