@@ -182,20 +182,22 @@ body p {
 
 .intro-text {
   text-align: right;
-  font-family: "Akhand";
-  margin: 10rem 5rem 10rem 5rem;
+  font-family: "Akhand", sans-serif;
+  margin: 6rem 3rem;
 }
 
-.intro-text h1 { 
-  font-size: 10rem;
+.intro-text h1 {
+  font-size: clamp(3rem, 10vw, 9rem); /* Växer med viewport */
   color: #F0EBE5;
+  margin: 0;
 }
 
 .intro-text p {
   font-size: 1.2rem;
   line-height: 1.5;
   color: #F0EBE5;
-  margin-left: 30rem;
+  margin: 1rem 0 0 auto; /* flyttar den till höger men inte fast med px/rem */
+  max-width: 70ch; /* bra läsbredd */
 }
 
 
@@ -1023,22 +1025,6 @@ hr {
 }
 
 @media (max-width: 740px) {
-  .intro-text {
-    text-align: right;
-    margin-bottom:2rem;
-  }
-
-  .intro-text p {
-    margin: 0 1rem; 
-    text-align: right;
-  }
-
-  .intro-text h1 {
-    font-size: 6rem;
-    margin: 0 1rem;
-    text-align: right;
-  }
-
     .grid-section {
     grid-template-columns: 1fr;
     padding: 1rem;
@@ -1051,13 +1037,6 @@ hr {
 
 /* Surfplattor: 600px - 1024px (37.5rem - 64rem) */
 @media (max-width: 64rem) and (min-width: 37.5rem) {
-  .intro-text {
-    margin-left: 2rem;
-    margin-right: 2rem;
-    margin-bottom:2rem;
-  }
-
-
   .menu-toggle {
     display: flex;
     flex-direction: column;
@@ -1143,10 +1122,20 @@ hr {
 /* Mobiler: upp till 600px (max-width: 37.5rem) */
 @media (max-width: 37.5rem) {
   .intro-text {
-    margin-left: 2rem;
-    margin-right: 2rem;
-    margin-bottom:2rem;
+    text-align: right;
+    margin: 4rem 1.5rem;
   }
+
+  .intro-text h1 {
+    font-size: 3rem;
+  }
+
+  .intro-text p {
+    margin: 1rem 0 0 0;
+    font-size: 1rem;
+    max-width: 100%;
+  }
+
   .cards {
     grid-template-columns: 1fr;
   }
@@ -1259,21 +1248,7 @@ hr {
 
 /* Karusell: mobil och surfplatta */
 @media (max-width: 768px) {
-    .intro-text {
-    margin-left: 2rem;
-    margin-right: 2rem;
-    margin-bottom:2rem;
-  }
 
-  .intro-text h1{
-    font-size: 4rem;
-  }
-
-  .intro-text p {
-    font-size: 1rem;
-    margin-left: 6rem;
-    margin-right: 1rem; 
-  }
 
   .carousel-wrapper {
     flex-direction: column;
@@ -1373,22 +1348,6 @@ hr {
 }
 
 @media (max-width: 640px) {
-   .intro-text {
-    margin-left: 2rem;
-    margin-right: 2rem;
-    margin-bottom:2rem;
-  }
-
-   .intro-text h1{
-    font-size: 6rem;
-  }
-
-  .intro-text p {
-    font-size: 1rem;
-    margin-left: 6rem;
-    margin-right: 1rem; 
-  }
-
   .carousel-text {
     padding: 0 1.5rem; 
     margin: 0 auto;
@@ -1405,21 +1364,6 @@ hr {
 }
 
 @media screen and (max-width: 480px) {
-  .intro-text {
-    margin-left: 2rem;
-    margin-right: 2rem;
-  }
-
-  .intro-text h1{
-    font-size: 6rem;
-  }
-
-  .intro-text p {
-    font-size: 1rem;
-    margin-left: 6rem;
-    margin-right: 1rem; 
-  }
-
   .carousel-wrapper {
     margin: 2rem auto;
     padding: 0.5rem;
