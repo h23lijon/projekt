@@ -183,7 +183,7 @@ body p {
 .intro-text {
   text-align: right;
   font-family: "Akhand", sans-serif;
-  margin: 6rem 3rem;
+  margin: 10rem 3rem;
 }
 
 .intro-text h1 {
@@ -1176,10 +1176,10 @@ hr {
 }
 
 /* Mobiler: upp till 600px (max-width: 37.5rem) */
-@media (max-width: 37.5rem) {
+@media (max-width: 600px) {
   .intro-text {
     text-align: right;
-    margin: 4rem 1.5rem;
+    margin: 6rem 1.5rem;
   }
 
   .intro-text h1 {
