@@ -559,7 +559,7 @@ resultBox.innerHTML = message;
   resultBox.classList.remove('hidden');
 });
 
-// Bubble chart över alkoholkonsumtion och befolkningstäthet i Sverige (2019) ===============================================
+// Bubble chart: alkoholkonsumtion vs befolkningstäthet (SCB + CAN)
 
 const urlPopulation = "https://api.scb.se/OV0104/v1/doris/sv/ssd/START/BE/BE0101/BE0101A/FolkmangdNov";
 const urlArea = "https://api.scb.se/OV0104/v1/doris/sv/ssd/START/MI/MI0802/Areal2012NN";
@@ -614,134 +614,151 @@ function getColor(value, min, max) {
   return gradientColors[Math.max(0, Math.min(index, gradientColors.length - 1))];
 }
 
-function fetchAndDrawChart() {
-  const popReq = new Request(urlPopulation, {
-    method: 'POST',
+// ======== Modal: öppna/stäng funktioner ========
+
+function openBubbleModal() {
+  document.getElementById("bubbleModalWrapper").style.display = "block";
+  drawBubbleChart();
+}
+
+function closeBubbleModal() {
+  document.getElementById("bubbleModalWrapper").style.display = "none";
+}
+
+window.addEventListener('click', function (e) {
+  const modal = document.getElementById("bubbleModalWrapper");
+  if (e.target === modal) closeBubbleModal();
+});
+
+// ======== Rita Bubble Chart i modalen ========
+
+function drawBubbleChart() {
+  fetch(urlPopulation, {
+    method: "POST",
     body: JSON.stringify(querySCB4)
-  });
+  })
+  .then(res => res.json())
+  .then(popData => {
+    return fetch(urlArea, {
+      method: "POST",
+      body: JSON.stringify(queryArea)
+    }).then(areaRes => areaRes.json()).then(areaData => {
+      const populationMap = {};
+      const areaMap = {};
 
-  const areaReq = new Request(urlArea, {
-    method: 'POST',
-    body: JSON.stringify(queryArea)
-  });
+      popData.data.forEach(entry => {
+        const code = entry.key[0];
+        const value = parseInt(entry.values[0].replace(/\s/g, ""), 10);
+        if (!populationMap[code]) populationMap[code] = 0;
+        populationMap[code] += value;
+      });
 
-  Promise.all([
-    fetch(popReq).then(res => res.json()),
-    fetch(areaReq).then(res => res.json())
-  ])
-  .then(([popData, areaData]) => {
-    const populationMap = {};
-    const areaMap = {};
+      areaData.data.forEach(entry => {
+        const code = entry.key[0];
+        const area = parseFloat(entry.values[0].replace(/\s/g, "").replace(",", "."));
+        areaMap[code] = area;
+      });
 
-    popData.data.forEach(entry => {
-      const code = entry.key[0];
-      const value = parseInt(entry.values[0].replace(/\s/g, ""), 10);
-      if (!populationMap[code]) populationMap[code] = 0;
-      populationMap[code] += value;
-    });
-
-    areaData.data.forEach(entry => {
-      const code = entry.key[0];
-      const area = parseFloat(entry.values[0].replace(/\s/g, "").replace(",", "."));
-      areaMap[code] = area;
-    });
-
-    const dataPoints = [];
-    const consumptions = [];
-
-    regionCodes.forEach(code => {
-      const name = regionCodeToName[code];
-      const pop = populationMap[code];
-      const area = areaMap[code];
-      const density = pop && area ? pop / area : null;
-      const consumption = consumptionData2[name];
-
-      if (pop && area && density && consumption) {
-        dataPoints.push({
-          x: parseFloat(density.toFixed(1)),
-          y: parseFloat(consumption.toFixed(2)),
-          r: Math.sqrt(pop) / 100 * 2,
-          label: name,
-          consumption: consumption
-        });
-        consumptions.push(consumption);
+      // Anpassad bubbelstorlek beroende på skärm
+      let baseRadius;
+      if (window.innerWidth < 500) {
+        baseRadius = 0.5;
+      } else if (window.innerWidth < 768) {
+        baseRadius = 1;
+      } else {
+        baseRadius = 2;
       }
-    });
 
-    const minC = Math.min(...consumptions);
-    const maxC = Math.max(...consumptions);
+      const dataPoints = [];
+      const consumptions = [];
 
-    // Skapa canvas och layout
-    const container = document.getElementById("chartContainer");
-    container.innerHTML = ""; // Rensa
-    container.style.display = "block"; // enbart chart – inget bredvid
+      regionCodes.forEach(code => {
+        const name = regionCodeToName[code];
+        const pop = populationMap[code];
+        const area = areaMap[code];
+        const density = pop && area ? pop / area : null;
+        const consumption = consumptionData2[name];
 
-    const chartCanvas = document.createElement("canvas");
-    chartCanvas.style.width = "100%";
-    chartCanvas.style.maxWidth = "100%";
-    chartCanvas.style.height = "400px";
-
-    container.appendChild(chartCanvas);
-
-    new Chart(chartCanvas, {
-      type: "bubble",
-      data: {
-      datasets: [{
-        label: "Alkoholkonsumtion vs Befolkningstäthet (2019)",
-        data: dataPoints,
-        backgroundColor: ctx => getColor(ctx.raw.consumption, minC, maxC),
-        borderColor: "#fff",
-        borderWidth: 1
-      }]
-      },
-      options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      layout: {
-        padding: {
-        bottom: 30 // eller mer 
+        if (pop && area && density && consumption) {
+          dataPoints.push({
+            x: parseFloat(density.toFixed(1)),
+            y: parseFloat(consumption.toFixed(2)),
+            r: Math.sqrt(pop) / 100 * baseRadius,
+            label: name,
+            consumption: consumption
+          });
+          consumptions.push(consumption);
         }
-      },
-      plugins: {
-        tooltip: {
-        callbacks: {
-          label: context => {
-          const dp = context.raw;
-          return `${dp.label}: ${dp.y} l/person, ${dp.x} inv/km²`;
+      });
+
+      const minC = Math.min(...consumptions);
+      const maxC = Math.max(...consumptions);
+
+      const ctx = document.getElementById("bubbleChartCanvas").getContext("2d");
+
+      // Rensa tidigare grafik
+      if (window.bubbleChartInstance) {
+        window.bubbleChartInstance.destroy();
+      }
+
+      window.bubbleChartInstance = new Chart(ctx, {
+        type: "bubble",
+        data: {
+          datasets: [{
+            label: "Alkoholkonsumtion vs Befolkningstäthet (2019)",
+            data: dataPoints,
+            backgroundColor: ctx => getColor(ctx.raw.consumption, minC, maxC),
+            borderColor: "#fff",
+            borderWidth: 1
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          layout: { padding: { bottom: 30 } },
+          plugins: {
+            tooltip: {
+              callbacks: {
+                label: context => {
+                  const dp = context.raw;
+                  return `${dp.label}: ${dp.y} l/person, ${dp.x} inv/km²`;
+                }
+              }
+            },
+            legend: { display: false }
+          },
+          scales: {
+            x: {
+              title: {
+                display: true,
+                text: "Invånare per km²",
+                color: '#000',
+                font: { weight: 'bold' }
+              },
+              ticks: { color: '#000' }
+            },
+            y: {
+              title: {
+                display: true,
+                text: "Liter alkohol/person/år",
+                color: '#000',
+                font: { weight: 'bold', size: 16 }
+              },
+              ticks: { color: '#000' },
+              grid: { color: '#ddd' },
+              min: 3,
+              max: 4.8
+            }
           }
         }
-        },
-        legend: { display: false }
-      },
-      scales: {
-        x: {
-        title: { display: true, text: "Invånare per km²", 
-          color: '#fff', font: {weight: 'bold'}}, 
-          ticks: {color: '#fff', font: {weight: 'bold'}},
-        },
-        y: {
-        title: { 
-          display: true, 
-          text: "Liter alkohol/person/år",
-          color: '#fff',
-          font: { size: 14 }
-        },
-        ticks: { color: '#fff' },
-        grid: { color: '#fff' },
-        min: 3,
-        max: 4.8
-        }
-      }
-      }
+      });
     });
   })
   .catch(err => {
     console.error("Fel vid hämtning:", err);
-    document.getElementById("chartContainer").innerText = "Kunde inte hämta data.";
+    document.getElementById("bubbleChartCanvas").parentElement.innerHTML = "Kunde inte hämta data.";
   });
 }
-
-fetchAndDrawChart();
 
 
   // Karusell ================================================================================//
