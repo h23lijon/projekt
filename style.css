@@ -520,103 +520,6 @@ hr {
   min-height: 350px;
 }
 @media (max-width: 768px) {
-
-  
-  .carousel-wrapper {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-  .carousel-text,
-  .carousel-container {
-    flex: 1 1 100%;
-    width: 100%;
-  }
-
-  .carousel {
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-  }
-
-  .carousel-track {
-    padding: 0 5vw;
-  }
-
-  .carousel-card {
-    flex: 0 0 90%;
-    min-width: 90%;
-    margin: 0 auto;
-    scroll-snap-align: center;
-  }
-
-  .carousel-btn {
-    display: none !important;
-  }
-
- .footer-container {
-    flex-direction: column;
-    gap: 0.75rem;
-    align-items: center; 
-    padding: 0; 
-  }
-
-.footer-branding {
-    max-width: 100%;
-    flex: 0 0 auto; 
-    text-align: center;
-    margin-bottom: 0.5rem; 
-    margin-right: 0rem;
-  }
-
- .footer-nav {
-  flex-direction: column;
-  align-items: center;    
-  justify-content: center;
-  gap: 0.25rem;    
-}
-
-  .footer-bottom {
-    flex-direction: column-reverse;
-    align-items: center;
-    gap: 0.25rem;
-    text-align: center;
-    padding-bottom: 0.5rem;
-     margin-right: 0rem;
-  }
-
-  .footer-copy {
-    text-align: center;
-    flex: none;
-    margin-left:4rem;
-  }
-
-  .site-footer {
-    padding: 1rem; 
-    margin-right: 0rem;
-  }
-   .about-section {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 2rem; 
-    height: auto;
-    margin-bottom: 1rem;
-  }
-
-  .about-section h1 {
-    writing-mode: horizontal-tb;
-    transform: none;
-    font-size: 3rem;
-    text-align: left;
-    margin-left: 1rem;
-  }
-
-  .about-section p {
-    margin: 1rem 0;
-    font-size: 1rem;
-    max-width: 100%;
-  }   
-
   .chart-canvas-wrapper {
     min-height: 260px;
   }
@@ -1188,8 +1091,8 @@ hr {
   }
 }
 
-/* Surfplattor: 600px - 1024px */
-@media (max-width: 600px) and (min-width: 1024px) {
+/* Surfplattor: 600px - 1024px (37.5rem - 64rem) */
+@media (max-width: 64rem) and (min-width: 37.5rem) {
   .menu-toggle {
     display: flex;
     flex-direction: column;
@@ -1250,7 +1153,7 @@ hr {
     transform: none;
     font-size: 3rem;
     text-align: left;
-    margin-left: 1.6rem;
+    margin-left: 1.5rem;
   }
 
   .about-section p {
@@ -1397,6 +1300,107 @@ hr {
     .vertical-line {
     display: none;
   }
+}
+
+/* Karusell: mobil och surfplatta */
+@media (max-width: 768px) {
+
+
+  .carousel-wrapper {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .carousel-text,
+  .carousel-container {
+    flex: 1 1 100%;
+    width: 100%;
+  }
+
+  .carousel {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .carousel-track {
+    padding: 0 5vw;
+  }
+
+  .carousel-card {
+    flex: 0 0 90%;
+    min-width: 90%;
+    margin: 0 auto;
+    scroll-snap-align: center;
+  }
+
+  .carousel-btn {
+    display: none !important;
+  }
+
+ .footer-container {
+    flex-direction: column;
+    gap: 0.75rem;
+    align-items: center; 
+    padding: 0; 
+  }
+
+.footer-branding {
+    max-width: 100%;
+    flex: 0 0 auto; 
+    text-align: center;
+    margin-bottom: 0.5rem; 
+    margin-right: 0rem;
+  }
+
+ .footer-nav {
+  flex-direction: column;
+  align-items: center;    
+  justify-content: center;
+  gap: 0.25rem;    
+}
+
+  .footer-bottom {
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 0.25rem;
+    text-align: center;
+    padding-bottom: 0.5rem;
+     margin-right: 0rem;
+  }
+
+  .footer-copy {
+    text-align: center;
+    flex: none;
+    margin-left:4rem;
+  }
+
+  .site-footer {
+    padding: 1rem; 
+    margin-right: 0rem;
+  }
+   .about-section {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 2rem; 
+    height: auto;
+    margin-bottom: 1rem;
+  }
+
+  .about-section h1 {
+    writing-mode: horizontal-tb;
+    transform: none;
+    font-size: 3rem;
+    text-align: left;
+    margin-left: 1rem;
+  }
+
+  .about-section p {
+    margin: 1rem 0;
+    font-size: 1rem;
+    max-width: 100%;
+  }   
+
 }
 
 @media (max-width: 640px) {
