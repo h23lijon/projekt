@@ -117,7 +117,7 @@ fetch(urlSCB1, {
             },
             ticks: {
               font:{
-                size:1,
+                size:14,
               }
             }
           }
