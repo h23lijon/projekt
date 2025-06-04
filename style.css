@@ -36,14 +36,14 @@ body p {
   transition: background-color 0.3s ease, box-shadow 0.3s ease, padding 0.3s ease;
 }
 
-/* Bakgrundsfärg på hela headern när man scrollar */
+
 .site-header.scrolled {
   background-color: rgba(240, 235, 229, 0.85);
   box-shadow: 0 0.125rem 0.375rem rgba(0, 0, 0, 0.04);
 
 }
 
-/* Navbar-specifika ändringar vid scroll */
+
 .site-header.scrolled .navbar a {
   color: #263A99;
   transition: color 0.3s ease;
@@ -53,7 +53,7 @@ body p {
   background-color: #263A99;
 }
 
-/* Hoverat läge ovanför hero */
+
 .site-header.hover-scrolled {
   background-color: rgba(240, 235, 229, 0.85);
   box-shadow: 0 0.125rem 0.375rem rgba(0, 0, 0, 0.04);
@@ -69,7 +69,7 @@ body p {
 }
 
 
-/* Inre header-layout */
+
 .header-inner {
   display: flex;
   flex-direction: row;
@@ -106,10 +106,10 @@ body p {
   border-radius: 0.5rem;
 }
 
-/* När navbar är scrolled eller hovered */
+
 .site-header.scrolled .menu-toggle span,
 .site-header.hover-scrolled .menu-toggle span {
-  background-color: #273c76; /* blå färg */
+  background-color: #273c76; 
 }
 
 /* === Navbar === */
@@ -182,7 +182,7 @@ body p {
   justify-content: right;
 }
 
-/* Behövs för att inte sticky headern ska hamna i vägen */
+
 [id] {
   scroll-margin-top: 7rem; 
 }
@@ -194,7 +194,7 @@ body p {
 }
 
 .intro-text h1 {
-  font-size: clamp(3rem, 10vw, 9rem); /* Växer med viewport */
+  font-size: clamp(3rem, 10vw, 9rem); 
   color: #F0EBE5;
   margin: 0;
 }
@@ -203,8 +203,8 @@ body p {
   font-size: 1.2rem;
   line-height: 1.5;
   color: #F0EBE5;
-  margin: 1rem 0 0 auto; /* flyttar den till höger men inte fast med px/rem */
-  max-width: 70ch; /* bra läsbredd */
+  margin: 1rem 0 0 auto; 
+  max-width: 70ch; 
 }
 
 
@@ -348,7 +348,7 @@ hr {
   margin-bottom: 1rem;
 }
 
-/*fram-baksida-delen*/
+
 #cardContainer {
   width: 100%;
   position: relative;
@@ -463,11 +463,10 @@ hr {
   content: "";
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
-  background-color: rgba(0, 0, 0, 0.7); /* 70% svart */
+  background-color: rgba(0, 0, 0, 0.7); 
   z-index: 1;
 }
 
-/* Innehåll ovanpå overlay */
 .chart-pic > * {
   position: relative;
   z-index: 2;
@@ -482,7 +481,7 @@ hr {
   background-color: #f0f0f0;
 }
 
-/*tooltip*/
+
 
 .tooltip-text a {
   color: #273c76;
@@ -522,7 +521,7 @@ hr {
   opacity: 1;
 }
 
-/*bubble pop up*/
+
 /* === Bubble Modal === */
 .bubble-modal {
   display: none;
@@ -552,11 +551,11 @@ hr {
   font-size: 1.5rem;
   margin-bottom: 1rem;
   margin-left: 0.6rem;
-  /* stil för rubriken */
+
 }
 
 .bubble-modal p {
-  /* stil för brödtexten */
+
     color: #59627a;
   font-size: 1rem;
   line-height: 1.5;
@@ -579,7 +578,7 @@ hr {
   color: #000;
 }
 
-/* Responsiv canvas */
+
 .chart-canvas-wrapper {
   width: 100%;
   height: auto;
@@ -597,7 +596,7 @@ hr {
   display: block;
 }
 
-  /* === Footer*/
+  /* === Footer ===================*/
 .site-footer {
   padding: 2rem 1rem;
   background-color: #f5f5f5;
@@ -615,7 +614,7 @@ hr {
 
 .footer-branding {
   max-width: 18.75rem;
-  flex: 1 1 250px; /* mindre min-bredd */
+  flex: 1 1 250px;
 }
 
 .footer-branding .footer-logo {
@@ -813,7 +812,7 @@ hr {
   color: white !important;
 }
 
-/* Bild-overlay-effekt */
+
 .image-overlay {
   position: absolute;
   top: 0;
@@ -908,7 +907,8 @@ hr {
   margin-top: 1rem;
 }
 
- /*===kalkylatorn===*/
+ /*----------------kalkylatorn-------------------------*/
+
 .calculator {
     background-image: url('img/bg.jpg');
     background-size: cover;
@@ -976,8 +976,8 @@ hr {
   .label-row {
     display: flex;
     align-items: baseline;
-    gap: 0.1rem; /* avstånd mellan label och texten */
-    flex-wrap: wrap; /* radbryt vid behov på små skärmar */
+    gap: 0.1rem;
+    flex-wrap: wrap; 
   }
   
   h1 {
@@ -1012,7 +1012,7 @@ hr {
     padding: 0.8rem 1.2rem;
     font-size: 1rem;
     background-color: #273c76;
-    border-color: #e4e7f0; /*stroke weak för att den ska synas bättre mot bakgrunden*/
+    border-color: #e4e7f0; 
     color: white;
     border-radius: 0.375rem;
     border-width: 0.0525rem;
@@ -1085,7 +1085,7 @@ hr {
 }
   /*===kalkylator slut===*/ 
   
-  /* Modal, bakgrund  */
+
 .modal {
     display: none;
     position: fixed;
@@ -1100,7 +1100,7 @@ hr {
     box-sizing: border-box;
   }
   
-  /*  Modal, innehåll  */
+ 
   .modal-content {
     background-color: #fff;
     margin: auto;
@@ -1113,9 +1113,9 @@ hr {
     box-sizing: border-box;
   }
   
-  /*  stängknapp  */
+
   .close {
-    color: #aaa; /*Se över om den ska vara annan färg? Brand? Likaså hover*/
+    color: #aaa; 
     position: absolute;
     top: 1rem;
     right: 1.5rem;
@@ -1129,7 +1129,7 @@ hr {
 
  /* ==================== MEDIA QUERIES ================================================================== */
 
-  /* Desktop-läge: formulär och resultat sida vid sida */
+
 @media (min-width: 768px) {
   .calculator-layout {
     flex-direction: row;
@@ -1201,7 +1201,7 @@ hr {
   }
 
      .carousel-wrapper h2 {
-    font-size: 3rem; /* Mindre rubrik på mobiler */
+    font-size: 3rem; 
     text-align: left;
     margin-left: 0;
   }
@@ -1333,7 +1333,7 @@ hr {
   }
 
    .carousel-wrapper h2 {
-    font-size: 3rem; /* Mindre rubrik på mobiler */
+    font-size: 3rem; 
     text-align: center;
     margin-left: 0;
   }
@@ -1345,18 +1345,18 @@ hr {
   }
 
   .carousel-text p {
-    max-width: 100%; /* Låt p-text ta full bredd */
+    max-width: 100%;
     font-size: 1rem;
     margin-left: 0;
     margin-right: 0;
   }
 
   .carousel-container {
-    padding: 0 1rem; /* Mindre sidomarginal */
+    padding: 0 1rem; 
   }
 
   .carousel-card {
-    flex: 0 0 80%; /* Visa en i taget på mindre skärmar */
+    flex: 0 0 80%; 
   }
 
   .carousel-btn img {
@@ -1545,7 +1545,7 @@ hr {
 
   .step-text {
     max-width: 100%;
-/*     padding: 0 1rem;  */
+
   }
 
   .step-text h2,
@@ -1564,11 +1564,10 @@ hr {
     color: #273C76;
   font-size: 1.5rem;
   margin-bottom: 0.3rem;
-  /* stil för rubriken */
+
 }
 
 .bubble-modal p {
-  /* stil för brödtexten */
     color: #59627a;
   font-size: 1rem;
   line-height: 1.2rem;
