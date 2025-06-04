@@ -51,9 +51,9 @@ fetch(urlSCB1, {
       tension: 0.3,
       borderColor: borderColorBase[index % borderColorBase.length],
       backgroundColor: colorBase[index % colorBase.length],
-      borderWidth: 2,
-      pointRadius: 3,
-      pointHoverRadius: 4,
+      borderWidth: (ctx) => ctx.chart.width < 400 ? 1 : 2,
+      pointRadius: (ctx) => ctx.chart.width < 400 ? 2 : 3,
+      pointHoverRadius: (ctx) => ctx.chart.width < 400 ? 3 : 5,
     }));
 
     const ctx1 = document.getElementById('myChart1').getContext('2d');
@@ -65,15 +65,19 @@ fetch(urlSCB1, {
       },
       options: {
         responsive: true,
+        maintainAspectRatio: false,
         plugins: {
           title: {
             display: true,
+            font: {
+              size: (ctx) => ctx.chart.width < 400 ? 12 : 16
+            }
           },
           legend: {
             position: 'top',
             labels: {
               font: {
-                size: 14
+                size: (ctx) => ctx.chart.width < 400 ? 10 : 14
               },
               padding: 20
             }
@@ -86,12 +90,12 @@ fetch(urlSCB1, {
               display: true,
               text: 'Ton',
               font: {
-                size: 14
+                size: (ctx) => ctx.chart.width < 400 ? 10 : 14
               }
             },
             ticks: {
               font: {
-                size: 14
+                size: (ctx) => ctx.chart.width < 400 ? 10 : 14
               }
             }
           },
@@ -100,12 +104,12 @@ fetch(urlSCB1, {
               display: true,
               text: 'År',
               font: {
-                size: 14
+                size: (ctx) => ctx.chart.width < 400 ? 10 : 14
               }
             },
             ticks: {
               font: {
-                size: 14
+                size: (ctx) => ctx.chart.width < 400 ? 10 : 14
               }
             }
           }
@@ -116,6 +120,7 @@ fetch(urlSCB1, {
   .catch(error => {
     console.error('Fel vid hämtning av data (myChart1):', error);
   });
+
 
 
 //Vad köper vi mest, myChart2 ================================================================//
