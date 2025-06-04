@@ -69,7 +69,7 @@ body p {
 }
 
 
-
+/* Inre header-layout */
 .header-inner {
   display: flex;
   flex-direction: row;
@@ -1491,7 +1491,6 @@ hr {
 }
 
 @media screen and (max-width: 480px) {
-  
   .carousel-wrapper {
     margin: 2rem auto;
     padding: 0.5rem;
