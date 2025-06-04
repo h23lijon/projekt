@@ -12,6 +12,7 @@
   <script src="https://cdn.plot.ly/plotly-2.26.0.min.js"></script>
 
   <script src="script.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
 </head>
 <body>
   <!-- NYASTE AKTUELL -->
@@ -235,7 +236,7 @@
     <div class="chart-item">
       <div class="text-row">
         <h2>Konsumtionen län för län</h2>
-        <p>Mörkare färg representerar högre alkoholkonsumtion i liter ren alkohol per person och år 2017-2019. Rikssnittet är det genomsnittliga värdet för hela landet.
+        <p>Mörkare färg representerar högre alkoholkonsumtion i liter ren alkohol per person och år 2017–2019. Rikssnittet är det genomsnittliga värdet för hela landet.
           Peka på ett län för att se skillnad från rikssnittet på 3,66 liter per person. Här kan du även se <a href="#" class="card-link" onclick="openBubbleModal(); return false;">
   konsumtion relaterat till befolkningstäthet
 </a></p>
@@ -259,7 +260,7 @@
   <div class="chart-item custom-bg">
     <div class="text-row">
       <h2>Tillförd mängd förpackningar över tid</h2>
-      <p>Alkoholens klimatpåverkan handlar inte bara om produkten i flaskan utan också om själva behållaren eller förpackningen. Genom att minska mängden förpackningsmaterial och öka återvinningen kan vi tillsammans bidra till FN:s globala mål för hållbar konsumtion och produktion <i>(Mål 12)</i> och bekämpning av klimatförändringar <i>(Mål 13)</i>. Diagrammet visar tydligt att glas löpande står för den största volymen.</p>
+      <p>Diagrammet visar mängden dryckesförpackningar som satts på marknaden mellan 2020 och 2023. Glas står för den klart största volymen, medan PET-flaskor och aluminiumburkar ligger betydligt lägre och har varit relativt stabila över tid.</p>
     </div>
     <canvas id="myChart1"></canvas>
 <div class="chart-source tooltip-hover">
@@ -392,8 +393,8 @@
     <div class="text-row">
       <h3>Konsumtion relaterat till befolkningstäthet per län</h2>
       <p>
-        Bubblorna visar varje läns alkoholkonsumtion och befolkningstäthet. Även här representerar mörkare färg högre konsumtion, 
-        medan större bubblor visar högre befolkningstäthet.
+        Bubblans position visar länets befolkningstäthet och alkoholkonsumtion, även här representerar mörkare färg högre konsumtion.
+Bubblans storlek är baserad på totala befolkningen i länet – ju större befolkning, desto större bubbla.
       </p>
     </div>
     <div class="chart-canvas-wrapper">

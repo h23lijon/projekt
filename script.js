@@ -87,7 +87,7 @@ fetch(urlSCB1, {
               font: {
                 size: 14,
               },
-              padding: 20 // Detta är OK här
+              padding: 20 
             }
           }
         },
@@ -475,7 +475,10 @@ fetch('swedish_regions.geojson')
       geojson: geojson,
       locations: locations,
       z: zValues,
-      colorscale: 'YlGnBu',
+      colorscale: [
+  [0, '#C3CAE9'], // låg konsumtion
+  [1, '#1C2E7C']  // hög konsumtion
+],
       colorbar: { title: 'Liter per invånare' },
       text: hoverTexts,
       hoverinfo: 'text',
@@ -662,7 +665,7 @@ function drawBubbleChart() {
       // Anpassad bubbelstorlek beroende på skärm
       let baseRadius;
       if (window.innerWidth < 500) {
-        baseRadius = 0.5;
+        baseRadius = 1;
       } else if (window.innerWidth < 768) {
         baseRadius = 1;
       } else {
@@ -803,6 +806,7 @@ function prevSlide() {
     updateCarousel();
   }
 }
+
 
 // Initiera karusell
 window.addEventListener('load', updateCarousel);
