@@ -302,7 +302,7 @@ window.addEventListener("load", () => {
   new Chart(ctx3, config);
 });
 
-// CO₂-utsläpp per förpackning, Systembolaget
+// CO₂-utsläpp per förpackning, Systembolaget //
 
 const co2Labels = [
   "Box (3 l)", "Påse (2 l)", "Papp (1 l)", "Returglas (0.5 l)",
@@ -495,7 +495,7 @@ fetch('swedish_regions.geojson')
   });
 
 
-   //==================================kalkylatorn ===========
+   //==================================kalkylatorn =========== //
 document.getElementById('calculate-button').addEventListener('click', function(e) {
   e.preventDefault();
 
@@ -509,27 +509,24 @@ document.getElementById('calculate-button').addEventListener('click', function(e
   const resultBox = document.getElementById('result');
   const errorMessage = document.getElementById('error-message');
 
-  // Återställ båda meddelandena
   resultBox.classList.add('hidden');
   errorMessage.classList.add('hidden');
   errorMessage.textContent = "";
 
-  // Visa felmeddelande om inget är ifyllt
   if (beer === 0 && wine === 0 && spirits === 0) {
     errorMessage.textContent = "Fyll i minst ett dryckesalternativ för att se uträkningen";
     errorMessage.classList.remove('hidden');
     return;
   }
 
-  // Beräkna ren alkohol i liter per år
-  const beerAlcohol = beer * 0.0165 * 12;     // 0.33 l * 5% * 12 mån
-  const wineAlcohol = wine * 0.018 * 12;      // 0.15 l * 12% * 12 mån
-  const spiritsAlcohol = spirits * 0.016 * 12; // 0.04 l * 40% * 12 mån
+  const beerAlcohol = beer * 0.0165 * 12;     
+  const wineAlcohol = wine * 0.018 * 12;      
+  const spiritsAlcohol = spirits * 0.016 * 12; 
 
   const totalAlcoholLiters = beerAlcohol + wineAlcohol + spiritsAlcohol;
   const avgSwedeAlcohol = 3.66;
 
-  // Samla ihop meddelanden
+
 let message = "";
 if (totalCO2 < avgSwedeCO2) {
   message += "<strong class='result-heading'>🌱 Härligt! Du bidrar till mindre utsläpp än genomsnittet</strong>";
@@ -549,7 +546,7 @@ resultBox.innerHTML = message;
   resultBox.classList.remove('hidden');
 });
 
-// Bubble chart: alkoholkonsumtion vs befolkningstäthet (SCB + CAN)
+// Bubble chart: alkoholkonsumtion vs befolkningstäthet (SCB + CAN) //
 
 const urlPopulation = "https://api.scb.se/OV0104/v1/doris/sv/ssd/START/BE/BE0101/BE0101A/FolkmangdNov";
 const urlArea = "https://api.scb.se/OV0104/v1/doris/sv/ssd/START/MI/MI0802/Areal2012NN";
@@ -604,7 +601,6 @@ function getColor(value, min, max) {
   return gradientColors[Math.max(0, Math.min(index, gradientColors.length - 1))];
 }
 
-// ======== Modal: öppna/stäng funktioner ======== //
 
 function openBubbleModal() {
   document.getElementById("bubbleModalWrapper").style.display = "block";
@@ -620,7 +616,6 @@ window.addEventListener('click', function (e) {
   if (e.target === modal) closeBubbleModal();
 });
 
-// ======== Rita Bubble Chart i modalen ======== //
 
 function drawBubbleChart() {
   fetch(urlPopulation, {
@@ -752,7 +747,6 @@ function drawBubbleChart() {
   // Karusell ================================================================================//
 let currentIndex = 1;
 
-// Justera karusellens position för desktop
 function updateCarousel() {
   const track = document.querySelector('.carousel-track');
   const cards = document.querySelectorAll('.carousel-card');
@@ -844,8 +838,6 @@ if (chartModal && openChartModal && closeChartModalBtn) {
     }
   });
 }
-
-//navbaren vid scroll//
 
 const hero = document.querySelector('.hero-section');
 const header = document.querySelector('.site-header');
