@@ -76,17 +76,51 @@ fetch(urlSCB1, {
         datasets: datasets
       },
       options: {
-  responsive: true,
-  plugins: {
-    title: {
-      display: true
-    },
-    legend: {
-      position: 'top',
-      padding: 20,
-      labels: {
-        font: {
-          size: 14,
+        responsive: true,
+        plugins: {
+          title: {
+            display: true
+          },
+          legend: {
+            position: 'top',
+            labels: {
+              font: {
+                size: 14,
+              },
+              padding: 20 
+            }
+          }
+        },
+        scales: {
+          y: {
+            beginAtZero: true,
+            title: {
+              display: true,
+              text: 'Ton',
+              font: {
+                size:14,
+              }
+            },
+            ticks: {
+              font:{
+                size:14,
+              }
+            }
+          },
+          x: {
+            title: {
+              display: true,
+              text: 'År',
+              font: {
+                size:14,
+              }
+            },
+            ticks: {
+              font:{
+                size:14,
+              }
+            }
+          }
         }
       }
     }
@@ -475,7 +509,10 @@ fetch('swedish_regions.geojson')
       geojson: geojson,
       locations: locations,
       z: zValues,
-      colorscale: 'YlGnBu',
+      colorscale: [
+  [0, '#C3CAE9'], // låg konsumtion
+  [1, '#1C2E7C']  // hög konsumtion
+],
       colorbar: { title: 'Liter per invånare' },
       text: hoverTexts,
       hoverinfo: 'text',
@@ -662,7 +699,7 @@ function drawBubbleChart() {
       // Anpassad bubbelstorlek beroende på skärm
       let baseRadius;
       if (window.innerWidth < 500) {
-        baseRadius = 0.5;
+        baseRadius = 1;
       } else if (window.innerWidth < 768) {
         baseRadius = 1;
       } else {
@@ -803,6 +840,7 @@ function prevSlide() {
     updateCarousel();
   }
 }
+
 
 // Initiera karusell
 window.addEventListener('load', updateCarousel);
