@@ -843,7 +843,6 @@ const hero = document.querySelector('.hero-section');
 const header = document.querySelector('.site-header');
 const logo = document.querySelector('.header-logo');
 
-// Scroll: lägger till 'scrolled' klass och byter logga
 window.addEventListener('scroll', () => {
   const heroBottom = hero.getBoundingClientRect().bottom;
 
@@ -857,7 +856,7 @@ window.addEventListener('scroll', () => {
   }
 });
 
-// Hover: lägg till 'hover-scrolled' och byt logga till blå
+
 header.addEventListener('mouseenter', () => {
   if (!header.classList.contains('scrolled')) {
     header.classList.add('hover-scrolled');
