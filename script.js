@@ -1,27 +1,25 @@
 // Förpackningar, SCB
-
 const urlSCB1 = 'https://api.scb.se/OV0104/v1/doris/sv/ssd/START/MI/MI0307/MI0307T2N';
 
 const querySCB1 = {
-  "query": [
-    
+  query: [
     {
-      "code": "Forpackning",
-      "selection": {
-        "filter": "item",
-        "values": ["10", "35", "65"]
+      code: "Forpackning",
+      selection: {
+        filter: "item",
+        values: ["10", "35", "65"]
       }
     },
     {
-      "code": "ContentsCode",
-      "selection": {
-        "filter": "item",
-        "values": ["0000047A"]
+      code: "ContentsCode",
+      selection: {
+        filter: "item",
+        values: ["0000047A"]
       }
     }
   ],
-  "response": {
-    "format": "JSON"
+  response: {
+    format: "JSON"
   }
 };
 
@@ -38,35 +36,25 @@ fetch(urlSCB1, {
   .then(response => response.json())
   .then(data => {
     const uniquePackages = [...new Set(data.data.map(item => item.key[0]))];
-    const uniqueYears = [...new Set(data.data.map(item => item.key[1]))];
+    const uniqueYears = [...new Set(data.data.map(item => item.key[1]))].sort();
 
-    const colorBase = [
-    '#4459C6',
-    '#1C2E7C', 
-    '#9FAAE1' 
-    ];
-    const borderColorBase = [
-    '#4459C6',
-    '#1C2E7C', 
-    '#9FAAE1' 
-    ];
+    const colorBase = ['#4459C6', '#1C2E7C', '#9FAAE1'];
+    const borderColorBase = ['#4459C6', '#1C2E7C', '#9FAAE1'];
 
-    const datasets = uniquePackages.map((pkg, index) => {
-      return {
-        label: packageNames[pkg] || pkg,
-        data: uniqueYears.map(year => {
-          const item = data.data.find(d => d.key[0] === pkg && d.key[1] === year);
-          return item ? parseFloat(item.values[0]) : 0;
-        }),
-        fill: false,
-        tension: 0.3,
-        borderColor: borderColorBase[index % borderColorBase.length],
-        backgroundColor: colorBase[index % colorBase.length],
-        borderWidth: 2,
-        pointRadius: 3,
-        pointHoverRadius: 4,
-      };
-    });
+    const datasets = uniquePackages.map((pkg, index) => ({
+      label: packageNames[pkg] || pkg,
+      data: uniqueYears.map(year => {
+        const item = data.data.find(d => d.key[0] === pkg && d.key[1] === year);
+        return item ? parseFloat(item.values[0]) : 0;
+      }),
+      fill: false,
+      tension: 0.3,
+      borderColor: borderColorBase[index % borderColorBase.length],
+      backgroundColor: colorBase[index % colorBase.length],
+      borderWidth: 2,
+      pointRadius: 3,
+      pointHoverRadius: 4,
+    }));
 
     const ctx1 = document.getElementById('myChart1').getContext('2d');
     new Chart(ctx1, {
@@ -79,15 +67,15 @@ fetch(urlSCB1, {
         responsive: true,
         plugins: {
           title: {
-            display: true
+            display: true,
           },
           legend: {
             position: 'top',
             labels: {
               font: {
-                size: 14,
+                size: 14
               },
-              padding: 20 
+              padding: 20
             }
           }
         },
@@ -98,12 +86,12 @@ fetch(urlSCB1, {
               display: true,
               text: 'Ton',
               font: {
-                size:14,
+                size: 14
               }
             },
             ticks: {
-              font:{
-                size:14,
+              font: {
+                size: 14
               }
             }
           },
@@ -112,56 +100,23 @@ fetch(urlSCB1, {
               display: true,
               text: 'År',
               font: {
-                size:14,
+                size: 14
               }
             },
             ticks: {
-              font:{
-                size:14,
+              font: {
+                size: 14
               }
             }
           }
         }
       }
-    }
-  },
-  scales: {
-    y: {
-      beginAtZero: true,
-      title: {
-        display: true,
-        text: 'Ton',
-        font: {
-          size:14,
-        }
-      },
-      ticks: {
-        font:{
-          size:14,
-        }
-      }
-    },
-    x: {
-      title: {
-        display: true,
-        text: 'År',
-        font: {
-          size:14,
-        }
-      },
-      ticks: {
-        font:{
-          size:14,
-        }
-      }
-    }
-  }
-}
     });
   })
   .catch(error => {
     console.error('Fel vid hämtning av data (myChart1):', error);
   });
+
 
 //Vad köper vi mest, myChart2 ================================================================
 
