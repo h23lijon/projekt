@@ -509,23 +509,27 @@ document.getElementById('calculate-button').addEventListener('click', function(e
   const resultBox = document.getElementById('result');
   const errorMessage = document.getElementById('error-message');
 
+  // Återställ båda meddelandena
   resultBox.classList.add('hidden');
   errorMessage.classList.add('hidden');
   errorMessage.textContent = "";
 
+  // Visa felmeddelande om inget är ifyllt
   if (beer === 0 && wine === 0 && spirits === 0) {
     errorMessage.textContent = "Fyll i minst ett dryckesalternativ för att se uträkningen";
     errorMessage.classList.remove('hidden');
     return;
   }
 
-  const beerAlcohol = beer * 0.0165 * 12;     
-  const wineAlcohol = wine * 0.018 * 12;     
-  const spiritsAlcohol = spirits * 0.016 * 12; 
+  // Beräkna ren alkohol i liter per år
+  const beerAlcohol = beer * 0.0165 * 12;     // 0.33 l * 5% * 12 mån
+  const wineAlcohol = wine * 0.018 * 12;      // 0.15 l * 12% * 12 mån
+  const spiritsAlcohol = spirits * 0.016 * 12; // 0.04 l * 40% * 12 mån
 
   const totalAlcoholLiters = beerAlcohol + wineAlcohol + spiritsAlcohol;
   const avgSwedeAlcohol = 3.66;
 
+  // Samla ihop meddelanden
 let message = "";
 if (totalCO2 < avgSwedeCO2) {
   message += "<strong class='result-heading'>🌱 Härligt! Du bidrar till mindre utsläpp än genomsnittet</strong>";
@@ -748,6 +752,7 @@ function drawBubbleChart() {
   // Karusell ================================================================================//
 let currentIndex = 1;
 
+// Justera karusellens position för desktop
 function updateCarousel() {
   const track = document.querySelector('.carousel-track');
   const cards = document.querySelectorAll('.carousel-card');
@@ -840,11 +845,13 @@ if (chartModal && openChartModal && closeChartModalBtn) {
   });
 }
 
+//navbaren vid scroll//
 
 const hero = document.querySelector('.hero-section');
 const header = document.querySelector('.site-header');
 const logo = document.querySelector('.header-logo');
 
+// Scroll: lägger till 'scrolled' klass och byter logga
 window.addEventListener('scroll', () => {
   const heroBottom = hero.getBoundingClientRect().bottom;
 
@@ -858,6 +865,7 @@ window.addEventListener('scroll', () => {
   }
 });
 
+// Hover: lägg till 'hover-scrolled' och byt logga till blå
 header.addEventListener('mouseenter', () => {
   if (!header.classList.contains('scrolled')) {
     header.classList.add('hover-scrolled');
