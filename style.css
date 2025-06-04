@@ -1491,6 +1491,7 @@ hr {
 }
 
 @media screen and (max-width: 480px) {
+  
   .carousel-wrapper {
     margin: 2rem auto;
     padding: 0.5rem;
