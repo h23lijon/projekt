@@ -733,7 +733,7 @@ function drawBubbleChart() {
                 display: true,
                 text: "Invånare per km²",
                 color: '#000',
-                font: { weight: 'bold' }
+                font: { size:'14' }
               },
               ticks: { color: '#000' }
             },
@@ -742,7 +742,7 @@ function drawBubbleChart() {
                 display: true,
                 text: "Liter alkohol/person/år",
                 color: '#000',
-                font: { weight: 'bold', size: 16 }
+                font: { size: 14 }
               },
               ticks: { color: '#000' },
               grid: { color: '#ddd' },
