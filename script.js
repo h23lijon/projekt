@@ -76,53 +76,53 @@ fetch(urlSCB1, {
         datasets: datasets
       },
       options: {
-        responsive: true,
-        plugins: {
-          title: {
-            display: true
-          },
-          legend: {
-            position: 'top',
-            labels: {
-              font: {
-                size: 14,
-              },
-              padding: 20 // Detta är OK här
-            }
-          }
-        },
-        scales: {
-          y: {
-            beginAtZero: true,
-            title: {
-              display: true,
-              text: 'Ton',
-              font: {
-                size:14,
-              }
-            },
-            ticks: {
-              font:{
-                size:14,
-              }
-            }
-          },
-          x: {
-            title: {
-              display: true,
-              text: 'År',
-              font: {
-                size:14,
-              }
-            },
-            ticks: {
-              font:{
-                size:14,
-              }
-            }
-          }
+  responsive: true,
+  plugins: {
+    title: {
+      display: true
+    },
+    legend: {
+      position: 'top',
+      padding: 20,
+      labels: {
+        font: {
+          size: 14,
         }
       }
+    }
+  },
+  scales: {
+    y: {
+      beginAtZero: true,
+      title: {
+        display: true,
+        text: 'Ton',
+        font: {
+          size:14,
+        }
+      },
+      ticks: {
+        font:{
+          size:14,
+        }
+      }
+    },
+    x: {
+      title: {
+        display: true,
+        text: 'År',
+        font: {
+          size:14,
+        }
+      },
+      ticks: {
+        font:{
+          size:14,
+        }
+      }
+    }
+  }
+}
     });
   })
   .catch(error => {
